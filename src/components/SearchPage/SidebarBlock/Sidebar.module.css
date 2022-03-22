@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-size: 14px;
+    font-weight: 300;
 }
 .Sidebar {
     width: 25%;
@@ -14,16 +15,26 @@
 
 .CategoryTitle {
     text-align: center;
+    font-size: 18px;
     margin: 40px;
+
 }
 
 .CategoryOfMap {
     display: flex;
     border-top: 1px solid #EEEEEE;
-    padding: 15px 0;
+    padding: 2px;
     align-items: center;
+    font-size: 14px;
+    text-align: justify;
+    font-weight: bold;
+}
+
+.CategoryOfMap span {
+    font-weight: 100;
 }
 
 .CategoryOfMap input {
-    margin: 5px 20px;
+    margin: 5px 15px;
+    width: 14px;
 }

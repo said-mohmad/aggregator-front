@@ -3,25 +3,34 @@
 }
 
 .cart{
-width: 65%;
-padding: 15px;
-margin: auto;
-font-size: 25px;
-/* border: 1px solid rgb(202, 200, 200); */
-margin-top: 40px;
-box-shadow: 0px 0px 8px 3px rgba(34, 60, 80, 0.14);
+    width: 70%;
+    padding: 1rem 1.25rem;
+    height: 50%;
+    font-size: 25px;
+    /* border: 1px solid rgb(202, 200, 200); */
+    margin-top: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
 
 .name{
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
     color: rgb(6, 6, 116);
+    color: black;
+}
+
+.name p {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0px;
+    padding: 5px 0;
+    color: #234b9c;
 }
 
 .discription{
     margin-top: 10px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
     color: rgb(80, 75, 75);
 }
 
@@ -30,23 +39,21 @@ box-shadow: 0px 0px 8px 3px rgba(34, 60, 80, 0.14);
     color: gray;
 }
 
-.executor{
-
-}
 
 .info{
     display: flex;
-    margin: 10px;
+    padding: 10px 15px;
+    align-items: center;
 }
 
 img{
-    width: 10%;
+    width: 50px;
+    height: 50px;
     border-radius: 50px
 }
 
 .number_phone{
-    margin-left: 40px;
-    margin-top: 20px;
+    padding: 0px 30px;
 }
 
 .discription p{
@@ -55,19 +62,13 @@ img{
     margin-bottom: 8px;
 }
 
-p{
-    margin-bottom: 19px;
-}
-
 button{
     width: 300px;
-    height: 30px;
-    font-size: 17px;
-    margin-left: 20px;
-    margin-top: 10px;
-    background-color: green;
+    padding: 10px 15px;
+    font-size: 12px;
+    background-color: #48964D;
     color: white;
-    border-radius: 3px;
+    border-radius: 5px;
     border: none;
     cursor: pointer;
 }
@@ -81,12 +82,24 @@ button:hover{
     margin-top: 10px;
 }
 
+.money div {
+    display: flex;
+    width: 300px;
+}
+
+.money div p {
+    font-size: 12px;
+    margin-left: 30px;
+    width: 250px;
+    margin: 5px 0;
+}
+
 .spisane{
     font-size: 20px;
 }
 
 .imgs{
-    margin-top: 15px;
+    margin-top: 10px;
 }
 .name_adds{
     margin-top: 30px;
