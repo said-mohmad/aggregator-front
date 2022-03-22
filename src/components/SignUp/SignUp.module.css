@@ -1,0 +1,82 @@
+.signUpContainer {
+    display: flex;
+    text-align: center;
+    margin: auto;
+    flex-direction: column;
+    width: 300px;
+    margin-top: 30px;
+    /* border: 1px solid #e5e5e5;    */
+    border-bottom: none;
+    border-top: none;
+    padding: 15px 30px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3),
+    -23px 0 20px -23px rgba(0, 0, 0, .5),
+    23px 0 20px -23px rgba(0, 0, 0, .5),
+    0 0 40px rgba(0, 0, 0, .1) inset;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+.label {
+    color: gray;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.signUpContainer input {
+    outline: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 5px 15px;
+    width: 250px; 
+    font-size: 24px;
+}
+
+.signUpContainer input:focus {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.inputContainer {
+    margin-top: 20px;
+}
+
+.signUpContainer button {
+    margin-top: 15px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+.signupHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 18px;
+    align-items: center;
+}
+
+.leftBlock {
+    display: flex;
+    text-align: left;
+    align-items: center;
+}
+
+.rightBlock {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-right: 480px; 
+}
+
+.rightBlock span {
+    margin-right: 5px;
+}
