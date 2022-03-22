@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.Sidebar {
+    width: 25%;
+    min-height: 800px;
+    background-color: white;
+    margin: 20px 0;
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.CategoryTitle {
+    text-align: center;
+    margin: 40px;
+}
+
+.CategoryOfMap {
+    display: flex;
+    border-top: 1px solid #EEEEEE;
+    padding: 15px 0;
+    align-items: center;
+}
+
+.CategoryOfMap input {
+    margin: 5px 20px;
+}
