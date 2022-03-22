@@ -1,0 +1,47 @@
+.headerContainer {
+  max-width: 100%;
+}
+.headerTop {
+  width: 100%;
+  background-color: #808080;
+}
+.header {
+  margin: auto;
+  max-width: 1140px;
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  color: white;
+}
+.logoContainer {
+}
+.logoImg {
+}
+.logoText {
+}
+.auth {
+}
+.navContainer {
+  width: 100%;
+  background-color: #ff820f;
+  box-shadow: 0px 0px 30px #000000;
+}
+.nav {
+  margin: auto;
+  max-width: 1140px;
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+  text-align: center;
+  backdrop-filter: blur(52px);
+}
+.navName {
+  font-size: 20px;
+  min-width: 200px;
+  color: #ffffff;
+  border-right: 0.1px solid #ffffff;
+  border-left: 0.1px solid #ffffff;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 35px;
+}

@@ -1,0 +1,43 @@
+
+.main {
+    max-width: 1140px;
+    margin: auto;
+    position: relative;
+}
+.backgroundImage{
+    width: 100%;
+    background-attachment: fixed;
+}
+.about{
+
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    z-index: 1;
+
+}
+.info{
+    display: flex;
+    flex-direction: column;
+
+}
+.companyName{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.infoText{
+    font-size: 15px;
+}
+.aboutButton{
+    margin-top: 100px;
+    width: 200px;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+
+
+}
