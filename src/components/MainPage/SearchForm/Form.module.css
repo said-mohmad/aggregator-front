@@ -1,0 +1,32 @@
+:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+.searchContainer {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 1140px;
+  margin: auto;
+  margin-top: 20px;
+  height: 45px;
+}
+.searchContainer input {
+  padding: 20px;
+  margin: 0;
+width: 80%;
+  height: 100%;
+  font-size: 20px;
+  border: 1px solid #000000;
+}
+.searchContainer button {
+    width: 20%;
+  height: 100%;
+  background-color: #ff820f;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  border: none;
+}
