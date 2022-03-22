@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './SearchPage.module.css'
 import SearchBlock from './SearchBlock/SearchBlock';
 import SidebarBlock from './SidebarBlock/SidebarBlock'
-import CardsBlock from './CardsBlock/CardsBlock'
+import CardsBlock from '../Cart/Cart'
 
 const Main = () => {
     return (

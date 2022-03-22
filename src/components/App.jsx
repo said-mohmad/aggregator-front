@@ -1,18 +1,18 @@
 import style from "./App.module.css";
 
-import Header from "./MainPage/Header/Header";
-import Main from "./MainPage/Main";
-import Form from "./MainPage/SearchForm/Form";
+// import Header from "./MainPage/Header/Header";
+// import Main from "./MainPage/Main";
+// import Form from "./MainPage/SearchForm/Form";
 import SearchPage from "./SearchPage/SearchPage";
-  import PersonPage from "./PersonPage/PersonPage"
+  // import PersonPage from "./PersonPage/PersonPage"
 
 const App = () => {
   return <div className={style.app}>
-    <Header/>
-    <Form/>
-    <Main/>
+    {/* <Header/> */}
+    {/* <Form/> */}
+    {/* <Main/> */}
     <SearchPage />
-    <PersonPage />
+    {/* <PersonPage /> */}
   </div>;
 
 }
