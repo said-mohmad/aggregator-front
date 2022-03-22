@@ -10,15 +10,15 @@ const SidebarBlock = () => {
 
             <div className={styles.CategoryOfMap}>
                 <input type="radio" />
-                Ремонт и строительство
+                <span>Ремонт и строительство</span>
             </div>
             <div  className={styles.CategoryOfMap}>
                 <input type="radio" />
-                Дизайн и проектировоние
+                <span>Дизайн и проектировоние</span> 
             </div>
             <div  className={styles.CategoryOfMap}>
                 <input type="radio" />
-                Ремонт техники
+                <span>Ремонт техники</span>
             </div>
         </div>
     );
