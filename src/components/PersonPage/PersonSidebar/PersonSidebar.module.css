@@ -1,0 +1,16 @@
+.serviceSidebar {
+    width: 100%;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.button {
+    width: 40%;
+    font-size: 44px;
+    background-color: aquamarine;
+    border: 1px solid green;
+}
