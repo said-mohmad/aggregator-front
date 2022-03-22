@@ -1,43 +1,59 @@
-
-.main {
-    max-width: 1140px;
-    margin: auto;
-    position: relative;
-}
-.backgroundImage{
-    width: 100%;
-    background-attachment: fixed;
-}
-.about{
-
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: absolute;
-    top: 30px;
-    left: 60px;
-    z-index: 1;
-
-}
-.info{
-    display: flex;
-    flex-direction: column;
-
-}
-.companyName{
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-.infoText{
+@media screen and (max-width: 1095px) {
+  .companyName {
+    display: none;
+  }
+  .infoText {
     font-size: 15px;
-}
-.aboutButton{
-    margin-top: 100px;
-    width: 200px;
-    height: 40px;
+  }
+  .aboutButton {
+    margin-top: 10px;
+    width: 100px;
+    height: 20px;
     background-color: #fff;
     border: none;
+  }
+}
 
+.main {
+    
+  margin: auto;
+  background-color: rgba(0, 0, 255, 0.185);
+  background: url("../../assets/background-image.svg") no-repeat;
+  background-size: 100%;
 
+}
+
+.about {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 5%;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+}
+.companyName {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.infoText {
+  font-size: 15px;
+  margin-bottom: 50px;
+}
+.aboutButton {
+  width: 200px;
+  height: 40px;
+  background-color: #fff;
+  border: none;
+}
+.categories {
+  margin: auto;
+  margin-top: 30%;
+  width: 1140px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5%;
+  flex-wrap: wrap;
 }

@@ -1,3 +1,6 @@
+span {
+  cursor: default;
+}
 .headerContainer {
   max-width: 100%;
 }
@@ -13,14 +16,7 @@
   height: 70px;
   color: white;
 }
-.logoContainer {
-}
-.logoImg {
-}
-.logoText {
-}
-.auth {
-}
+
 .navContainer {
   width: 100%;
   background-color: #ff820f;
@@ -30,18 +26,53 @@
   margin: auto;
   max-width: 1140px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   height: 35px;
   text-align: center;
   backdrop-filter: blur(52px);
+  position: relative;
 }
-.navName {
-  font-size: 20px;
-  min-width: 200px;
-  color: #ffffff;
-  border-right: 0.1px solid #ffffff;
-  border-left: 0.1px solid #ffffff;
-  box-sizing: border-box;
-  text-align: center;
-  line-height: 35px;
+
+.auth button {
+
+  padding: 5px 10px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.signup {
+  border: 1px solid #4caf50;
+  background-color: rgb(0, 202, 0);
+  color: rgb(255, 255, 255);
+  margin-left: 5px;
+}
+
+.signup:hover {
+  background-color: #31e237;
+  color: white;
+}
+
+.signin {
+  border: 1px solid #2196f3;
+  background-color: #2196f3;
+  border-color: #2196f3;
+  color: rgb(255, 255, 255);
+}
+
+.signin:hover {
+  background: #55b2ff;
+  color: white;
+}
+
+.cabinet {
+  margin-left: 10px;
+  border: 1px solid #2196f3;
+  background-color: #2196f3;
+  border-color: #2196f3;
+  color: rgb(255, 255, 255);
+}
+
+.cabinet:hover {
+  background: #55b2ff;
+  color: white;
 }

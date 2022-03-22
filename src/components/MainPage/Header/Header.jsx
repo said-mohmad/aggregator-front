@@ -2,6 +2,7 @@ import React from "react";
 import style from "./Header.module.css";
 import logo from "../../../assets/logo.svg";
 import logoText from "../../../assets/logo-text.svg";
+import List from "./List/List";
 const Header = () => {
   return (
     <header className={style.headerContainer}>
@@ -12,18 +13,24 @@ const Header = () => {
             <img className={style.logoText} src={logoText} alt="#" />
           </div>
           <div className={style.auth}>
-            <span>ВХОД</span>
-            <span>РЕГИСТРАЦИЯ</span>
+            {false && <button className={style.signin}>ВХОД</button>}
+            {false && <button className={style.signup}>РЕГИСТРАЦИЯ</button>}
+            {true && (
+              <div>
+                <span>Имя пользователя</span>
+                <button className={style.cabinet}>Личный кабинет</button>
+              </div>
+            )}
           </div>
         </div>
       </div>
       <div className={style.navContainer}>
         <nav className={style.nav}>
-          <div className={style.navName}>КАТЕГОРИИ</div>
-          <div className={style.navName}>УСЛУГИ</div>
-          <div className={style.navName}>ЗАКАЗЫ</div>
-          <div className={style.navName}>ИСПОЛНИТЕЛИ</div>
-          <div className={style.navName}>КОНТАКТЫ</div>
+          <List name="Категории" />
+          <List name="Исполнители" />
+          <List name="Контакты" />
+          <List name="О нас" />
+          <List name="Альвииии" />
         </nav>
       </div>
     </header>
