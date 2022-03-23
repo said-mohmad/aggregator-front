@@ -9,7 +9,7 @@ const Header = () => {
         <div className={style.header}>
           <div className={style.logoContainer}>
             <img className={style.logoImg} src={logo} alt="#" />
-            <div className={style.logoText}>BSA <br />поиск проффесионалов</div>
+            <div className={style.logoText}>BSA <br />ПОИСК ПРОФФЕСИОНАЛОВ</div>
           </div>
           <div className={style.auth}>
             {true && <button className={style.auth_button}>ВХОД</button>}
@@ -25,10 +25,10 @@ const Header = () => {
       </div>
       <div className={style.navContainer}>
         <nav className={style.nav}>
-          <List name="Категории" />
-          <List name="Исполнители" />
-          <List name="Контакты" />
-          <List name="О нас" />
+          <List name="КАТЕГОРИИ" />
+          <List name="ИСПОЛНИТЕЛИ" />
+          <List name="КОНТАКТЫ" />
+          <List name="О НАС" />
         </nav>
       </div>
     </header>

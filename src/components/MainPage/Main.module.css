@@ -1,52 +1,7 @@
 
 .main {
+  width: 100%;
   margin: auto;
-  background-color: rgba(0, 0, 255, 0.185);
-  background: url("../../assets//background-image.svg") no-repeat;
   background-size: 100%;
-
-}
-
-.about {
-  width: 1140px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: auto;
-  height: 456px;
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-}
-
-.companyName {
-  padding: 20px;
-  font-size: 25px;
-  
-}
-
-.infoText {
-  padding: 20px 20px;
-  font-size: 15px;
-  margin-bottom: 50px;
-}
-
-.aboutButton {
-  margin: 20px;
-  font-size: 12px;
-  width: 200px;
-  height: 40px;
-  background-color: #48964D;
-  color: white;
-  border-radius: 5px;
-  border: none;
-}
-
-.aboutButton:hover {
-  background-color: white;
-  color: #48964D;
-  font-weight: 400;
 }
 
