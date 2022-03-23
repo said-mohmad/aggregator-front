@@ -4,7 +4,6 @@ import SearchPage from "./SearchPage/SearchPage";
 import PersonPage from "./PersonPage/PersonPage";
 import Footer from "./Footer/Footer";
 import MainPage from "../components/MainPage/Main";
-import Carts from "./Cart/Carts";
 
 const App = () => {
   return (
@@ -13,7 +12,6 @@ const App = () => {
       <MainPage />
       <SearchPage />
       <PersonPage />
-      <Carts/>
       <Footer />
     </div>
   );

@@ -1,7 +1,7 @@
 const initialState = {
   loading: true,
-  text: [],
-  error: null,
+  services: [],
+  error: null
 };
 
 export default function services(state = initialState, action) {
@@ -9,20 +9,20 @@ export default function services(state = initialState, action) {
     case "services/fetch/pending":
       return {
         ...state,
-        loading: true,
+        loading: true
       };
     case "services/fetch/fulfilled":
       return {
         ...state,
         loading: false,
-        text: action.payload,
+        services: action.payload
       };
     case "services/fetch/rejected":
       return {
         ...state,
         loading: false,
-        text: [],
-        error: action.error,
+        services: [],
+        error: action.error
       };
     default:
       return state;
@@ -35,8 +35,8 @@ export const fetchCarts = () => {
     try {
       const response = await fetch("http://localhost:4000/services", {
         headers: {
-          "Content-type": "application/json",
-        },
+          "Content-type": "application/json"
+        }
       });
       const json = await response.json();
       if (json.error) {

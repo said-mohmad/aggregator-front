@@ -27,7 +27,7 @@ const Cart = ({ card }) => {
       <div className={style.name}>
         {/* Название услуги */}
         {/* {console.log(props)} */}
-        <p>{card.serviceName}</p>
+        {/* <p>{card.serviceName}</p> */}
         <p className={style.time}>🕐 Сегодня</p>
       </div>
       <div className={style.discription}>
