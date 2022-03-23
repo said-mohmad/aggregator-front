@@ -3,7 +3,7 @@ import logoHome from "../../assets/home.png";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signUp } from "../../redux/features/application";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
     const dispatch = useDispatch();
@@ -25,21 +25,23 @@ const SignUp = () => {
     const [passwordError, setPasswordError] = useState("")
     const [errorEmail, setErrorEmail] = useState("");
     const [btnDisabled, setBtnDisabled] = useState(false);
-    const [errorEmpty, setErrorEmpty] = useState("");
+    // const [errorEmpty, setErrorEmpty] = useState("");
     // const [isSucceed, setSucceed] = useState(false);
 
     const handleChangeExecutor = (e) => {
         setExecutor(e.target.value);
-        // setErrorMessage("");
+        setErrorMessage("");
     };
 
     const handleChangePassword = (e) => {
         setPassword(e.target.value);
         setPasswordError("");
+        setErrorMessage("");
     };
 
-    const handleChangeRepeat = (e) => {
+    const handleChangeRepeat = (e, password) => {
         setRepeat(e.target.value);
+        console.log(repeat)
         if (password !== e.target.value) {
             setPasswordError("Пароли не совпадают");
         } else {
@@ -49,20 +51,18 @@ const SignUp = () => {
 
     const handleChangeLogin = (e) => {
         setLogin(e.target.value);
-        // setErrorMessage("");
+        setErrorMessage("");
     };
 
     const handleChangePhone = (e) => {
         setPhone(e.target.value);
-        // setErrorMessage("");
+        setErrorMessage("");
     };
 
     const handleChangeCity = (e) => {
         setCity(e.target.value);
-        // setErrorMessage("");
+        setErrorMessage("");
     };
-
-    const handleBlur = (e) => {};
 
     const handleChangeMail = (e) => {
         setEmail(e.target.value);
@@ -71,7 +71,7 @@ const SignUp = () => {
         if (re.test(e.target.value)) {
             setErrorEmail("");
         }
-        // setErrorMessage("");
+        setErrorMessage("");
     };
 
     const handleBlurMail = () => {
@@ -90,12 +90,12 @@ const SignUp = () => {
         executor,
         password,
         phone,
-        email,
         city,
-        repeat
+        repeat,
+        email
     ) => {
-        console.log(login, executor, password, phone, city, repeat);
-        if (!login || executor || password || phone) {
+        console.log(login, executor, password, phone, city, repeat, email);
+        if (!login || !executor || !password || !phone) {
             setErrorMessage("Не заполнены обязательные поля");
         } else if (password !== repeat) {
             setPasswordError("Пароли не совпадают");
@@ -114,24 +114,23 @@ const SignUp = () => {
     }, [isSucceed, navigate]);
 
     useEffect(() => {
-        if (signingUp || errorEmail || errorMessage || errorEmpty) {
+        if (signingUp || errorEmail || errorMessage) {
             setBtnDisabled(true);
             console.log(
                 signingUp,
                 Boolean(errorEmail),
-                Boolean(errorMessage),
-                Boolean(errorEmpty)
+                Boolean(errorMessage)
             );
         } else {
             setBtnDisabled(false);
+            setErrorMessage("")
             console.log(
                 signingUp,
                 Boolean(errorEmail),
-                Boolean(errorMessage),
-                Boolean(errorEmpty)
+                Boolean(errorMessage)
             );
         }
-    }, [signingUp, errorMessage, errorEmail, errorEmpty]);
+    }, [signingUp, errorMessage, errorEmail]);
 
     return (
         <div>
@@ -144,7 +143,7 @@ const SignUp = () => {
                 <div className={style.rightBlock}>
                     <span>Уже есть аккаунт? </span>
                     <b>
-                        <a href="/signin">Войти</a>
+                        <Link to="/signin">Войти</Link>
                     </b>
                 </div>
             </div>
@@ -157,13 +156,13 @@ const SignUp = () => {
                         onChange={(e) => handleChangeExecutor(e)}
                     />
                 </div>
-                <div className={style.error}>{errorEmpty}</div>
+                {/* <div className={style.error}>{errorEmpty}</div> */}
                 <div className={style.inputContainer}>
                     <div className={style.label}>Придумайте логин</div>
                     <input
                         value={login}
                         onChange={(e) => handleChangeLogin(e)}
-                        onBlur={(e) => handleBlur(e)}
+                        // onBlur={(e) => handleBlur(e)}
                     />
                 </div>
                 {/* <div className={style.error}>{errorEmpty}</div> */}
@@ -173,7 +172,7 @@ const SignUp = () => {
                         type="password"
                         value={password}
                         onChange={(e) => handleChangePassword(e)}
-                        onBlur={(e) => handleBlur(e)}
+                        // onBlur={(e) => handleBlur(e)}
                     />
                 </div>
                 {/* <div className={style.error}>{errorEmpty}</div> */}
@@ -182,7 +181,7 @@ const SignUp = () => {
                     <input
                         type="password"
                         value={repeat}
-                        onChange={(e) => handleChangeRepeat(e)}
+                        onChange={(e) => handleChangeRepeat(e, password)}
                     />
                     <div className={style.error}>{passwordError}</div>
                 </div>
@@ -232,7 +231,8 @@ const SignUp = () => {
                                 password,
                                 phone,
                                 city,
-                                repeat
+                                repeat,
+                                email
                             )
                         }
                         disabled={btnDisabled}

@@ -49,7 +49,7 @@ const SignIn = () => {
                     <div>
                         Еще не зарегистрированы?{" "}
                         <b>
-                            <a href="/signup">Зарегистрироваться</a>
+                            <Link to="/signup">Зарегистрироваться</Link>
                         </b>
                     </div>
                 </div>

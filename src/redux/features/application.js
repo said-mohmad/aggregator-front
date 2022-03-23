@@ -93,7 +93,7 @@ export const signIn = (login, password) => {
     };
 };
 
-export const signUp = (login, executor, password, phone, city, email ) => {
+export const signUp = (login, executor, password, phone, city, mail ) => {
   return async (dispatch) => {
     dispatch({ type: "application/signup/pending" });
     try {
@@ -102,7 +102,7 @@ export const signUp = (login, executor, password, phone, city, email ) => {
           headers: {
               "Content-Type": "application/json;charset=utf-8",
           },
-          body: JSON.stringify({ login, executor, password, phone, city, email  }),
+          body: JSON.stringify({ login, executor, password, phone, city, mail  }),
       });
       const json = await res.json();
       if (json.error) {
