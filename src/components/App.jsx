@@ -6,6 +6,8 @@ import SearchPage from "./SearchPage/SearchPage";
 import PersonPage from "./PersonPage/PersonPage";
 import Footer from "./Footer/Footer";
 
+
+
 const App = () => {
   return (
     <div className={style.app}>
@@ -15,6 +17,7 @@ const App = () => {
       <SearchPage />
       <PersonPage />
       <Footer />
+      
     </div>
   );
 };

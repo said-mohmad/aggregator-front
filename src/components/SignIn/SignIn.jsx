@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./SignIn.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { signIn } from "../redux/features/application";
 import { Link } from "react-router-dom";
-import logoHome from "../../assets/home.png"
+import logoHome from "../../assets/home.png";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
+
+    const navigate = useNavigate();
+
     const dispatch = useDispatch();
+    const application = useSelector((state) => state.application);
+    const error = useSelector((state) => state.application.error);
+    const signingIn = useSelector((state) => state.application.signingIn);
+    const [signingError, setSigningError] = useState("");
 
     const handleChangeLogin = (e) => {
         setLogin(e.target.value);
@@ -17,21 +25,26 @@ const SignIn = () => {
     const handleChangePassword = (e) => {
         setPassword(e.target.value);
     };
-
+    // useEffect(() => {
+    //     setSigningError(application.error)
+    // }, [application.error])
     const handleSignIn = (login, password) => {
         dispatch(signIn(login, password));
+        console.log(application.error);
     };
 
     return (
         <div>
             <div className={style.signinHeader}>
                 <div className={style.leftBlock}>
-                <img src={logoHome} alt="home" /> <b>Главная </b>
+                    <img src={logoHome} alt="home" /> <b>Главная </b>
                 </div>
                 <div className={style.rightBlock}>
                     <div>
                         Еще не зарегистрированы?{" "}
-                       <b><a href="/signup">Зарегистрироваться</a></b> 
+                        <b>
+                            <a href="/signup">Зарегистрироваться</a>
+                        </b>
                     </div>
                 </div>
             </div>
@@ -55,7 +68,11 @@ const SignIn = () => {
                 </div>
 
                 <div>
-                    <button onClick={() => handleSignIn(login, password)}>
+                    {error && <div className={style.error}>{error}</div>}
+                    <button
+                        onClick={() => handleSignIn(login, password)}
+                        disabled={signingIn}
+                    >
                         Войти
                     </button>
                 </div>
