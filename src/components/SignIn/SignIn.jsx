@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./SignIn.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { signIn } from "../redux/features/application";
 import { Link } from "react-router-dom";
 import logoHome from "../../assets/home.png";
 import { useNavigate } from "react-router-dom";
@@ -29,7 +28,7 @@ const SignIn = () => {
     //     setSigningError(application.error)
     // }, [application.error])
     const handleSignIn = (login, password) => {
-        dispatch(signIn(login, password));
+        dispatch(SignIn(login, password));
         console.log(application.error);
     };
 
