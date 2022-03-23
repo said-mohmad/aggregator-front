@@ -72,6 +72,7 @@ export const signIn = (login, password) => {
                     type: "application/signin/rejected",
                     error: json.error,
                 });
+                console.log(json)
             } else {
                 dispatch({
                     type: "application/signin/fulfilled",
