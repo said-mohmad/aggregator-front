@@ -7,8 +7,6 @@ import PersonPage from "./PersonPage/PersonPage";
 import Footer from "./Footer/Footer";
 import MainPage from '../components/MainPage/Main'
 
-
-
 const App = () => {
   return (
     <div className={style.app}>
@@ -19,10 +17,8 @@ const App = () => {
       <SearchPage />
       <PersonPage />
       <Footer />
-    
     </div>
   );
 };
-
 
 export default App;

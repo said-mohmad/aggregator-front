@@ -4,12 +4,12 @@ span {
 
 .headerContainer {
   max-width: 100%;
-  background-color: #000000;
+  background-color: white
 }
 
 .headerTop {
   max-width: 1140px;
-  background-color: #000000;
+  background-color: white;
   margin: auto;
 }
 
@@ -18,17 +18,54 @@ span {
   max-width: 1140px;
   display: flex;
   justify-content: space-between;
-  height: 100px;
   color: white;
 }
 
-.auth {
+
+.logoContainer {
   display: flex;
+}
+
+.logoImg {
+  width: 50px;
+  margin: 10px 10px;
+}
+
+.logoText {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-size: large;
+  line-height: 15px;
+  margin-left: 20px;
+
+}
+
+
+
+
+.auth {
+  width: 260px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
+.auth_button {
+  border: 2px solid #4caf50;
+  background-color: white;
+  color: white;
+  width: 120px;
+}
+
+.auth_button:hover {
+  border: 2px solid #4caf50;
+  background-color: white;
+  color: #4caf50;
+}
+
 .auth button {
-  padding: 10px 25px;
+  padding: 6px 25px;
   font-size: 10px;
   cursor: pointer;
   border-radius: 5px;
@@ -36,9 +73,13 @@ span {
   border: none;
 }
 
+
+
+
+
 .navContainer {
   max-width: 100%;
-  background-color: #ff820f;
+  background-color: #4caf50;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
 
@@ -48,34 +89,8 @@ span {
   display: flex;
   justify-content: left;
   text-align: center;
-  /* position: relative; */
 }
 
-
-
-.signup {
-  border: 1px solid #4caf50;
-  background-color: rgb(0, 202, 0);
-  color: rgb(255, 255, 255);
-  margin-left: 5px;
-}
-
-.signup:hover {
-  background-color: #31e237;
-  color: white;
-}
-
-.signin {
-  border: 1px solid #2196f3;
-  background-color: #2196f3;
-  border-color: #2196f3;
-  color: rgb(255, 255, 255);
-}
-
-.signin:hover {
-  background: #55b2ff;
-  color: white;
-}
 
 .cabinet {
   margin-left: 10px;
