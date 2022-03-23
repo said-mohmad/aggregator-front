@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './SearchPage.module.css'
 import SidebarBlock from './SidebarBlock/SidebarBlock'
-import CardsBlock from '../Cart/Cart'
+import CardsBlock from '../Cart/Carts'
 import SearchBlock from '../MainPage/SearchBlock/SearchBlock';
 
 
-const Main = () => {
+const SearchPage = () => {
+    
     return (
         <div className={styles.SearchPage}>
             <SearchBlock />
@@ -17,4 +18,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default SearchPage;

@@ -12,9 +12,9 @@ const Header = () => {
             <div className={style.logoText}>BSA <br />ПОИСК ПРОФФЕСИОНАЛОВ</div>
           </div>
           <div className={style.auth}>
-            {true && <button className={style.auth_button}>ВХОД</button>}
-            {true && <button className={style.auth_button}>РЕГИСТРАЦИЯ</button>}
-            {false && (
+            {false && <button className={style.auth_button}>ВХОД</button>}
+            {false && <button className={style.auth_button}>РЕГИСТРАЦИЯ</button>}
+            {true && (
               <div>
                 <span className={style.cabinetName}>Имя пользователя</span>
                 <button className={style.cabinet}>Личный кабинет</button>
