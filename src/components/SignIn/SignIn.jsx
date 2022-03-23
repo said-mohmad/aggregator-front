@@ -16,7 +16,7 @@ const SignIn = () => {
 
     const error = useSelector((state) => state.application.error);
     const signingIn = useSelector((state) => state.application.signingIn);
-    const token = useSelector(state => state.application.token)
+    const token = useSelector((state) => state.application.token);
 
     const handleChangeLogin = (e) => {
         setLogin(e.target.value);
@@ -28,14 +28,14 @@ const SignIn = () => {
 
     useEffect(() => {
         if (token) {
-            navigate("/")
+            navigate("/");
         }
-    }, [token, navigate])
+    }, [token, navigate]);
     const handleSignIn = (login, password) => {
         dispatch(signIn(login, password));
         console.log(error, signingIn);
         if (!error && token) {
-            navigate("/")
+            navigate("/");
         }
     };
 
@@ -74,7 +74,10 @@ const SignIn = () => {
                 </div>
 
                 <div>
-                    {(error && <div className={style.error}>Ошибка авторизации</div>) || (signingIn && <div>Идет авторизация...</div>)}
+                    {(error && (
+                        <div className={style.error}>Ошибка авторизации</div>
+                    )) ||
+                        (signingIn && <div>Идет авторизация...</div>)}
                     <button
                         onClick={() => handleSignIn(login, password)}
                         disabled={signingIn}

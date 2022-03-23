@@ -4,7 +4,7 @@
     margin: auto;
     flex-direction: column;
     width: 360px;
-    margin-top: 30px;
+    margin-top: 20px;
     /* border: 1px solid #e5e5e5;    */
     border-bottom: none;
     border-top: none;
@@ -43,7 +43,7 @@
 }
 
 .inputContainer {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .signUpContainer button {
@@ -54,6 +54,10 @@
     padding: 10px 30px;
     border-radius: 30px;
     font-size: 18px;
+}
+.signUpContainer button:disabled {
+    opacity: 0.7;
+    cursor:not-allowed;
 }
 
 .signupHeader {
@@ -79,4 +83,9 @@
 
 .rightBlock span {
     margin-right: 5px;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
 }

@@ -1,6 +1,7 @@
 const initialState = {
     signingIn: false,
     signingUp: false,
+    isSucceed: false,
     error: null,
     token: localStorage.getItem("token"),
 };
@@ -35,6 +36,7 @@ export const application = (state = initialState, action) => {
                 signingIn: false,
                 signingUp: true,
                 error: null,
+                isSucceed: false
             };
             case "application/signup/rejected": 
             return {
@@ -42,6 +44,7 @@ export const application = (state = initialState, action) => {
                 signingIn: false,
                 signingUp: false,
                 error: action.error,
+                isSucceed: false
             };
             case "application/signup/fulfilled": 
             return {
@@ -49,6 +52,7 @@ export const application = (state = initialState, action) => {
                 signingIn: false,
                 signingUp: false,
                 error: null,
+                isSucceed: true
             };
         default:
             return state;
@@ -89,7 +93,7 @@ export const signIn = (login, password) => {
     };
 };
 
-export const signUp = (login, executor, password, phone, city ) => {
+export const signUp = (login, executor, password, phone, city, email ) => {
   return async (dispatch) => {
     dispatch({ type: "application/signup/pending" });
     try {
@@ -98,10 +102,11 @@ export const signUp = (login, executor, password, phone, city ) => {
           headers: {
               "Content-Type": "application/json;charset=utf-8",
           },
-          body: JSON.stringify({ login, executor, password, phone, city  }),
+          body: JSON.stringify({ login, executor, password, phone, city, email  }),
       });
       const json = await res.json();
       if (json.error) {
+          console.log(json)
           dispatch({
               type: "application/signup/rejected",
               error: json.error,
@@ -113,6 +118,7 @@ export const signUp = (login, executor, password, phone, city ) => {
           });
       }
   } catch (e) {
+      console.log(e)
       dispatch({
           type: "application/signup/rejected",
           error: e.toString(),
