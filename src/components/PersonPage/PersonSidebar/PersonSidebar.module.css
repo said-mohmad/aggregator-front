@@ -5,12 +5,27 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
 }
 
-.button {
-    width: 40%;
-    font-size: 44px;
-    background-color: aquamarine;
-    border: 1px solid green;
-}
+.serviceBtn {
+    width: 45%;
+    padding: 15px 25px;
+    font-size: 36px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .serviceBtn:hover {background-color: #3e8e41}
+  
+  .serviceBtn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }

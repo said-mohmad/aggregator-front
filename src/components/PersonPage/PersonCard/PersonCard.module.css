@@ -1,21 +1,25 @@
 .personCard {
     display: flex;
     justify-content: space-between;
-    background-color: blue;
+    /* background-color: blue; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
     padding: 15px;
 }
 
 .personImg {
-    width: 300px;
-    height: 300px;
+    width: 25%;
+    height: auto;
     border-radius: 50%;
-    background-color: red;
+    background-color: antiquewhite;
+    /* border: 10px solid green; */
     display: flex;
     align-items: center;
 }
 
 .personImg img {
     width: 100%;
+    border-radius: 50%;
 }
 
 .personInfo {
@@ -27,20 +31,62 @@
     margin-bottom: 15px;
 }
 
-.Company h1{
-    /* text-align: center; */
-    margin-bottom: 15px;
-}
-
 .infoLine {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid gray;
-    margin: 10px 0;
+    margin-top: 20px;
     padding: 0 15px;
 }
 
 .infoLine h3 {
     margin: 0;
+    font-size: 24px;
+}
+
+.infoLine p {
+    font-size: 24px;
+    margin: 0;
+}
+
+.editInfo {
+    text-align: center;
+    margin-top: 25px
+}
+
+.editBtn {
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 40%;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.editBtn:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.editBtn:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
 }

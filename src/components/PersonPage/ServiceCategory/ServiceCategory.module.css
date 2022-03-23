@@ -1,0 +1,46 @@
+.addBtn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  border-color: #4CAF50;
+  color: green;
+  border-radius: 10px;
+}
+
+.addBtn:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.cart{
+  width: 100%;
+  padding: 15px;
+  margin: auto;
+  font-size: 25px;
+  /* border: 1px solid rgb(202, 200, 200); */
+  margin-bottom: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  }
+  
+.name{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    color: rgb(6, 6, 116);
+}
+
+.discription{
+    margin-top: 10px;
+    border-bottom: 1px solid gray;
+    color: rgb(80, 75, 75);
+}
+
+.time{
+    font-size: 18px;
+    color: gray;
+}
+
