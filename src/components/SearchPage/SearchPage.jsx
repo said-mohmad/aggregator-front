@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './SearchPage.module.css'
 import SearchBlock from './SearchBlock/SearchBlock';
 import SidebarBlock from './SidebarBlock/SidebarBlock'
-import CardsBlock from '../Cart/Cart'
+// import CardsBlock from '../Cart/Cart'
 
 const Main = () => {
     return (
@@ -10,7 +10,7 @@ const Main = () => {
             <SearchBlock />
             <div className={styles.Wrapper}>
             <SidebarBlock />
-            <CardsBlock />
+            {/* <CardsBlock /> */}
             </div>
         </div>
     );
