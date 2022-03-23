@@ -1,23 +1,23 @@
 const initialState = {
-  loading: false,
+  loading: true,
   text: [],
   error: null,
 };
 
-export default function news(state = initialState, action) {
+export default function services(state = initialState, action) {
   switch (action.type) {
-    case "carts/fetch/pending":
+    case "services/fetch/pending":
       return {
         ...state,
         loading: true,
       };
-    case "carts/fetch/fulfilled":
+    case "services/fetch/fulfilled":
       return {
         ...state,
         loading: false,
         text: action.payload,
       };
-    case "carts/fetch/rejected":
+    case "services/fetch/rejected":
       return {
         ...state,
         loading: false,
@@ -31,21 +31,42 @@ export default function news(state = initialState, action) {
 
 export const fetchCarts = () => {
   return async (dispatch, getState) => {
-    dispatch({ type: "carts/fetch/pending" });
+    dispatch({ type: "services/fetch/pending" });
     try {
-      const response = await fetch("http://localhost:4000/service", {
+      const response = await fetch("http://localhost:4000/services", {
         headers: {
           "Content-type": "application/json",
         },
       });
       const json = await response.json();
       if (json.error) {
-        dispatch({ type: "carts/fetch/rejected", payload: json.error });
+        dispatch({ type: "services/fetch/rejected", payload: json.error });
       } else {
-        dispatch({ type: "carts/fetch/fulfilled", payload: json });
+        dispatch({ type: "services/fetch/fulfilled", payload: json });
       }
     } catch (e) {
-      dispatch({ type: "carts/fetch/rejected", error: e.toString() });
+      dispatch({ type: "services/fetch/rejected", error: e.toString() });
     }
   };
 };
+
+// export const fetchExecutor = () => {
+//   return async (dispatch, getState) => {
+//     dispatch({ type: "executor/fetch/pending" });
+//     try {
+//       const response = await fetch("http://localhost:4000/executors", {
+//         headers: {
+//           "Content-type": "application/json",
+//         },
+//       });
+//       const json = await response.json();
+//       if (json.error) {
+//         dispatch({ type: "executor/fetch/rejected", payload: json.error });
+//       } else {
+//         dispatch({ type: "executor/fetch/fulfilled", payload: json });
+//       }
+//     } catch (e) {
+//       dispatch({ type: "executor/fetch/rejected", error: e.toString() });
+//     }
+//   };
+// };

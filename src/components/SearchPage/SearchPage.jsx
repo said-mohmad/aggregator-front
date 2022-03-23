@@ -4,6 +4,7 @@ import SidebarBlock from './SidebarBlock/SidebarBlock'
 import CardsBlock from '../Cart/Cart'
 import SearchBlock from '../MainPage/SearchBlock/SearchBlock';
 
+
 const Main = () => {
     return (
         <div className={styles.SearchPage}>
