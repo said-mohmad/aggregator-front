@@ -1,0 +1,91 @@
+span {
+  cursor: default;
+}
+
+.headerContainer {
+  max-width: 100%;
+  background-color: #000000;
+}
+
+.headerTop {
+  max-width: 1140px;
+  background-color: #000000;
+  margin: auto;
+}
+
+.header {
+  margin: auto;
+  max-width: 1140px;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  color: white;
+}
+
+.auth {
+  display: flex;
+  align-items: center;
+}
+
+.auth button {
+  padding: 10px 25px;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #4caf50;
+  border: none;
+}
+
+.navContainer {
+  max-width: 100%;
+  background-color: #ff820f;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.nav {
+  margin: auto;
+  max-width: 1140px;
+  display: flex;
+  justify-content: left;
+  text-align: center;
+  /* position: relative; */
+}
+
+
+
+.signup {
+  border: 1px solid #4caf50;
+  background-color: rgb(0, 202, 0);
+  color: rgb(255, 255, 255);
+  margin-left: 5px;
+}
+
+.signup:hover {
+  background-color: #31e237;
+  color: white;
+}
+
+.signin {
+  border: 1px solid #2196f3;
+  background-color: #2196f3;
+  border-color: #2196f3;
+  color: rgb(255, 255, 255);
+}
+
+.signin:hover {
+  background: #55b2ff;
+  color: white;
+}
+
+.cabinet {
+  margin-left: 10px;
+  border: 1px solid #2196f3;
+  background-color: #2196f3;
+  border-color: #2196f3;
+  color: rgb(255, 255, 255);
+}
+
+.cabinet:hover {
+  background: #55b2ff;
+  color: white;
+}
