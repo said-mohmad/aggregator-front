@@ -1,11 +1,10 @@
 .SearchPage {
-    max-width: 100%;
     margin: auto;
 }
 
 .Wrapper {
-    width: 1140px;
+    width: 1240px;
     display: flex;
     margin: auto;
-   justify-content: space-between;
+     justify-content: space-between;
 }

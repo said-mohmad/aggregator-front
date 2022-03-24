@@ -8,7 +8,7 @@ import ServiceCategory from './ServiceCategory/ServiceCategory';
 const PersonPage = () => {
     return (
         <div className={styles.personPage}>
-            <h1 style={{fontSize:'44px', margin:'15px 0'}}>Личный кабинет</h1>
+            {/* <h1 style={{fontSize:'44px', margin:'15px 0'}}>Личный кабинет</h1> */}
             <PersonCard />
             <div className={styles.personService}>
                 <PersonSidebar />

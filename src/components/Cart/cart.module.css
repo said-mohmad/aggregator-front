@@ -1,7 +1,11 @@
+.carts {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
 .cart{
-    width: 70%;
+    width: 100%;
     padding: 1rem 1.25rem;
-    height: 50%;
     font-size: 25px;
     /* border: 1px solid rgb(202, 200, 200); */
     margin-top: 20px;

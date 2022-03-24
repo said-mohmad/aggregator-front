@@ -1,31 +1,62 @@
-
-
 .SearchBlock {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 1140px;
-    min-height: 50px;
-    margin: 20px auto;
-    padding: 30px 15px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    border-radius: 5px;
+    width: 100%;
+    background-color: #e1f1ff;}
+
+.Form {
+    width: 1240px;
+    height: 360px;
+    display: flex;
+    margin: auto;
 }
 
-.SearchBlock input{
-    width: 80%;
-    height: 40px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    border: none;
-    border-radius: 5px;
+.FormBlock {
+    margin: auto;
 }
 
-.SearchBlock button {
-    width: 15%;
-    height: 40px;
-    border: none;
-    background-color: #48964D;
+.textOfSearch {
+    height: 50%;
+}
+
+.textOfSearch h1 {
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+
+.Search_form {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.Search_form input {
+    width: 500px;
+    height: 54px;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 4px;
+}
+
+.Search_form button {
+    width: 190px;
+    height: 54px;
+    margin-left: 20px;
+    background: #f85112;
     color: white;
-    border-radius: 5px;
+    border: none;
+    border-radius: 4px;
+}
 
+.Search_form_img img {
+    padding: 20px;
+    width: 360px;
+}
+
+
+.orange {
+    margin-right: 20px ;
+    color: #f85112;
 }
