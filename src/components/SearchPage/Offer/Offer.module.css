@@ -1,0 +1,57 @@
+
+
+.offer {
+    width: 100%;
+    min-height: 200px;
+    background-color: #e1f1ff;
+}
+
+.wrapper {
+    width: 1240px;
+    display: flex;
+    margin: auto;
+    padding: 30px 0;
+    
+    
+}
+
+.information  {
+    margin: 0 30px;
+}
+
+.information h3 {
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.information div {
+    font-weight: 700;
+}
+
+.offerButtons {
+    padding: 20px 0;
+}
+
+.offerButtons button {
+    background-color: #4776AA;
+    width: 200px;
+    margin-right: 30px;
+    border: 1px solid #4776AA;
+}
+
+.offerButtons button:hover {
+    background-color: #e1f1ff;
+    border: 1px solid #4776AA;
+    color: black;
+}
+
+.offerButtons .span {
+    border: none;
+    background-color: #e1f1ff;
+    color: #4776AA;
+}
+
+.offerButtons .span:hover {
+    border: none;
+    text-decoration: underline;
+}

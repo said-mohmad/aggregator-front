@@ -4,7 +4,7 @@ const initialState = {
     error: null,
 };
   
-  export default function Categories (state = initialState, action) {
+  export default function getCategories (state = initialState, action) {
     switch (action.type) {
       case "category/fetch/pending":
         return {
@@ -33,12 +33,13 @@ const initialState = {
     return async (dispatch, getState) => {
       dispatch({ type: "category/fetch/pending" });
       try {
-        const response = await fetch("http://localhost:4000/category/");
-        const json = await response.json();
-        if (json.error) {
-          dispatch({ type: "category/fetch/rejected", payload: json.error });
+        const response = await fetch("http://localhost:4000/category");
+        const categories = await response.json();
+        // console.log(categories);
+        if (categories.error) {
+          dispatch({ type: "category/fetch/rejected", payload: categories.error });
         } else {
-          dispatch({ type: "category/fetch/fulfilled", payload: json });
+          dispatch({ type: "category/fetch/fulfilled", payload: categories });
         }
       } catch (e) {
         dispatch({ type: "category/fetch/rejected", error: e.toString() });

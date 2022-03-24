@@ -1,0 +1,25 @@
+.searchForm {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.wrapper {
+    width: 1240px;
+    display: flex;
+    margin: auto;
+    justify-content: left;
+    align-items: center;
+}
+
+.wrapper input {
+    width: 45%;
+    height: 35px;
+    margin: 0 40px 0 0;
+    padding: 0;
+    border: 0.1px solid rgba(139, 139, 139, 0.349);
+}
+
+.wrapper button {
+    background-color: #4776AA;
+    height: 35px;
+}

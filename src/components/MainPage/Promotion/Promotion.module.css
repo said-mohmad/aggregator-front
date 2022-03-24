@@ -1,0 +1,26 @@
+.Promotion {
+    width: 100%;
+    min-height: 400px;
+    background-color: white;
+}
+
+.wrapper {
+    width: 1240px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.VIPad {
+    background-color: white;
+    border-radius: 14px;
+    width: 40%;
+    min-height: 500px;
+    margin: 40px;
+    padding: 20px;
+}
+
+.VIPad h2 {
+    text-align: center;
+}

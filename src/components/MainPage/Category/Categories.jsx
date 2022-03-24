@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import  { fetchCategories } from "../../../redux/features/categories";
 import Category from "./Category";
 import style from "./Category.module.css";
 
 const Categories = () => {
 
+  const dispatch = useDispatch();
+
+  
+  useEffect(() => {
+    dispatch(fetchCategories());
+  }, [dispatch]);
+
+  const categories = useSelector(state => state.categories.categories)
+
 
   return (
-    <div>
-      <div className={style.categories}>
-
-        <Category name="Category1" />
-        <Category name="Category2" />
-        <Category name="Category3" />
-        <Category name="Category4" />
-      </div>
+    <div className={style.CategoriesContainer}>
+      <div className={style.wrapper}>
+         {categories.map((item, index) => {
+        return (
+            <Category key={index} categories={item} />
+        )
+      })}
+      </div>      
     </div>
   );
 };

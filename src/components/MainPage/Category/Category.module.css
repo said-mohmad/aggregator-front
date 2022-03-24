@@ -1,24 +1,48 @@
-.container {
-    margin: 40px 0;
-    position: relative;
-    width: 120px;
+.CategoriesContainer {
+  background-color: white;
+  
 }
 
-.categories {
+.wrapper {
+  width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: space-evenly
+}
+
+.container {
+    margin: 50px 50px;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.2);
+    
+}
+
+.container:hover {
+ 
+}
+
+.category {
   width: 1140px;
   margin: auto;
+  padding: 40px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  
 }
 
 .image {
   opacity: 1;
   display: block;
   width: 100%;
-  transition: .5s ease;
+  transition: .4s;
   backface-visibility: hidden;
-  border-radius: 50%;
+
+  border-radius: 4px;
 }
 
 .middle {
@@ -34,10 +58,12 @@
 
 .container:hover .image {
   opacity: 0.5;
+  
 }
 
 .container:hover .middle {
   opacity: 1;
+  
 }
 
 .text {

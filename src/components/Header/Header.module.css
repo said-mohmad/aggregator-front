@@ -1,108 +1,112 @@
-span {
-  cursor: default;
-}
-
 .headerContainer {
-  max-width: 100%;
+  width: 100%;
   background-color: white;
-}
-
-.headerTop {
-  max-width: 1140px;
-  background-color: white;
-  margin: auto;
-  height: 120px;
 }
 
 .header {
-  margin: auto;
-  max-width: 1140px;
   display: flex;
   justify-content: space-between;
-  color: white;
+  width: 1240px;
+  margin: auto;
+  height: 80px;
 }
 
+/* СТИЛИ ДЛЯ ЛОГОТИПА И ДЛЯ ТЕКСТА ГОЛОТИПА */
 
 .logoContainer {
   display: flex;
+  align-items: center;
 }
 
 .logoImg {
-  width: 70px;
-  margin: 10px 10px;
-}
-
-.logoText {
-  display: flex;
-  align-items: center;
-  color: black;
-  font-size: large;
-  line-height: 15px;
-  margin-left: 20px;
-
+  padding: 16px;
+  width: 76px;
 }
 
 
-
-
-.auth {
-  width: 260px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.auth_button:hover {
-  border: 2px solid #816353;
-  background-color: #816353;
-  color: white;
-}
-
-.auth button {
-  width: 120px;
-  height: 40px;
-  border: 2px solid #816353;
-  background-color: white;
-  color: #816353;
-  font-size: 13px;
-  cursor: pointer;
-  border-radius: 5px;
-  background-color: #ffffff;
-}
-
-
-
-
+/* СТИЛИ ДЛЯ МЕНЮ В ХЕДЕРЕ */
 
 .navContainer {
-  position: relative;
-  max-width: 100%;
-  background-color: white;
-  /* box-shadow: 0 0 5px rgba(0,0,0,0.2); */
+  padding: 0;
+  justify-content: flex-start;
+  margin: 0;
 }
 
 .nav {
-  position: absolute;
-  top: -30px;
-  right: 190px;
-  background-color: #816353;
-  width: 1140px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 15px;
+  list-style: none;
+  display: flex;
   text-align: center;
-  height: 60px;
+  align-items: center;
+  height: 100%;
+}
+
+.nav li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  width: 150px;
+}
+.nav li:hover {
+  color: #f85112;
+}
+
+.li img {
+  margin: auto;
+  text-align: center;
+  width: 20px;
 }
 
 
-.cabinet {
-  margin-left: 10px;
-  border: 1px solid #816353;
-  background-color: #816353;
-  border-color: #816353;
-  color: rgb(255, 255, 255);
+/* Стили для кнопок регистрации */
+
+.auth {
+  display: flex;
+  align-items: center;
 }
 
-.cabinet:hover {
-  background: #816353;
+.auth_in {
+  background-color: #195191c4;
   color: white;
+  border: none;
+  padding: 5px 40px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  width: 130px;
+
+}
+
+.auth_in:hover{
+  background-color: #195191c4;
+}
+
+.auth_register {
+  color: black;
+  background-color: #ffffff;
+  border: none;
+  padding: 0 20px;
+  height: 30px;
+  width: 150px;
+}
+
+.auth_register:hover {
+  text-decoration: underline;
+  background-color: #e1f1ff;
+}
+
+.auth_in_person {
+  text-align: center;
+  background-color: #195191c4;
+  color: white;
+  border: none;
+  padding: 5px 40px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  width: 130px;
 }
