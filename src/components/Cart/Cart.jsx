@@ -7,7 +7,7 @@ const Cart = ({ card }) => {
   const [text, setText] = useState(false);
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
-  console.log(card);
+  // console.log(card);
   // const loading = useSelector((state) => state.services.loading);
 
   // const cards = useSelector((state) => state.services.text);

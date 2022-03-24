@@ -13,7 +13,7 @@ const SidebarBlock = () => {
   }, [dispatch]);
 
   const categories = useSelector(state => state.categories.categories)
-    console.log(categories)
+    // console.log(categories)
 
     return (
         <div className={styles.SidebarForm}>

@@ -16,7 +16,7 @@ const Carts = () => {
 
   return (
     <div className={styles.carts}> 
-        {cards.map((card) => {
+        {cards.map((card, index) => {
           return <Cart card={card} key={card._id} />;
         })}
     </div>
