@@ -6,6 +6,7 @@ const PersonCard = () => {
     return (
         <div className={styles.person}>
              <div className={styles.wrapper}>
+                
                 <div className={styles.personImg}>
                         <img src='https://cdn.freelance.ru/img/portfolio/pics/00/36/88/3573970.jpg?mt=c7bcef8b' alt="personImg" />
                         <button className={styles.EditImg}>Редактировать</button>
