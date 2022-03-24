@@ -1,31 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+<<<<<<< HEAD
+
+=======
 import Carousel from "./Carousel";
+>>>>>>> 82e129b14da9d489621bbb436a5a27f30c1f105e
 import style from "./cart.module.css";
 import img from "./mam.png";
-import moment from "moment";
 import { useDispatch } from "react-redux";
 import { fetchExecutorById } from "../../redux/features/services";
 
 const Cart = ({ card }) => {
+  // const [sended, setSended ] = useState(false)
   const [text, setText] = useState(false);
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
   const [photo, setPhoto] = useState(false);
+  const [sendUser, setSendUser] = useState(false);
   const dispatch = useDispatch();
   // console.log(card);
   // const loading = useSelector((state) => state.services.loading);
-  
-  
+
   useEffect(() => {
-    dispatch(fetchExecutorById(card.executorId))
+    dispatch(fetchExecutorById(card.executorId));
   }, [card.executorId, dispatch]);
   const executor = useSelector((state) => state.services.executor);
-  
 
   // const cards = useSelector((state) => state.services.text);
   const hundleClick = () => {
     setText(!text);
+    // setSended(true)
   };
 
   const hundleNumber = (e) => {
@@ -36,16 +40,32 @@ const Cart = ({ card }) => {
     setName(e.target.value);
   };
 
+<<<<<<< HEAD
+=======
   const photosClick = () => {
     setPhoto(!photo);
   };
 
+  const hundleUserSend = () => {
+    if (name && number) {
+      setName("");
+      setNumber("");
+      setSendUser(!sendUser);
+      setText(!text);
+      // setSended(false)
+      return false;
+    }
+  };
+
+  const closeModelWindow = () => {
+    setText(!text);
+  };
+>>>>>>> 82e129b14da9d489621bbb436a5a27f30c1f105e
+
   return (
-   
     <div className={style.cart}>
       <div className={style.name}>
         {/* Название услуги */}
-        {/* {console.log(card)} */}
         <p>{card.serviceName}</p>
         <p className={style.time}>🕐</p>
       </div>
@@ -57,16 +77,18 @@ const Cart = ({ card }) => {
             Фото
           </div>
           <div className={style.imgCarosel}>
-        {photo && (
-          <div className={style.CarouselBlock}>
-            <Carousel card={card} />
+            {photo && (
+              <div className={style.CarouselBlock}>
+                <Carousel card={card} />
+              </div>
+            )}
           </div>
-        )}
-      </div>
         </div>
         <div className={style.money}>
           {/* Цена услуги и место оказания */}
-          <div><p>Бюджет</p> <p>{card.price}</p></div>
+          <div>
+            <p>Бюджет</p> <p>{card.price}</p>
+          </div>
           <div>
             <p>Регион</p> <p>{executor.city}</p>
           </div>
@@ -81,11 +103,14 @@ const Cart = ({ card }) => {
             <p>{executor.phone}</p>
           </div>
         </div>
+
         {!text ? (
           <button onClick={() => hundleClick()}>Откликнуться</button>
         ) : (
-          <div>
-            <button onClick={() => hundleClick()}>Откликнуться</button>
+          <div className={style.model}>
+            <div className={style.vihod} onClick={() => closeModelWindow()}>
+              Закрыть
+            </div>
             <div className={style.name_adds}>
               <div className={style.add_name}>Введите имя</div>
               <div>
@@ -105,12 +130,22 @@ const Cart = ({ card }) => {
                   onChange={hundleNumber}
                 />
               </div>
-              <button className={style.send_but}>Отправить</button>
+
+              <button
+                className={style.send_but}
+                onClick={() => hundleUserSend()}
+              >
+                Отправить
+              </button>
             </div>
           </div>
         )}
       </div>
     </div>
+
+   
+    
+    
   );
 };
 
