@@ -16,9 +16,7 @@ const Carts = () => {
   
 console.log(cards);
 
-  return (
-    <div> 
-
+ 
   // const loading = useSelector((state) => state.services.loading);
 
   return (
