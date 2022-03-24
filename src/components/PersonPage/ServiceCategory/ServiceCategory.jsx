@@ -5,12 +5,14 @@ const ServiceCategory = () => {
     const newArr = [1, 2, 3]
 
     return (
-        <>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '15px', padding: '0 10px' }}>
-                <h1>Список активных услуг</h1>
+        <div className={styles.servises}>
+            <div className={styles.addServise}>
+                <h3>Список активных услуг</h3>
                 <button className={styles.addBtn}>+Добавить услугу</button>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+
+
+            <div className={styles.ServisesMap}>
                 {newArr.map(item => {
                     return (
                         <div className={styles.cart}>
@@ -42,7 +44,7 @@ const ServiceCategory = () => {
                 <p><button className={styles.button}>Contact</button></p>
             </div>*/}
             </div>
-        </>
+        </div>
 
     );
 };

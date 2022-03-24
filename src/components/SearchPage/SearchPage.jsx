@@ -9,6 +9,8 @@ import { useSelector } from "react-redux";
 const SearchPage = () => {
   const cards = useSelector((state) => state.services.services);
   const [inputText, setInputText] = useState("");
+  const [categoryId, setCategoryId] = useState("")
+  console.log(categoryId);
   const filteredCarts = cards.filter((card) => card.serviceName.toLowerCase().includes(inputText.toLowerCase())
   );
   console.log(inputText);
@@ -19,7 +21,7 @@ const SearchPage = () => {
       <SearchForm inputText={inputText} setInputText={setInputText} />
       <div className={styles.Wrapper}>
         <Carts filteredCarts={filteredCarts} />
-        <SidebarBlock />
+        <SidebarBlock categoryId={categoryId} setCategoryId={setCategoryId} />
       </div>
     </div>
   );

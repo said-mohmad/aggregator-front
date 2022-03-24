@@ -1,14 +1,11 @@
+
 .person {
     width: 100%;
-    background-color: #F5F6FA;
 }
-
 .wrapper {
-    width: 1240px;
+    width: 100%;
     display: flex;
-    margin:  auto;
-    justify-content: space-between;
-    padding: 25px;
+    padding: 25px 0;
 }
 
 .personImg {
@@ -16,6 +13,7 @@
     box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.4);
     padding: 10px;
     width: 20%;
+    margin: 0 40px 0 0;
 }
 
 .personImg img {
@@ -36,7 +34,7 @@
     box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.4);
     padding: 5px 20px;
     background-color: white;
-    width: 70%;
+    width: 80%;
 }
 
 .Company {
