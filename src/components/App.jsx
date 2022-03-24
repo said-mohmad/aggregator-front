@@ -11,9 +11,6 @@ const App = () => {
     <div className={style.app}>
       <Header />
       <MainPage />
-      <SearchPage />
-       {/* <PersonPage /> */}
-       {/* <Carts/> */}
       {/* <PersonPage /> */}
       <Footer />
     </div>
