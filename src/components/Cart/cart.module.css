@@ -10,6 +10,7 @@
     /* border: 1px solid rgb(202, 200, 200); */
     margin-top: 20px;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    /* position: relative; */
 }
 
 .name{
@@ -71,6 +72,7 @@ button{
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    z-index: 3;
 }
 
 button:hover{
@@ -119,6 +121,7 @@ input{
 }
 
 .send_but{
+    margin-top: 10px;   
     background-color: brown;
     margin-left: 47px;
 }
@@ -126,6 +129,7 @@ input{
     background-color: red;
 }
 
+<<<<<<< HEAD
 
 .carusel {
     position: absolute;
@@ -134,3 +138,44 @@ input{
     height: 150px;
     background-color: rgb(245, 116, 116);
 }
+=======
+.imgCarosel{
+    position: absolute;
+    /* width: 100%;  */
+    background-color: aqua;
+}
+
+.CarouselBlock{
+        width: 100%;
+        height: 100%;
+}
+
+.vivod{
+    color: blue;
+    text-align: center;
+}
+
+.model{
+    position: absolute;
+    background-color: gray;
+    border-radius: 20px;
+    padding: 5px;   
+    left: 300px;
+    width: 430px;
+    height: 260px;
+    bottom: 10px;
+}
+
+.model input{
+    margin: auto;
+}
+.executor{
+    position: relative;
+}
+
+.vihod{
+    color: white;
+    text-align: right;
+    cursor: pointer;
+}
+>>>>>>> 82e129b14da9d489621bbb436a5a27f30c1f105e

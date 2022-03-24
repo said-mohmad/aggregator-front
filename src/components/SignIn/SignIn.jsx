@@ -16,7 +16,7 @@ const SignIn = () => {
 
     const error = useSelector((state) => state.application.error);
     const signingIn = useSelector((state) => state.application.signingIn);
-    const token = useSelector(state => state.application.token)
+    const token = useSelector((state) => state.application.token);
 
     const handleChangeLogin = (e) => {
         setLogin(e.target.value);
@@ -28,14 +28,15 @@ const SignIn = () => {
 
     useEffect(() => {
         if (token) {
-            navigate("/")
+            navigate("/");
         }
-    }, [token, navigate])
-    const handleSignIn = (login, password) => {
+    }, [token, navigate]);
+    const handleSignIn = (e, login, password) => {
+        e.preventDefault();
         dispatch(signIn(login, password));
         console.log(error, signingIn);
         if (!error && token) {
-            navigate("/")
+            navigate("/");
         }
     };
 
@@ -49,39 +50,46 @@ const SignIn = () => {
                     <div>
                         Еще не зарегистрированы?{" "}
                         <b>
-                            <a href="/signup">Зарегистрироваться</a>
+                            <Link to="/signup">Зарегистрироваться</Link>
                         </b>
                     </div>
                 </div>
             </div>
             <div className={style.signInContainer}>
                 <h3>Авторизация</h3>
+                <form onSubmit={(e) => handleSignIn(e, login, password)}>
+                    <div className={style.inputContainer}>
+                        <div className={style.label}>Логин</div>
+                        <input
+                            value={login}
+                            onChange={(e) => handleChangeLogin(e)}
+                        />
+                    </div>
+                    <div className={style.inputContainer}>
+                        <div className={style.label}>Пароль</div>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => handleChangePassword(e)}
+                        />
+                    </div>
 
-                <div className={style.inputContainer}>
-                    <div className={style.label}>Логин</div>
-                    <input
-                        value={login}
-                        onChange={(e) => handleChangeLogin(e)}
-                    />
-                </div>
-                <div className={style.inputContainer}>
-                    <div className={style.label}>Пароль</div>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => handleChangePassword(e)}
-                    />
-                </div>
-
-                <div>
-                    {(error && <div className={style.error}>Ошибка авторизации</div>) || (signingIn && <div>Идет авторизация...</div>)}
-                    <button
-                        onClick={() => handleSignIn(login, password)}
-                        disabled={signingIn}
-                    >
-                        Войти
-                    </button>
-                </div>
+                    <div>
+                        {(error && (
+                            <div className={style.error}>
+                                Ошибка авторизации
+                            </div>
+                        )) ||
+                            (signingIn && <div>Идет авторизация...</div>)}
+                        <button
+                            // onClick={() => handleSignIn(login, password)}
+                            type="submit"
+                            disabled={signingIn}
+                        >
+                            Войти
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     );
