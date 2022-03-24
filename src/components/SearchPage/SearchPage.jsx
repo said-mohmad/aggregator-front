@@ -1,31 +1,28 @@
-import React from 'react';
-import styles from './SearchPage.module.css'
-import SidebarBlock from './SidebarBlock/SidebarBlock'
-
-// import CardsBlock from '../Cart/Carts'
-import SearchBlock from '../MainPage/SearchBlock/SearchBlock';
-
-import Carts from '../Cart/Carts';
-import Offer from './Offer/Offer';
-import SearchForm from './SearchForm/SearchForm';
-
-
+import React, { useState } from "react";
+import styles from "./SearchPage.module.css";
+import SidebarBlock from "./SidebarBlock/SidebarBlock";
+import Carts from "../Cart/Carts";
+import Offer from "./Offer/Offer";
+import SearchForm from "./SearchForm/SearchForm";
+import { useSelector } from "react-redux";
 
 const SearchPage = () => {
-    
-    return (
-        <div className={styles.SearchPage}>
-            <Offer />
-            <SearchForm/>
-            <div className={styles.Wrapper}>
-            <Carts />
-            <SidebarBlock />
+  const cards = useSelector((state) => state.services.services);
+  const [inputText, setInputText] = useState("");
+  const filteredCarts = cards.filter((card) => card.serviceName.toLowerCase().includes(inputText.toLowerCase())
+  );
+  console.log(inputText);
 
-            {/* <CardsBlock /> */}
-
-            </div>
-        </div>
-    );
+  return (
+    <div className={styles.SearchPage}>
+      <Offer />
+      <SearchForm inputText={inputText} setInputText={setInputText} />
+      <div className={styles.Wrapper}>
+        <Carts filteredCarts={filteredCarts} />
+        <SidebarBlock />
+      </div>
+    </div>
+  );
 };
 
 export default SearchPage;

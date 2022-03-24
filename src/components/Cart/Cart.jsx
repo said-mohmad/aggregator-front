@@ -13,6 +13,7 @@ const Cart = ({ card }) => {
   const [name, setName] = useState("");
   const [photo, setPhoto] = useState(false);
   const dispatch = useDispatch();
+  // console.log(card);
   // const loading = useSelector((state) => state.services.loading);
   
   
