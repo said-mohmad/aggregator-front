@@ -14,7 +14,7 @@ const Carts = () => {
 
   const cards = useSelector((state) => state.services.services);
   
-console.log(cards);
+// const loading = useSelector((state) => state.services.loading);
 
   return (
     <div className={styles.carts}> 

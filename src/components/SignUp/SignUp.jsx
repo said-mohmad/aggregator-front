@@ -137,8 +137,8 @@ const SignUp = () => {
             <div className={style.signupHeader}>
                 <div className={style.leftBlock}>
                     {" "}
-                    <img src={logoHome} alt="home" />
-                    <b>Главная</b>
+                    <Link to="/home"> <img src={logoHome} alt="home" />
+                    <b>Главная</b></Link>
                 </div>
                 <div className={style.rightBlock}>
                     <span>Уже есть аккаунт? </span>

@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Header.module.css";
 import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom"
 import { Link } from "react-scroll";
 
 const Header = () => {
@@ -24,8 +25,8 @@ const Header = () => {
              </div>
 
              <div className={style.auth}>
-                {true && <button className={style.auth_in}>Вход</button>}
-                {true && <button className={style.auth_register}>Регистрация</button>}
+                {true && <Link to="/signin"><button className={style.auth_in}>Вход</button></Link>}
+                {true && <Link to="/signup"><button className={style.auth_register}>Регистрация</button></Link>}
                 {false && (
                   <div className={style.auth}>
                     <span className={style.auth_in_person}>Имя</span>

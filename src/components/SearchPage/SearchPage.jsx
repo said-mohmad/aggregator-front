@@ -13,7 +13,7 @@ const SearchPage = () => {
   console.log(categoryId);
   const filteredCarts = cards.filter((card) => card.serviceName.toLowerCase().includes(inputText.toLowerCase())
   );
-  console.log(inputText);
+  
 
   return (
     <div className={styles.SearchPage}>
