@@ -31,7 +31,8 @@ const SignIn = () => {
             navigate("/");
         }
     }, [token, navigate]);
-    const handleSignIn = (login, password) => {
+    const handleSignIn = (e, login, password) => {
+        e.preventDefault();
         dispatch(signIn(login, password));
         console.log(error, signingIn);
         if (!error && token) {
@@ -56,35 +57,39 @@ const SignIn = () => {
             </div>
             <div className={style.signInContainer}>
                 <h3>Авторизация</h3>
+                <form onSubmit={(e) => handleSignIn(e, login, password)}>
+                    <div className={style.inputContainer}>
+                        <div className={style.label}>Логин</div>
+                        <input
+                            value={login}
+                            onChange={(e) => handleChangeLogin(e)}
+                        />
+                    </div>
+                    <div className={style.inputContainer}>
+                        <div className={style.label}>Пароль</div>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => handleChangePassword(e)}
+                        />
+                    </div>
 
-                <div className={style.inputContainer}>
-                    <div className={style.label}>Логин</div>
-                    <input
-                        value={login}
-                        onChange={(e) => handleChangeLogin(e)}
-                    />
-                </div>
-                <div className={style.inputContainer}>
-                    <div className={style.label}>Пароль</div>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => handleChangePassword(e)}
-                    />
-                </div>
-
-                <div>
-                    {(error && (
-                        <div className={style.error}>Ошибка авторизации</div>
-                    )) ||
-                        (signingIn && <div>Идет авторизация...</div>)}
-                    <button
-                        onClick={() => handleSignIn(login, password)}
-                        disabled={signingIn}
-                    >
-                        Войти
-                    </button>
-                </div>
+                    <div>
+                        {(error && (
+                            <div className={style.error}>
+                                Ошибка авторизации
+                            </div>
+                        )) ||
+                            (signingIn && <div>Идет авторизация...</div>)}
+                        <button
+                            // onClick={() => handleSignIn(login, password)}
+                            type="submit"
+                            disabled={signingIn}
+                        >
+                            Войти
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     );
