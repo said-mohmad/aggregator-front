@@ -62,7 +62,7 @@
 
 .signupHeader {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-top: 20px;
     font-size: 24px;
     align-items: center;
@@ -78,7 +78,7 @@
     text-align: center;
     display: flex;
     align-items: center;
-    margin-right: 660px; 
+    margin-right: 365px; 
 }
 
 .rightBlock span {

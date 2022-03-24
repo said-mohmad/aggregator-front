@@ -25,10 +25,10 @@ const SignIn = () => {
     const handleChangePassword = (e) => {
         setPassword(e.target.value);
     };
-    console.log(Boolean(localStorage.getItem('token')));
+    // console.log(Boolean(localStorage.getItem('token')));
     useEffect(() => {
         if (localStorage.getItem('token')) {
-            navigate("/");
+            navigate("/home");
         }
     }, [token, navigate]);
     const handleSignIn = (e, login, password) => {
@@ -36,7 +36,7 @@ const SignIn = () => {
         dispatch(signIn(login, password));
         console.log(error, signingIn);
         if (!error && token) {
-            navigate("/");
+            navigate("/home");
         }
     };
 
@@ -44,7 +44,7 @@ const SignIn = () => {
         <div>
             <div className={style.signinHeader}>
                 <div className={style.leftBlock}>
-                   <Link to="/"> <img src={logoHome} alt="home" /> <b>Главная </b></Link>
+                   <Link to="/home"> <img src={logoHome} alt="home" /> <b>Главная </b></Link>
                 </div>
                 <div className={style.rightBlock}>
                     <div>
