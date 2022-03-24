@@ -1,28 +1,27 @@
 * {
     box-sizing: border-box;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
 }
-.Sidebar {
-    width: 25%;
+.SidebarForm {
+    width: 35%;
     min-height: 800px;
-    background-color: white;
-    margin: 20px 0;
+    /* background-color: white; */
+    margin: 0px 0 20px 0;
     padding: 15px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
     border-radius: 5px;
 }
 
 .CategoryTitle {
     text-align: center;
     font-size: 18px;
-    margin: 40px;
+    margin: 20px;
 
 }
 
 .CategoryOfMap {
     display: flex;
-    border-top: 1px solid #EEEEEE;
+    /* border-top: 1px solid #EEEEEE; */
     padding: 2px;
     align-items: center;
     font-size: 14px;
@@ -31,10 +30,40 @@
 }
 
 .CategoryOfMap span {
-    font-weight: 100;
+    width: 100%;
+    font-weight: 700;
+    font-size: 16px;
+    border-bottom: 1px solid #94cdff;
+    margin: 5px 0;
 }
 
 .CategoryOfMap input {
     margin: 5px 15px;
     width: 14px;
+}
+
+
+.region {
+    width: 100%;
+    background-color: #e1f1ff;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.region p {
+    font-weight: 700;
+}
+
+.Sidebar {
+    background-color: #e1f1ff;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+
+.region input {
+    border-radius: 4px;
+    width: auto;
+    border: none;
+    margin-top: 20px;
 }

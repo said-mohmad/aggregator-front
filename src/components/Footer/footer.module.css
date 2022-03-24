@@ -1,4 +1,9 @@
-footer{
+
+.footer {
+    width: 100%;
+    background-color: #e1f1ff;
+}
+.footerFrom{
    width: 1140px;
    margin: auto;
    height: 200px;

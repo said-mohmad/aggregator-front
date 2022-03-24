@@ -1,0 +1,56 @@
+.choose {
+    width: 100%;
+    background-color: #2A66A0;
+}
+
+.wrapper {
+    width: 1240px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.chooseOne {
+    width: 485px;
+    height: 217px;
+    background-color: white;
+    border-radius: 4px;
+    margin: 50px 0;
+    display: flex;
+}
+
+.chooseOneTitle {
+    width: 65%;
+    margin-left: 35px;
+}
+
+.chooseOneTitle h4 {
+    padding: 40px 0px 0px 0px;
+    font-weight: 900;
+}
+
+.chooseOneTitle p {
+    font-size: small;
+    padding: 10px 0 10px 0px ;
+    color: grey;
+}
+
+.chooseOneTitle button {
+    border: none;
+    background-color: #f85112 ;
+    color: white;
+    border-radius: 4px;
+    width: 130px;
+    height: 30px;
+}
+
+
+.chooseOneImage {
+    width: 50%;
+    background-color: white;
+}
+
+.chooseOneImage img {
+    height: 100%;
+}
