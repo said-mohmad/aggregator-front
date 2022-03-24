@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
 import styles from './SearchForm.module.css'
 
 const SearchForm = ({inputText, setInputText }) => {
