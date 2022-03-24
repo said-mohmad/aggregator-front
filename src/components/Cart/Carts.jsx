@@ -16,18 +16,13 @@ const Carts = () => {
   
 console.log(cards);
 
-  return (
-    <div> 
-
-  // const loading = useSelector((state) => state.services.loading);
-
-  return (
+  return ( (
     <div className={styles.carts}> 
-        {cards.map((card, index) => {
+        {cards.map((card) => {
           return <Cart card={card} key={card._id} />;
         })}
     </div>
-  );
+  ));
 };
 
 export default Carts;

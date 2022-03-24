@@ -72,6 +72,7 @@ button{
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    z-index: 3;
 }
 
 button:hover{
@@ -120,6 +121,7 @@ input{
 }
 
 .send_but{
+    margin-top: 10px;   
     background-color: brown;
     margin-left: 47px;
 }
@@ -136,4 +138,33 @@ input{
 .CarouselBlock{
         width: 100%;
         height: 100%;
+}
+
+.vivod{
+    color: blue;
+    text-align: center;
+}
+
+.model{
+    position: absolute;
+    background-color: gray;
+    border-radius: 20px;
+    padding: 5px;   
+    left: 300px;
+    width: 430px;
+    height: 260px;
+    bottom: 10px;
+}
+
+.model input{
+    margin: auto;
+}
+.executor{
+    position: relative;
+}
+
+.vihod{
+    color: white;
+    text-align: right;
+    cursor: pointer;
 }
