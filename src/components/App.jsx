@@ -9,9 +9,9 @@ const App = () => {
   return (
     <div className={style.app}>
       <Header />
-      {/* <MainPage /> */}
+      <MainPage />
       {/* <SearchPage /> */}
-      <PersonPage />
+      {/* <PersonPage /> */}
       <Footer />
     </div>
   );

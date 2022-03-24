@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+
 import style from "./cart.module.css";
 import img from "./mam.png";
 
@@ -22,6 +23,8 @@ const Cart = ({ card }) => {
   const hundleName = (e) => {
     setName(e.target.value);
   };
+
+
   return (
     <div className={style.cart}>
       <div className={style.name}>
@@ -83,6 +86,10 @@ const Cart = ({ card }) => {
         )}
       </div>
     </div>
+
+   
+    
+    
   );
 };
 
