@@ -12,10 +12,8 @@ const App = () => {
       <Header />
       <MainPage />
       <SearchPage />
-
        {/* <PersonPage /> */}
-{/* /      <Carts/> */}
-
+       {/* <Carts/> */}
       {/* <PersonPage /> */}
       <Footer />
     </div>

@@ -16,7 +16,7 @@ const Carts = () => {
   
 console.log(cards);
 
-  return ( (
+  return (
     <div className={styles.carts}> 
         {cards.map((card) => {
           return <Cart card={card} key={card._id} />;

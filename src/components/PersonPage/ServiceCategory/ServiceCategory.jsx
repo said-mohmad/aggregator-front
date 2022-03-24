@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './ServiceCategory.module.css'
+import { useSelector } from 'react-redux';
 
 const ServiceCategory = () => {
-    const newArr = [1, 2, 3]
+    const services = useSelector(state=>state.organization.services)
 
     return (
         <div className={styles.servises}>
@@ -10,39 +11,29 @@ const ServiceCategory = () => {
                 <h3>Список активных услуг</h3>
                 <button className={styles.addBtn}>+Добавить услугу</button>
             </div>
-
-
             <div className={styles.ServisesMap}>
-                {newArr.map(item => {
+                {services.map(item => {
                     return (
                         <div className={styles.cart}>
                             <div className={styles.name}>
-                                <p>Кабель каналы</p>
+                                <p>{item.serviceName}</p>
                                 <p className={styles.time}>🕐 Сегодня</p>
                             </div>
                             <div className={styles.discription}>
                                 <div className={styles.spisane}>
                                     <span>
-                                        Монтаж кабель каналов 40*25мм по стенам. Причем слаботочку. На этаже
-                                        примерно 60метров. Дом 16 этажей
+                                        {item.description}
                                     </span>
                                     <div className={styles.imgs}>3 фото</div>
                                 </div>
                                 <div className={styles.money}>
-                                    <p>Бюджет: 50 тысяч</p>
+                                    <p>Бюджет: {item.price}р</p>
                                     <p>Регион: Московская область, Москва</p>
                                 </div>
                             </div>
                         </div>
                     )
                 })}
-                {/* <div className={styles.card}>
-                <img src="https://cdn.worldvectorlogo.com/logos/dmc.svg" alt="John" style={{ width: '100%' }} />
-                <h1>HTML CSS</h1>
-                <p className={styles.title}>CEO & Founder, Example</p>
-                <p>Harvard University</p>
-                <p><button className={styles.button}>Contact</button></p>
-            </div>*/}
             </div>
         </div>
 
