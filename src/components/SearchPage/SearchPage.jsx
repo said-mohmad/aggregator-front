@@ -11,7 +11,7 @@ const SearchPage = () => {
   const [inputText, setInputText] = useState("");
   const filteredCarts = cards.filter((card) => card.serviceName.toLowerCase().includes(inputText.toLowerCase())
   );
-  console.log(inputText);
+  
 
   return (
     <div className={styles.SearchPage}>

@@ -5,6 +5,7 @@ import contact from '../../assets/menu/contact.png'
 import obout from '../../assets/menu/obout.png'
 import category from '../../assets/menu/category.png'
 import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom"
 
 const Header = () => {
   return (
@@ -27,8 +28,8 @@ const Header = () => {
              </div>
 
              <div className={style.auth}>
-                {true && <button className={style.auth_in}>Вход</button>}
-                {true && <button className={style.auth_register}>Регистрация</button>}
+                {true && <Link to="/signin"><button className={style.auth_in}>Вход</button></Link>}
+                {true && <Link to="/signup"><button className={style.auth_register}>Регистрация</button></Link>}
                 {false && (
                   <div className={style.auth}>
                     <span className={style.auth_in_person}>Имя</span>

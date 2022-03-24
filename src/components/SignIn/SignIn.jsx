@@ -25,9 +25,9 @@ const SignIn = () => {
     const handleChangePassword = (e) => {
         setPassword(e.target.value);
     };
-
+    console.log(Boolean(localStorage.getItem('token')));
     useEffect(() => {
-        if (token) {
+        if (localStorage.getItem('token')) {
             navigate("/");
         }
     }, [token, navigate]);
@@ -44,7 +44,7 @@ const SignIn = () => {
         <div>
             <div className={style.signinHeader}>
                 <div className={style.leftBlock}>
-                    <img src={logoHome} alt="home" /> <b>Главная </b>
+                   <Link to="/"> <img src={logoHome} alt="home" /> <b>Главная </b></Link>
                 </div>
                 <div className={style.rightBlock}>
                     <div>
