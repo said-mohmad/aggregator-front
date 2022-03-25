@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-<<<<<<< HEAD
-
-=======
 import Carousel from "./Carousel";
->>>>>>> 82e129b14da9d489621bbb436a5a27f30c1f105e
 import style from "./cart.module.css";
 import img from "./mam.png";
 import { useDispatch } from "react-redux";
@@ -40,8 +36,7 @@ const Cart = ({ card }) => {
     setName(e.target.value);
   };
 
-<<<<<<< HEAD
-=======
+
   const photosClick = () => {
     setPhoto(!photo);
   };
@@ -60,7 +55,6 @@ const Cart = ({ card }) => {
   const closeModelWindow = () => {
     setText(!text);
   };
->>>>>>> 82e129b14da9d489621bbb436a5a27f30c1f105e
 
   return (
     <div className={style.cart}>

@@ -89,7 +89,7 @@ export const loadServices = () => {
         })
 
         const result = await res.json()
-        console.log(result)
+        // console.log(result)
 
         if (result.error) {
             dispatch({ type: 'services/fetch/rejected', error: result.error })

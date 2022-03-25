@@ -1,9 +1,26 @@
 import React from 'react';
 import styles from './ServiceCategory.module.css'
 import { useSelector } from 'react-redux';
+import EditModal from './EditRemoveModal/EditModal';
+import { useState } from 'react';
+import RemoveModal from './EditRemoveModal/RemoveModal';
 
 const ServiceCategory = () => {
-    const services = useSelector(state=>state.organization.services)
+    const services = useSelector(state => state.organization.services)
+
+    const [currentItem, setCurrentItem] = useState('')
+    const [showEdit, setShowEdit] = useState(false)
+    const [showRemove, setShowRemove] = useState(false)
+
+    const handleShowEdit = (item) => {
+        setShowEdit(!showEdit)
+        setCurrentItem(item)
+    }
+
+    const handleShowRemove = (item) => {
+        setShowRemove(!showRemove)
+        setCurrentItem(item)
+    }
 
     return (
         <div className={styles.servises}>
@@ -12,6 +29,7 @@ const ServiceCategory = () => {
                 <button className={styles.addBtn}>+Добавить услугу</button>
             </div>
             <div className={styles.ServisesMap}>
+                <div style={{fontSize: '48px', textAlign:'center', margin: '30px 5px'}}>{services.length > 0 ? '' : 'Вы пока не разместили ни одну услугу'}</div>
                 {services.map(item => {
                     return (
                         <div className={styles.cart}>
@@ -30,6 +48,14 @@ const ServiceCategory = () => {
                                     <p>Бюджет: {item.price}р</p>
                                     <p>Регион: Московская область, Москва</p>
                                 </div>
+                            </div>
+                            <div style={{width:'80%', margin: 'auto', textAlign: 'center'}}>
+                                <button className={`${styles.editBtn} ${styles.button}`} onClick={() => handleShowEdit(item)} disabled={showEdit || showRemove}><span>Редактировать</span></button>
+                                {showEdit ? <EditModal showEdit={showEdit} handleShowEdit={handleShowEdit} item={currentItem}/> : ''}
+
+                                <button className={`${styles.removeBtn} ${styles.button}`} onClick={() => handleShowRemove(item)} disabled={showEdit || showRemove}><span>Удалить</span></button>
+                                {showRemove ? <RemoveModal showRemove={showRemove} handleShowRemove={handleShowRemove} item={currentItem}/> : ''}
+                                
                             </div>
                         </div>
                     )

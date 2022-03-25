@@ -22,7 +22,7 @@ const Carts = () => {
           return <Cart card={card} key={card._id} />;
         })}
     </div>
-  ));
+  );
 };
 
 export default Carts;
