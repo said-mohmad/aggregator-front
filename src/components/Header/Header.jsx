@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Header.module.css";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom"
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
 
 const Header = () => {
   return (

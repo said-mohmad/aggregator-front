@@ -32,3 +32,58 @@
   border-bottom: 1px solid #4E79AA ;
   border-top: 1px solid #4E79AA;
 }
+
+.button {
+  border-radius: 4px;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+  width: 45%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.editBtn {
+  background-color: #f4511e;
+}
+
+.removeBtn {
+  background-color: #a50101;
+}
+
+.button span {
+  font-size:28px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.editBtn span:after {
+  content: '🛠';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.removeBtn span:after {
+  content: '✖';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: -10px;
+}
