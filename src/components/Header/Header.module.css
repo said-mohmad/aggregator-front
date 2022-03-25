@@ -44,22 +44,10 @@
   height: 100%;
 }
 
-.nav li {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  width: 150px;
-}
-.nav li:hover {
-  color: #f85112;
+.li {
+  width: 110px;
 }
 
-.li img {
-  margin: auto;
-  text-align: center;
-  width: 20px;
-}
 
 
 /* Стили для кнопок регистрации */

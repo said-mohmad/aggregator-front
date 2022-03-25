@@ -1,11 +1,8 @@
 import React from "react";
 import style from "./Header.module.css";
-import ispolnitel from '../../assets/menu/ispolnitel.png'
-import contact from '../../assets/menu/contact.png'
-import obout from '../../assets/menu/obout.png'
-import category from '../../assets/menu/category.png'
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom"
+// import { Link } from "react-scroll";
 
 const Header = () => {
   return (
@@ -20,10 +17,10 @@ const Header = () => {
 
              <div className={style.navContainer}>
                     <ul className={style.nav}>
-                      <li className={style.li}><a href="">Категории</a></li>
-                      <li className={style.li}><a href="">Исполнители</a></li>
-                      <li className={style.li}><a href="">Контакты</a></li>
-                      <li className={style.li}><a href="">О нас</a></li>
+                      <Link activeClass="active" to="Promotion" spy={true} smooth={true} offset={1000} duration={150} className={style.li} >Категории</Link>
+                      <Link activeClass="active" to="Promotion" spy={true} smooth={true} offset={150} duration={150} className={style.li}>Исполнители</Link>
+                      <Link activeClass="active" to="Promotion" spy={true} smooth={true} offset={150} duration={150} className={style.li}>Контакты</Link>
+                      <Link activeClass="active" to="Promotion" spy={true} smooth={true} offset={150} duration={150} className={style.li}>О нас</Link>
                     </ul>
              </div>
 

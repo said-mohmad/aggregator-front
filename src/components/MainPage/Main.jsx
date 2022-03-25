@@ -13,7 +13,8 @@ const Main = () => {
       <Choose />
       <Categories />
       <Advantages />
-      <Promotion />
+      <div id='Promotion'><Promotion /></div>
+      
     </div>
   );
 };
