@@ -3,6 +3,7 @@ const initialState = {
   services: [],
   error: null,
   executor: [],
+  executors: []
 };
 
 export default function services(state = initialState, action) {
@@ -10,56 +11,56 @@ export default function services(state = initialState, action) {
     case "services/fetch/pending":
       return {
         ...state,
-        loading: true,
+        loading: true
       };
     case "services/fetch/fulfilled":
       return {
         ...state,
         loading: false,
-        services: action.payload,
+        services: action.payload
       };
     case "services/fetch/rejected":
       return {
         ...state,
         loading: false,
         services: [],
-        error: action.error,
+        error: action.error
       };
     case "executor/fetch/pending":
       return {
         ...state,
-        loading: true,
+        loading: true
       };
     case "executor/fetch/fulfilled":
       return {
         ...state,
         loading: false,
-        executor: action.payload,
+        executors: action.payload
       };
     case "executor/fetch/rejected":
       return {
         ...state,
         loading: false,
-        executor: [],
-        error: action.error,
+        executors: [],
+        error: action.error
       };
     case "executorById/fetch/pending":
       return {
         ...state,
-        loading: true,
+        loading: true
       };
     case "executorById/fetch/fulfilled":
       return {
         ...state,
         loading: false,
-        executor: action.payload,
+        executor: action.payload
       };
     case "executorById/fetch/rejected":
       return {
         ...state,
         loading: false,
         executor: [],
-        error: action.error,
+        error: action.error
       };
     default:
       return state;
@@ -72,8 +73,8 @@ export const fetchCarts = () => {
     try {
       const response = await fetch("http://localhost:4000/services", {
         headers: {
-          "Content-type": "application/json",
-        },
+          "Content-type": "application/json"
+        }
       });
       const json = await response.json();
       if (json.error) {
@@ -82,7 +83,10 @@ export const fetchCarts = () => {
         dispatch({ type: "services/fetch/fulfilled", payload: json });
       }
     } catch (e) {
-      dispatch({ type: "services/fetch/rejected", error: e.toString() });
+      dispatch({
+        type: "services/fetch/rejected",
+        error: `Ошибка кетча: ${e.toString()}`
+      });
     }
   };
 };
@@ -93,8 +97,8 @@ export const fetchExecutor = () => {
     try {
       const response = await fetch("http://localhost:4000/executors", {
         headers: {
-          "Content-type": "application/json",
-        },
+          "Content-type": "application/json"
+        }
       });
       const json = await response.json();
       if (json.error) {
@@ -114,8 +118,8 @@ export const fetchExecutorById = (id) => {
     try {
       const response = await fetch(`http://localhost:4000/executor/${id}`, {
         headers: {
-          "Content-type": "application/json",
-        },
+          "Content-type": "application/json"
+        }
       });
       const json = await response.json();
       if (json.error) {

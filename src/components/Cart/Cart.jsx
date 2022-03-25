@@ -14,18 +14,14 @@ const Cart = ({ card }) => {
   const [photo, setPhoto] = useState(false);
   const [sendUser, setSendUser] = useState(false);
   const dispatch = useDispatch();
-  // console.log(card);
-  // const loading = useSelector((state) => state.services.loading);
 
   useEffect(() => {
     dispatch(fetchExecutorById(card.executorId));
   }, [card.executorId, dispatch]);
   const executor = useSelector((state) => state.services.executor);
 
-  // const cards = useSelector((state) => state.services.text);
   const hundleClick = () => {
     setText(!text);
-    // setSended(true)
   };
 
   const hundleNumber = (e) => {
@@ -46,7 +42,6 @@ const Cart = ({ card }) => {
       setNumber("");
       setSendUser(!sendUser);
       setText(!text);
-      // setSended(false)
       return false;
     }
   };
