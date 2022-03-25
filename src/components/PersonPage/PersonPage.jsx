@@ -7,18 +7,22 @@ import ServiceCategory from './ServiceCategory/ServiceCategory';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { loadOrganization, loadServices } from '../../redux/features/organization';
+import { fetchCategories } from '../../redux/features/categories';
 
 
 const PersonPage = () => {
     const dispatch = useDispatch()
     const loadingPerson = useSelector(state=>state.organization.loadingPerson)
     const loadingService = useSelector(state=>state.organization.loadingService)
-    const userCity = useSelector(state=>state.organization.user.city)
+    const user = useSelector(state=>state.organization.user)
+    const services = useSelector(state=>state.organization.services)
+    // console.log(userCity)
 
 
     useEffect(() => {
         dispatch(loadOrganization())
         dispatch(loadServices())
+        dispatch(fetchCategories())
     }, [dispatch])
 
     
@@ -28,10 +32,10 @@ const PersonPage = () => {
         <div className={styles.personPage}>
             <div className={styles.wrapper}>
                 <PersonSidebar />
-                {loadingPerson ? <div style={{fontSize: '72px'}}>Загрузка</div> : <PersonCard />}
+                {!user ? <div style={{fontSize: '72px'}}>Загрузка</div> : <PersonCard />}
             </div>
             <div className={styles.personService}>
-                {loadingService ? <div style={{fontSize: '72px'}}>Загрузка</div> : <ServiceCategory userCity={userCity} />}
+                {!services ? <div style={{fontSize: '72px'}}>Загрузка</div> : <ServiceCategory />}
                 {/* <OrderCategory /> */}
             </div>
         </div>

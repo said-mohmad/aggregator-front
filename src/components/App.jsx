@@ -4,11 +4,9 @@ import SearchPage from "./SearchPage/SearchPage";
 import PersonPage from "./PersonPage/PersonPage";
 import Footer from "./Footer/Footer";
 import MainPage from "../components/MainPage/Main";
-import Carts from "../components/Cart/Carts";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import SignUp from "./SignUp/SignUp";
 import SignIn from "./SignIn/SignIn";
-import ServiceAdd from "./PersonPage/ServiceCategory/ServiceAdd";
 
 const App = () => {
     return (
