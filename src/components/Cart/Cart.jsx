@@ -1,35 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-<<<<<<< HEAD
-
-=======
-import Carousel from "./Carousel";
->>>>>>> 82e129b14da9d489621bbb436a5a27f30c1f105e
 import style from "./cart.module.css";
 import img from "./mam.png";
 import { useDispatch } from "react-redux";
 import { fetchExecutorById } from "../../redux/features/services";
+import Carousel from "../Carousel/Carousel";
 
 const Cart = ({ card }) => {
+  
   // const [sended, setSended ] = useState(false)
   const [text, setText] = useState(false);
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
-  const [photo, setPhoto] = useState(false);
   const [sendUser, setSendUser] = useState(false);
   const dispatch = useDispatch();
-  // console.log(card);
-  // const loading = useSelector((state) => state.services.loading);
+
+  const [carusel, setCarusel] = useState(false)
+
+    const handlePhoto = () => {
+        setCarusel(!carusel)
+    }
 
   useEffect(() => {
     dispatch(fetchExecutorById(card.executorId));
   }, [card.executorId, dispatch]);
   const executor = useSelector((state) => state.services.executor);
 
-  // const cards = useSelector((state) => state.services.text);
   const hundleClick = () => {
     setText(!text);
-    // setSended(true)
   };
 
   const hundleNumber = (e) => {
@@ -40,19 +38,12 @@ const Cart = ({ card }) => {
     setName(e.target.value);
   };
 
-<<<<<<< HEAD
-=======
-  const photosClick = () => {
-    setPhoto(!photo);
-  };
-
   const hundleUserSend = () => {
     if (name && number) {
       setName("");
       setNumber("");
       setSendUser(!sendUser);
       setText(!text);
-      // setSended(false)
       return false;
     }
   };
@@ -60,7 +51,6 @@ const Cart = ({ card }) => {
   const closeModelWindow = () => {
     setText(!text);
   };
->>>>>>> 82e129b14da9d489621bbb436a5a27f30c1f105e
 
   return (
     <div className={style.cart}>
@@ -73,16 +63,11 @@ const Cart = ({ card }) => {
         <div className={style.spisane}>
           {/* Описание услуги */}
           <span> {card.description}</span>
-          <div onClick={() => photosClick()} className={style.imgs}>
-            Фото
-          </div>
+          {/* <div onClick={() => setOpen(true)} className={style.imgs}>Фото</div> */}
           <div className={style.imgCarosel}>
-            {photo && (
-              <div className={style.CarouselBlock}>
-                <Carousel card={card} />
-              </div>
-            )}
           </div>
+          <Carousel />
+
         </div>
         <div className={style.money}>
           {/* Цена услуги и место оказания */}
@@ -96,7 +81,7 @@ const Cart = ({ card }) => {
       </div>
       <div className={style.executor}>
         <div className={style.info}>
-          <img src={img} alt="" />
+          <img className={style.executor_img} src={img} alt="" />
           <div className={style.number_phone}>
             {/* Данные об исполнителе */}
             <p>{executor.executor}</p>
@@ -140,7 +125,7 @@ const Cart = ({ card }) => {
             </div>
           </div>
         )}
-      </div>
+      </div>     
     </div>
 
    

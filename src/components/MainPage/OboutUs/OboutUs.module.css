@@ -1,0 +1,67 @@
+.oboutUs {
+    width: 100%;
+    min-height: 600px;
+    background-color: aliceblue;
+    text-align: center;
+}
+
+.oboutUs h2 {
+    padding: 50px 0;
+}
+
+.wrapper {
+    width: 1240px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.wrapper div {
+    width: 45%;
+}
+
+.wrapper p {
+    text-align: center;
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.frelance h4 {
+    margin: 0 0 50px 0; 
+    padding: 0;
+}
+
+.frelance button {
+    margin: 40px;
+    background-color: #F85112;
+    border: 2px solid #F85112;
+}
+
+.custom h4 {
+    margin: 0 0 50px 0; 
+    padding: 0;
+}
+
+.custom button {
+    margin: 50px;
+    background-color: #F85112;
+    border: 2px solid #F85112;
+}
+
+.custom p {
+    line-height: 1.6;
+}
+
+.custom button:hover {
+    border: 2px solid #F85112;
+    background-color: white;
+    color: #F85112;
+}
+
+.frelance button:hover {
+    border: 2px solid #F85112;
+    background-color: white;
+    color: #F85112;
+}

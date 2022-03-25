@@ -5,6 +5,8 @@ import style from "./Main.module.css";
 import SearchBlock from './SearchBlock/SearchBlock'
 import Advantages from "./Advantages/Advantages";
 import Promotion from "./Promotion/Promotion";
+import OboutUs from "./OboutUs/OboutUs";
+import Carousel from "../Carousel/Carousel";
 
 const Main = () => {
   return (
@@ -13,8 +15,8 @@ const Main = () => {
       <Choose />
       <Categories />
       <Advantages />
-      <div id='Promotion'><Promotion /></div>
-      
+      <Promotion />
+      <OboutUs />
     </div>
   );
 };
