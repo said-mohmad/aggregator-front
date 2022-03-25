@@ -7,6 +7,7 @@ import MainPage from "../components/MainPage/Main";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import SignUp from "./SignUp/SignUp";
 import SignIn from "./SignIn/SignIn";
+import ServiceAdd from "./PersonPage/ServiceCategory/ServiceAdd";
 
 const App = () => {
     return (

@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signUp } from "../../redux/features/application";
 import { Link, useNavigate } from "react-router-dom";
+import Cleave from 'cleave.js/react';
+import CleavePhone from '../../../node_modules/cleave.js/dist/addons/cleave-phone.ru';
 
 const SignUp = () => {
     const dispatch = useDispatch();
@@ -196,11 +198,14 @@ const SignUp = () => {
                 <div className={style.error}>{errorEmail}</div>
                 <div className={style.inputContainer}>
                     <div className={style.label}>Номер мобильного телефона</div>
-                    <input
-                        value={phone}
-                        onChange={(e) => handleChangePhone(e)}
-                    />
+                    {/* <input
+                        
+                    /> */}
+                    <Cleave options={{phone: true, phoneRegionCode: "RU", initValue: "9", prefix: "+7"}} 
+                    value={phone}
+                    onChange={(e) => handleChangePhone(e)}/>
                 </div>
+                
                 <div className={style.inputContainer}>
                     <div className={style.label}>Город</div>
                     <input value={city} onChange={(e) => handleChangeCity(e)} />
