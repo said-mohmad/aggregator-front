@@ -9,6 +9,7 @@ import ServiceAdd from "./ServiceAdd";
 
 const ServiceCategory = ({userCity}) => {
   const services = useSelector((state) => state.organization.services);
+//   console.log(services)
  
 
   const [currentItem, setCurrentItem] = useState("");
@@ -62,7 +63,7 @@ const ServiceCategory = ({userCity}) => {
                 </div>
                 <div className={styles.money}>
                   <p>Бюджет: {item.price}р</p>
-                  <p>Регион: {userCity}</p>
+                  <p>Регион: 1</p>
                 </div>
               </div>
               <div

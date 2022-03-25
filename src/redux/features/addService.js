@@ -32,7 +32,7 @@ export const addService = (state = initialState, action) => {
   }
 };
 
-export const addedService = (name, description, price) => {
+export const addedService = (name, description, price, category) => {
   return async (dispatch) => {
     dispatch({ type: "addService/fetch/pending" });
     try {
@@ -46,6 +46,7 @@ export const addedService = (name, description, price) => {
           serviceName: name,
           description,
           price,
+          categoryId: category
         }),
       });
       const json = await response.json();

@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addedService } from '../../../redux/features/addService';
+import { fetchCategories } from '../../../redux/features/categories';
 import { loadServices } from '../../../redux/features/organization';
 import styles from "./ServiceCategory.module.css"
 
-const ServiceAdd = ({showAdd, handleShowAdd}) => { 
+const ServiceAdd = ({showAdd, handleShowAdd}) => {
+    const categories = useSelector(state=>state.categories.categories)
     
     const dispatch = useDispatch()
 
@@ -12,6 +14,11 @@ const ServiceAdd = ({showAdd, handleShowAdd}) => {
     const [description, setDescription] = useState("")
     const [price, setPrice] = useState("")
     const [stop, setStop] = useState(false)
+    const [category, setCategory] = useState('')
+
+    const handleCategory = (e) => {
+        setCategory(e.target.value)
+    }
 
     const handleName = (e) => {
         setName(e.target.value)
@@ -30,8 +37,9 @@ const ServiceAdd = ({showAdd, handleShowAdd}) => {
             setStop(true)
         } else {
             setStop(false)
-            dispatch(addedService(name, description, price))
+            dispatch(addedService(name, description, price, category))
             dispatch(loadServices())
+            handleShowAdd()
             alert('Услуга создана')
         }
     }
@@ -56,6 +64,16 @@ const ServiceAdd = ({showAdd, handleShowAdd}) => {
                         <div style={{display: 'flex', justifyContent:'space-between', alignItems: 'center', fontSize:'16px', padding: '10px 5px'}}>
                             <div style={{width: '35%'}}>Цена</div>
                             <div style={{width: '65%'}}><input value={price} onChange={handlePrice} style={{width:'100%'}} placeholder='Необходимо ввести цену' /></div>
+                        </div>
+                        <div style={{display: 'flex', justifyContent:'space-between', alignItems: 'center', fontSize:'16px', padding: '10px 5px'}}>
+                            <div style={{width: '35%'}}>Категория</div>
+                            <div style={{width: '65%'}}>
+                                <select value={category} onChange={handleCategory}>
+                                    {categories.map(item => {
+                                        return (<option value={item._id}>{item.title}</option>)
+                                    })}
+                                </select>
+                            </div>
                         </div>
                         <div style={{fontSize:'18px', color:'red', textAlign:'center', margin: '10px 0'}}>
                             {stop && 'Пожалуйста, заполните поля'}

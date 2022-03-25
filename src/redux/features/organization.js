@@ -55,7 +55,7 @@ export const organization = (state = initialState, action) => {
 
 export const loadOrganization = () => {
     return async (dispatch) => {
-        console.log('hello')
+        // console.log('hello')
         dispatch({ type: 'organization/fetch/pending' })
         const res = await fetch('http://localhost:4000/executor', {
             method: "GET",
