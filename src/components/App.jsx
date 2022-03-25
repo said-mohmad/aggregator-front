@@ -12,18 +12,15 @@ const App = () => {
     return (
         <div className={style.app}>
             <BrowserRouter>
-            
-            <Routes>
-                <Route path="/" element={<Navigate to="/home" />} />
-                <Route path="/signup" element={<SignUp />} />
-                <Route path="/signin" element={<SignIn />} />
-                <Route path="/home" element={<><Header /><MainPage />  <Footer /></>} />
-                <Route path="/search" element={<><Header /><SearchPage /><Footer /></>} />
-                <Route path="/executor" element={<><Header /><PersonPage /><Footer /></>} />
-            </Routes>
-            </BrowserRouter>
-            {/* <Carts/> */}
-          
+                <Routes>
+                    <Route path="/" element={<Navigate to="/home" />} />
+                    <Route path="/signup" element={<SignUp />} />
+                    <Route path="/signin" element={<SignIn />} />
+                    <Route path="/home" element={<><Header /><MainPage /> <Footer /></>} />
+                    <Route path="/search" element={<><Header /><SearchPage /><Footer /></>} />
+                    <Route path="/executor" element={<><Header /><PersonPage /><Footer /></>} />
+                </Routes>
+            </BrowserRouter>        
         </div>
     );
 

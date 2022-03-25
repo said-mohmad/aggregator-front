@@ -48,9 +48,8 @@
 }
 
 .cart img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50px
+
+    height: 500px;
 }
 
 .number_phone{
@@ -63,7 +62,7 @@
     margin-bottom: 8px;
 }
 
-button{
+.cart button{
     width: 300px;
     padding: 10px 15px;
     font-size: 12px;
@@ -72,7 +71,6 @@ button{
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    z-index: 3;
 }
 
 button:hover{
@@ -130,49 +128,41 @@ input{
 }
 
 
+.info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px
+}
+
+
+
+
+/* css каруселя */
+
 .carusel {
-    position: absolute;
-    left: 0; right: 0; top: 0; bottom: 0;
-    width: 150px;
-    height: 150px;
-    background-color: rgb(245, 116, 116);
-}
-.imgCarosel{
-    position: absolute;
-    /* width: 100%;  */
-    background-color: aqua;
-}
-
-.CarouselBlock{
-        width: 100%;
-        height: 100%;
-}
-
-.vivod{
-    color: blue;
-    text-align: center;
-}
-
-.model{
-    position: absolute;
-    background-color: gray;
-    border-radius: 20px;
-    padding: 5px;   
+    position: fixed;
+    top: 150px;
     left: 300px;
-    width: 430px;
-    height: 260px;
-    bottom: 10px;
+    width: 60%;
+    height: auto;
+    margin: auto; 
+
+    
 }
 
-.model input{
+.carusel button {
+    width: 30px;
+}
+
+.wrapper {
+    width: 1240px;
     margin: auto;
 }
-.executor{
-    position: relative;
+
+.display {
+    display: none;
 }
 
-.vihod{
-    color: white;
-    text-align: right;
-    cursor: pointer;
+.caruselImg {
+    width: 100%;
 }

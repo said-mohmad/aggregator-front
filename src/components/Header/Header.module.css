@@ -46,6 +46,11 @@
 
 .li {
   width: 110px;
+  cursor: pointer;
+}
+.li:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 
@@ -85,6 +90,7 @@
 .auth_register:hover {
   text-decoration: underline;
   background-color: #e1f1ff;
+  text-underline-offset: 2px;
 }
 
 .auth_in_person {
