@@ -129,7 +129,6 @@ input{
     background-color: red;
 }
 
-<<<<<<< HEAD
 
 .carusel {
     position: absolute;
@@ -138,7 +137,6 @@ input{
     height: 150px;
     background-color: rgb(245, 116, 116);
 }
-=======
 .imgCarosel{
     position: absolute;
     /* width: 100%;  */
@@ -178,4 +176,3 @@ input{
     text-align: right;
     cursor: pointer;
 }
->>>>>>> 82e129b14da9d489621bbb436a5a27f30c1f105e

@@ -13,6 +13,7 @@ const PersonPage = () => {
     const dispatch = useDispatch()
     const loadingPerson = useSelector(state=>state.organization.loadingPerson)
     const loadingService = useSelector(state=>state.organization.loadingService)
+    const userCity = useSelector(state=>state.organization.user.city)
 
 
     useEffect(() => {
@@ -30,7 +31,7 @@ const PersonPage = () => {
                 {loadingPerson ? <div style={{fontSize: '72px'}}>Загрузка</div> : <PersonCard />}
             </div>
             <div className={styles.personService}>
-                {loadingService ? <div style={{fontSize: '72px'}}>Загрузка</div> : <ServiceCategory />}
+                {loadingService ? <div style={{fontSize: '72px'}}>Загрузка</div> : <ServiceCategory userCity={userCity} />}
                 {/* <OrderCategory /> */}
             </div>
         </div>
