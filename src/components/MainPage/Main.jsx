@@ -12,9 +12,9 @@ const Main = () => {
   return (
     <div className={style.main}>
       <SearchBlock />
+      <Advantages />
       <Choose />
       <Categories />
-      <Advantages />
       <Promotion />
       <OboutUs />
     </div>
