@@ -33,7 +33,7 @@ const OboutUs = () => {
                     <p>
                     Хороших вам исполнителей!
                     </p>
-                    <button>Стать фрилансером и найти работу</button>
+                    <button className={styles.OboutUsButton}>Стать фрилансером и найти работу</button>
                     
                 </div>
                 <div className={styles.custom}>
@@ -52,7 +52,7 @@ const OboutUs = () => {
                     <p>
                     Успешного поиска работы!
                     </p>
-                    <button>Опубликовать заказ и найти специалиста</button>
+                    <button className={styles.OboutUsButton}>Опубликовать заказ и найти специалиста</button>
 
                 </div>
             </div>

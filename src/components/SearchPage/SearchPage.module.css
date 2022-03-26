@@ -3,8 +3,12 @@
 }
 
 .Wrapper {
-    width: 1240px;
+    width: 1040px;
     display: flex;
     margin: auto;
      justify-content: space-between;
+}
+
+.carts {
+    width: 100%;
 }

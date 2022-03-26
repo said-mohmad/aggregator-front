@@ -9,13 +9,13 @@ const SearchForm = ({inputText, setInputText }) => {
    }
    const handleFind =(text)=>{
        console.log(inputText);
-       setInputText("")
+    //    setInputText("")
    }
     return (
 
         <div className={styles.searchForm}>
             <div className={styles.wrapper}>
-                <input type="text" placeholder="Давайте найдем" value={inputText} onChange={(e)=>handleInput(e)}/>
+                <input type="text" placeholder="  Давайте найдем" value={inputText} onChange={(e)=>handleInput(e)}/>
                 <button onClick={()=>handleFind(inputText)}>Поиск</button>
             </div>
         </div>

@@ -63,7 +63,6 @@ const Cart = ({ card }) => {
         <div className={style.spisane}>
           {/* Описание услуги */}
           <span> {card.description}</span>
-          {/* <div onClick={() => setOpen(true)} className={style.imgs}>Фото</div> */}
           <div className={style.imgCarosel}>
           </div>
           <Carousel />
@@ -90,7 +89,7 @@ const Cart = ({ card }) => {
         </div>
 
         {!text ? (
-          <button onClick={() => hundleClick()}>Откликнуться</button>
+          <button className={style.sendedButton} onClick={() => hundleClick()}>Откликнуться</button>
         ) : (
           <div className={style.model}>
             <div className={style.vihod} onClick={() => closeModelWindow()}>

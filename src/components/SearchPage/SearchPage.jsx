@@ -4,7 +4,7 @@ import styles from "./SearchPage.module.css";
 import SidebarBlock from "./SidebarBlock/SidebarBlock";
 import Offer from "./Offer/Offer";
 import SearchForm from "./SearchForm/SearchForm";
-import { fetchExecutor } from "../../redux/features/services";
+import { fetchCarts, fetchExecutor } from "../../redux/features/services";
 import Cart from "../Cart/Cart";
 
 const SearchPage = () => {
@@ -12,6 +12,7 @@ const SearchPage = () => {
 
   useEffect(() => {
     dispatch(fetchExecutor());
+    dispatch(fetchCarts())
   }, [dispatch]);
 
   const cards = useSelector((state) => state.services.services);

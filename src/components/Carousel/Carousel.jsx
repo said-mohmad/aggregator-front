@@ -1,9 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import styles from './Carousel.module.css'
-import './style.css'
 
 const Carousel = () => {
 
@@ -25,15 +23,14 @@ const Carousel = () => {
           
         return (
               <div>
-                <Button onClick={handleOpen}>Фото</Button>
+                <div className={styles.buttonCarusel} onClick={handleOpen}>Фотографии</div>
                 <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-                  <Box sx={style}>
+                  <Box sx={style} className={styles.boxModal}>
                         <div className={styles.carousel}>
                             <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
                         <div class="carousel-indicators ">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
                         <div class="carousel-inner ">
                         <div class="carousel-item active">
