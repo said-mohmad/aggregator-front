@@ -16,6 +16,7 @@ const PersonPage = () => {
     const loadingService = useSelector(state=>state.organization.loadingService)
     const user = useSelector(state=>state.organization.user)
     const services = useSelector(state=>state.organization.services)
+    const service = useSelector(state=>state.addService.service)
     // console.log(userCity)
 
 
@@ -31,7 +32,9 @@ const PersonPage = () => {
     return (
         <div className={styles.personPage}>
             <div className={styles.wrapper}>
+                {/* <PersonNavigate /> */}
                 <PersonSidebar />
+
                 {!user ? <div style={{fontSize: '72px'}}>Загрузка</div> : <PersonCard />}
             </div>
             <div className={styles.personService}>
