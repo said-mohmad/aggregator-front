@@ -14,7 +14,7 @@ const Cart = ({ card }) => {
   const [name, setName] = useState("");
   const [sendUser, setSendUser] = useState(false);
   const dispatch = useDispatch();
-
+  
   const [carusel, setCarusel] = useState(false)
 
     const handlePhoto = () => {
