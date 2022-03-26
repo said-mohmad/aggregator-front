@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./SearchBlock.module.css";
 import formImg from "../../../assets/index-plasterer.png";
+import { Link } from "react-router-dom";
 
 const SearchBlock = () => {
   return (
@@ -23,8 +24,8 @@ const SearchBlock = () => {
           </div>
 
           <div className={styles.Search_form}>
-            <input type="text" placeholder="  Что требуется сделать?" />
-            <button>Найти мастера</button>
+            <input  type="text" placeholder="  Что требуется сделать?" />
+            <Link to='/search' ><button>Найти мастера</button></Link>
           </div>
         </div>
 

@@ -62,19 +62,24 @@
     margin-bottom: 8px;
 }
 
-.cart button{
-    width: 300px;
-    padding: 10px 15px;
+
+.sendedButton{
+    width: 200px;
+    padding: 5px 10px;
     font-size: 12px;
-    background-color: #48964D;
+    background-color: #2A66A0;
     color: white;
     border-radius: 5px;
     border: none;
     cursor: pointer;
 }
 
+.sendedButton:hover {
+    background-color: #1e3e7e;
+}
+
 button:hover{
-    background-color: rgb(81, 156, 81);
+    background-color: white;
 }
 
 .money{
@@ -111,11 +116,12 @@ button:hover{
     margin-top: 10px;
 }
 input{
-    width: 400px;
+    width: auto;
     height: 30px;
     border-radius: 5px;
+    border: 1px solid black;
     outline: none;
-    margin-top: 8px;
+    padding: 10px 15px;
 }
 
 .send_but{

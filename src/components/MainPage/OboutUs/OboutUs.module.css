@@ -18,6 +18,10 @@
     text-align: center;
 }
 
+.wrapper p {
+    line-height: 1.6;
+}
+
 .wrapper div {
     width: 45%;
 }
@@ -34,9 +38,12 @@
 }
 
 .frelance button {
-    margin: 40px;
-    background-color: #F85112;
-    border: 2px solid #F85112;
+    margin: 50px;
+    background-color: #2A66A0;
+    border: 2px solid #2A66A0;
+    padding: 10px 15px;
+    color: white;
+    width: 300px;
 }
 
 .custom h4 {
@@ -45,9 +52,12 @@
 }
 
 .custom button {
-    margin: 50px;
-    background-color: #F85112;
-    border: 2px solid #F85112;
+    margin: 45px;
+    background-color: #2A66A0;
+    border: 2px solid #2A66A0;
+    padding: 10px 15px;
+    color: white;
+    width: 300px;
 }
 
 .custom p {
@@ -55,13 +65,17 @@
 }
 
 .custom button:hover {
-    border: 2px solid #F85112;
+    border: 2px solid #2A66A0;
     background-color: white;
-    color: #F85112;
+    color: #2A66A0;
+    padding: 10px 15px;
+    color: #2A66A0;
 }
 
 .frelance button:hover {
-    border: 2px solid #F85112;
+    border: 2px solid #2A66A0;
     background-color: white;
-    color: #F85112;
+    color: #2A66A0;
+    padding: 10px 15px;
+    color: #2A66A0;
 }
