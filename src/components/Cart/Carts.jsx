@@ -13,13 +13,12 @@ const Carts = () => {
   }, [dispatch]);
 
   const cards = useSelector((state) => state.services.services);
-  // console.log(cards);
 
   return (
-    <div className={styles.carts}>
-      {cards.map((card) => {
-        return <Cart card={card} key={card._id} />;
-      })}
+    <div className={styles.carts}> 
+        {cards.map((card) => {
+          return <Cart card={card} key={card._id} />;
+        })}
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Offer.module.css'
+import { Link } from "react-router-dom"
 
 const Offer = () => {
     return (
@@ -15,7 +16,7 @@ const Offer = () => {
                     <div><span><img src="https://www.remontnik.ru/static/images/icons/recom_check.png" alt="" /></span> Договаривайтесь напрямую без комиссий и посредников</div>
 
                     <div className={styles.offerButtons}>
-                        <button>Регистрация мастера</button>
+                        <Link to="/signup"><button>Регистрация мастера</button></Link>
                         <button className={styles.span}>Условия работы на сервисе</button>
                     </div>
                 </div>

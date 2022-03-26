@@ -1,6 +1,6 @@
 .headerContainer {
   width: 100%;
-  background-color: white;
+  background-color: #E1F1FF;
 }
 
 .header {
@@ -8,7 +8,7 @@
   justify-content: space-between;
   width: 1240px;
   margin: auto;
-  height: 80px;
+  height: 70px;
 }
 
 /* СТИЛИ ДЛЯ ЛОГОТИПА И ДЛЯ ТЕКСТА ГОЛОТИПА */
@@ -19,8 +19,8 @@
 }
 
 .logoImg {
-  padding: 16px;
-  width: 76px;
+  padding: 20px;
+  width: 90px;
 }
 
 
@@ -44,22 +44,15 @@
   height: 100%;
 }
 
-.nav li {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  width: 150px;
+.li {
+  width: 110px;
+  cursor: pointer;
 }
-.nav li:hover {
-  color: #f85112;
+.li:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
-.li img {
-  margin: auto;
-  text-align: center;
-  width: 20px;
-}
 
 
 /* Стили для кнопок регистрации */
@@ -97,6 +90,7 @@
 .auth_register:hover {
   text-decoration: underline;
   background-color: #e1f1ff;
+  text-underline-offset: 2px;
 }
 
 .auth_in_person {

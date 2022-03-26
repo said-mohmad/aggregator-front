@@ -5,15 +5,18 @@ import style from "./Main.module.css";
 import SearchBlock from './SearchBlock/SearchBlock'
 import Advantages from "./Advantages/Advantages";
 import Promotion from "./Promotion/Promotion";
+import OboutUs from "./OboutUs/OboutUs";
+import Carousel from "../Carousel/Carousel";
 
 const Main = () => {
   return (
     <div className={style.main}>
       <SearchBlock />
+      <Advantages />
       <Choose />
       <Categories />
-      <Advantages />
       <Promotion />
+      <OboutUs />
     </div>
   );
 };

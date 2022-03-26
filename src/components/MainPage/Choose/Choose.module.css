@@ -3,6 +3,10 @@
     background-color: #2A66A0;
 }
 
+.chooseOne:hover {
+    box-shadow: 1px 1px 15px 5px #ffffffa8;
+}
+
 .wrapper {
     width: 1240px;
     margin: auto;

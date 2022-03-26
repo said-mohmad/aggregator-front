@@ -1,19 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Carousel from "./Carousel";
 import style from "./cart.module.css";
 import img from "./mam.png";
 import { useDispatch } from "react-redux";
 import { fetchExecutorById } from "../../redux/features/services";
+import Carousel from "../Carousel/Carousel";
 
 const Cart = ({ card }) => {
+  
   // const [sended, setSended ] = useState(false)
   const [text, setText] = useState(false);
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
-  const [photo, setPhoto] = useState(false);
   const [sendUser, setSendUser] = useState(false);
   const dispatch = useDispatch();
+  
+  const [carusel, setCarusel] = useState(false)
+
+    const handlePhoto = () => {
+        setCarusel(!carusel)
+    }
 
   useEffect(() => {
     dispatch(fetchExecutorById(card.executorId));
@@ -30,10 +36,6 @@ const Cart = ({ card }) => {
 
   const hundleName = (e) => {
     setName(e.target.value);
-  };
-
-  const photosClick = () => {
-    setPhoto(!photo);
   };
 
   const hundleUserSend = () => {
@@ -61,16 +63,11 @@ const Cart = ({ card }) => {
         <div className={style.spisane}>
           {/* Описание услуги */}
           <span> {card.description}</span>
-          <div onClick={() => photosClick()} className={style.imgs}>
-            Фото
-          </div>
+          {/* <div onClick={() => setOpen(true)} className={style.imgs}>Фото</div> */}
           <div className={style.imgCarosel}>
-            {photo && (
-              <div className={style.CarouselBlock}>
-                <Carousel card={card} />
-              </div>
-            )}
           </div>
+          <Carousel />
+
         </div>
         <div className={style.money}>
           {/* Цена услуги и место оказания */}
@@ -84,7 +81,7 @@ const Cart = ({ card }) => {
       </div>
       <div className={style.executor}>
         <div className={style.info}>
-          <img src={img} alt="" />
+          <img className={style.executor_img} src={img} alt="" />
           <div className={style.number_phone}>
             {/* Данные об исполнителе */}
             <p>{executor.executor}</p>
@@ -128,8 +125,12 @@ const Cart = ({ card }) => {
             </div>
           </div>
         )}
-      </div>
+      </div>     
     </div>
+
+   
+    
+    
   );
 };
 

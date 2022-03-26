@@ -1,12 +1,14 @@
 .SearchBlock {
+    background-size: 100%;
     display: flex;
     align-items: center;
     width: 100%;
-    background-color: #e1f1ff;}
+    background-color: #E1F1FF;
+    min-height: 400px;
+}
 
 .Form {
     width: 1240px;
-    height: 360px;
     display: flex;
     margin: auto;
 }
@@ -38,6 +40,7 @@
     height: 54px;
     border: 1px solid rgb(199, 199, 199);
     border-radius: 4px;
+    margin: 0;
 }
 
 .Search_form button {
