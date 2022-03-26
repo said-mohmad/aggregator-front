@@ -18,6 +18,7 @@ const Categories = () => {
 
   return (
     <div className={style.CategoriesContainer}>
+      <h2>Какие виды работ можно заказать на нашем сайте</h2>
       <div className={style.wrapper}>
          {categories.map((item, index) => {
         return (
