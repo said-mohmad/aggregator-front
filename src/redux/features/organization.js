@@ -8,6 +8,7 @@ const initialState = {
 
 export const organization = (state = initialState, action) => {
     switch (action.type) {
+//ORGANIZATION=LOAD============================================================
         case 'organization/fetch/pending':
             return {
                 ...state,
@@ -28,6 +29,31 @@ export const organization = (state = initialState, action) => {
                 error: null,
                 loadingPerson: false
             };
+//ORGANIZATION=EDIT============================================================
+        case 'organization/edit/fetch/pending':
+            return {
+                ...state,
+                user: null,
+                error: null,
+                loadingPerson: true,
+            };
+        case 'organization/edit/fetch/rejected':
+            return {
+                ...state,
+                user: null,
+                error: action.error,
+                loadingPerson: false,
+            };
+        case 'organization/edit/fetch/fulfilled':
+            return {
+                ...state,
+                user: action.payload,
+                error: null,
+                loadingPerson: false
+            }
+
+//SERVICE=============================================================
+
         case 'services/fetch/pending':
             return {
                 ...state,
@@ -74,6 +100,31 @@ export const loadOrganization = () => {
             dispatch({ type: 'organization/fetch/fulfilled', payload: result })
         }
 
+    }
+}
+
+export const editOrganization = (executor, phone, city) => {
+    return async (dispatch) => {
+        dispatch({type: 'organization/edit/fetch/pending'})
+        const res = await fetch('http://localhost:4000/executor/patch', {
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify({
+                executor,
+                phone,
+                city
+            })
+        })
+        const result = await res.json()
+
+        if(result.error) {
+            dispatch({type: 'organization/edit/fetch/rejected', error: result.error})
+        } else {
+            dispatch({type: 'organization/edit/fetch/fulfilled', payload: result})
+        }
     }
 }
 
