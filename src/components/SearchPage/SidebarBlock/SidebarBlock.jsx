@@ -15,6 +15,7 @@ const SidebarBlock = ({
   getCategory,
   setGetCategory
 }) => {
+
   const dispatch = useDispatch();
 
   useEffect(() => {
