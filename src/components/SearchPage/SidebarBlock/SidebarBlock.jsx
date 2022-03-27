@@ -13,9 +13,14 @@ const SidebarBlock = ({
   priceTo,
   setPriceTo,
   getCategory,
-  setGetCategory
+  setGetCategory,
+  generalArr,
+  setGeneralArr,
+  sortUp,
+  setSortUp,
+  sortDown,
+  setSortDown
 }) => {
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,12 +30,18 @@ const SidebarBlock = ({
   const categories = useSelector((state) => state.categories.categories);
 
   const handleCategoryId = (id) => {
-    setGetCategory(!getCategory);
-    if (getCategory) setCategoryId(id);
+    if (categoryId === id) {
+      setGetCategory(false);
+      setCategoryId("");
+    } else {
+      setGetCategory(true);
+      setCategoryId(id);
+    }
   };
-  const handleCity = (city) => {
-    setCity(city);
-  };
+
+  // const handleCity = (city) => {
+  //   setCity(city);
+  // };
   const handlePriceFrom = (e) => {
     if (e.target.value >= 0) setPriceFrom(e.target.value);
   };
@@ -38,9 +49,29 @@ const SidebarBlock = ({
     if (e.target.value >= 0) setPriceTo(e.target.value);
   };
 
+  const selectSortUp = ()=>{
+    console.log(777);
+    setSortUp(!sortUp)
+    setSortDown(false)
+  }
+  const selectSortDown = ()=>{
+    console.log(888);
+    setSortDown(!sortDown)
+    setSortUp(false)
+  }
+
   return (
     <div className={styles.SidebarForm}>
-      <div className={styles.region}>
+      <div className={styles.sortBlock}>
+        <p>Сортировать по цене</p>
+        <div className={styles.sortBtns}>
+          <button onClick={()=>selectSortUp()}>Увеличение</button>
+          <button onClick={()=>selectSortDown()}>Уменьшение</button>
+        </div>
+
+        {/* <input type="text" placeholder="        Найти мой город" /> */}
+      </div>
+      {/* <div className={styles.region}>
         <p>Регион</p>
         <select
           id={styles.selecttheme}
@@ -54,12 +85,12 @@ const SidebarBlock = ({
           <option value="Нью-йорк">Нью-йорк</option>
         </select>
         <input type="text" placeholder="        Найти мой город" />
-      </div>
+      </div> */}
 
-      <div>
-        <div>Стоимость услуг</div>
-        <div>
-          От{" "}
+      <div className={styles.priceBlock}>
+        <div className={styles.priceTitle}>Стоимость услуг</div>
+        <div className={styles.priceChange}>
+          <p>ОТ</p>
           <input
             onChange={(e) => {
               handlePriceFrom(e);
@@ -69,8 +100,8 @@ const SidebarBlock = ({
             value={priceFrom}
           />
         </div>
-        <div>
-          До{" "}
+        <div className={styles.priceChange}>
+          <p>ДО</p>
           <input
             onChange={(e) => {
               handlePriceTo(e);

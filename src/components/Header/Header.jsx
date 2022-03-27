@@ -33,10 +33,10 @@ const Header = () => {
 
              <div className={style.navContainer}>
                     <ul className={style.nav}>
-                      <Link activeClass="active" to="/search" spy={'true'} smooth={'true'} offset={1000} duration={150} className={style.li} >Категории</Link>
-                      <ReactScroll.Link activeClass="active" to="Promotion" spy={'true'} smooth={true} offset={150} duration={150} className={style.li}>Исполнители</ReactScroll.Link>
-                      <ReactScroll.Link activeClass="active" to="Promotion" spy={'true'} smooth={true} offset={150} duration={150} className={style.li}>Контакты</ReactScroll.Link>
-                      <ReactScroll.Link activeClass="active" to="OboutUs" spy={'true'} smooth={true} offset={150} duration={150} className={style.li}>О нас</ReactScroll.Link>
+                      <Link activeclass="active" to="/search"  smooth={"true"} offset={1000} duration={150} className={style.li} >Категории</Link>
+                      <ReactScroll.Link activeclass="active" to="Promotion"  smooth={"true"} offset={150} duration={150} className={style.li}>Исполнители</ReactScroll.Link>
+                      <ReactScroll.Link activeclass="active" to="Promotion"  smooth={"true"} offset={150} duration={150} className={style.li}>Контакты</ReactScroll.Link>
+                      <ReactScroll.Link activeclass="active" to="OboutUs"  smooth={"true"} offset={150} duration={150} className={style.li}>О нас</ReactScroll.Link>
                     </ul>
              </div>
              <div className={style.auth}>
