@@ -48,25 +48,22 @@ const SidebarBlock = ({
   const handlePriceTo = (e) => {
     if (e.target.value >= 0) setPriceTo(e.target.value);
   };
-
-  const selectSortUp = ()=>{
-    console.log(777);
-    setSortUp(!sortUp)
-    setSortDown(false)
-  }
-  const selectSortDown = ()=>{
-    console.log(888);
-    setSortDown(!sortDown)
-    setSortUp(false)
-  }
+  const selectSortUp = () => {
+    setSortUp(!sortUp);
+    setSortDown(false);
+  };
+  const selectSortDown = () => {
+    setSortDown(!sortDown);
+    setSortUp(false);
+  };
 
   return (
     <div className={styles.SidebarForm}>
       <div className={styles.sortBlock}>
         <p>Сортировать по цене</p>
         <div className={styles.sortBtns}>
-          <button onClick={()=>selectSortUp()}>Увеличение</button>
-          <button onClick={()=>selectSortDown()}>Уменьшение</button>
+          <button onClick={() => selectSortUp()}>Увеличение</button>
+          <button onClick={() => selectSortDown()}>Уменьшение</button>
         </div>
 
         {/* <input type="text" placeholder="        Найти мой город" /> */}
