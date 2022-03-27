@@ -30,9 +30,9 @@ const PersonCard = () => {
                     <div className={styles.Company}>
                         <h1>Личная информация</h1>
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '5px' }}>
-                            <div onClick={handleShowEdit} className={`${styles.editInfo} ${styles.btnInfo}`}></div>
+                            <div onClick={handleShowEdit} className={`${styles.editInfo} ${styles.btnInfo} ${styles.btnSett}`}></div>
                             <EditInfoModal showEdit={showEdit} handleShowEdit={handleShowEdit} user={user} />
-                            <div onClick={handleShowExit} className={`${styles.logOut} ${styles.btnInfo}`}></div>
+                            <div onClick={handleShowExit} className={`${styles.logOut} ${styles.btnInfo} ${styles.btnExit}`}></div>
                             <ExitModal showExit={showExit} handleShowExit={handleShowExit} />
                         </div>
 

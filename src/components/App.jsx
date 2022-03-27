@@ -44,7 +44,9 @@ const App = () => {
                         <Route path="/oneCard/:id" element={<><Header/> <div className={style.wrapper}><OneCart/> <SidebarBlock/></div><Footer/></>} />
                         <Route path="/home" element={<><Header /><MainPage /><Footer /></>}/>
                         <Route path="/search" element={<><Header /><SearchPage /><Footer /></>} />
-                        <Route path="/executor" element={<Navigate to='/home' replace/> } />
+                        {/* <Route path="/executor" element={<Navigate to='/home' replace/> } /> */}
+                        <Route path="/executor" element={<><Header /><PersonPage /><Footer /></>} />
+
                     </Routes>
                 </BrowserRouter>        
             </div>);
