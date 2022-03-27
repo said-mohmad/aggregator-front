@@ -27,8 +27,30 @@
   text-align: justify;
   font-weight: bold;
 }
+.CategoryOfMapSelected {
+  display: flex;
+  padding: 2px;
+  align-items: center;
+  font-size: 14px;
+  text-align: justify;
+  font-weight: bold;
+
+  color: white;
+}
+.CategoryOfMapSelected span {
+  width: 100%;
+  font-weight: 700;
+  font-size: 16px;
+  border-bottom: 1px solid #ffffff;
+  margin: 5px 0;
+  color: rgb(255, 255, 255);
+  padding: 0 10px;
+  background-color: #143555;
+  border-radius: 5px;
+}
 .CategoryOfMap :hover {
   background-color: #c8e2f8;
+  border-radius: 5px;
 }
 
 .CategoryOfMap span {
@@ -38,6 +60,7 @@
   border-bottom: 1px solid #94cdff;
   margin: 5px 0;
   color: rgb(0, 0, 0);
+  padding: 0 10px;
 }
 
 .CategoryOfMap input {
@@ -80,6 +103,13 @@
   border: none;
   cursor: pointer;
 }
+.sortBtns :hover {
+  background-color: #143555;
+}
+.sortBtns .selected {
+  background-color: #143555;
+}
+
 .priceTitle {
   text-align: center;
   font-size: 18px;
