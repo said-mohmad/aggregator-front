@@ -78,10 +78,6 @@
     background-color: #1e3e7e;
 }
 
-button:hover{
-    background-color: white;
-}
-
 .money{
     color: gray;
     margin-top: 10px;

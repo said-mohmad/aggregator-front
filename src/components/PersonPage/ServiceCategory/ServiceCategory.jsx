@@ -11,6 +11,7 @@ import { loadServices } from "../../../redux/features/organization";
 const ServiceCategory = ({ userCity }) => {
   const dispatch = useDispatch()
   const services = useSelector((state) => state.organization.services);
+  const user = useSelector((state) => state.organization.user)
   //   console.log(services)
 
 
@@ -18,6 +19,7 @@ const ServiceCategory = ({ userCity }) => {
   const [showEdit, setShowEdit] = useState(false);
   const [showAdd, setShowAdd] = useState(false);
   const [showRemove, setShowRemove] = useState(false);
+  // const [time, setTime] = useState()
 
   const handleShowEdit = (item) => {
     setShowEdit(!showEdit);
@@ -58,12 +60,13 @@ const ServiceCategory = ({ userCity }) => {
           {services.length > 0 ? "" : "Вы пока не разместили ни одну услугу"}
         </div>
         {services.map((item) => {
+          console.log(moment(item.time).fromNow())
           return (
             <div className={styles.cart}>
               <div className={styles.name}>
-                <p>{item.serviceName}</p>
+                <h1>{item.serviceName}</h1>
                 <p className={styles.time}>
-                  🕐 {moment("20220321", "YYYYMMDD").fromNow()}
+                  <>🕐 {moment(item.time).fromNow()}</>
                 </p>
               </div>
               <div className={styles.discription}>
@@ -73,7 +76,7 @@ const ServiceCategory = ({ userCity }) => {
                 </div>
                 <div className={styles.money}>
                   <p>Бюджет: {item.price}р</p>
-                  <p>Регион: 1</p>
+                  <p>Регион: {user ? user.city : "Загрузка..."}</p>
                 </div>
               </div>
               <div

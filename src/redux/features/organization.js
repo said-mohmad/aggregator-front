@@ -57,6 +57,7 @@ export const organization = (state = initialState, action) => {
         case 'services/fetch/pending':
             return {
                 ...state,
+                services:null,
                 error: null,
                 loadingService: true
             };
