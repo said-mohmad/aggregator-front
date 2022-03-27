@@ -1,15 +1,16 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import styles from "./SearchForm.module.css";
 
 const SearchForm = ({ inputText, setInputText }) => {
-  const textFromMainInput = window.location.href.split("?")
+  // const textFromMainInput = window.location.href.split("?")
   
-  const [textHref, setTextHref] = useState(
-    decodeURI(textFromMainInput[textFromMainInput.length - 1])
-  );
+  // const [textHref, setTextHref] = useState(
+  //   decodeURI(textFromMainInput[textFromMainInput.length - 1])
+  // );
 
   const handleInput = (e) => {
-    setTextHref("");
+    // setTextHref("");
     setInputText(e.target.value);
   };
 
@@ -24,7 +25,7 @@ const SearchForm = ({ inputText, setInputText }) => {
         <input
           type="text"
           placeholder="Давайте найдем"
-          value={inputText || textHref}
+          value={inputText}
           onChange={(e) => handleInput(e)}
         />
         <button onClick={() => handleFind(inputText)}>Поиск</button>

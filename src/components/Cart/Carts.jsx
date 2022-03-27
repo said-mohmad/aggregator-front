@@ -1,26 +1,26 @@
-import React, { useEffect } from "react";
-import styles from "./cart.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCarts, fetchExecutor } from "../../redux/features/services";
-import Cart from "./Cart";
+// import React, { useEffect } from "react";
+// import styles from "./cart.module.css";
+// import { useDispatch, useSelector } from "react-redux";
+// import { fetchCarts, fetchExecutor } from "../../redux/features/services";
+// import Cart from "./Cart";
 
-const Carts = () => {
-  const dispatch = useDispatch();
+// const Carts = () => {
+//   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchCarts());
-    // dispatch(fetchExecutor())
-  }, [dispatch]);
+//   useEffect(() => {
+//     dispatch(fetchCarts());
+//     // dispatch(fetchExecutor())
+//   }, [dispatch]);
 
-  const cards = useSelector((state) => state.services.services);
+//   const cards = useSelector((state) => state.services.services);
 
-  return (
-    <div className={styles.carts}> 
-        {cards.map((card) => {
-          return <Cart card={card} key={card._id} />;
-        })}
-    </div>
-  );
-};
+//   return (
+//     <div className={styles.carts}> 
+//         {cards.map((card) => {
+//           return <Cart card={card} key={card._id} />;
+//         })}
+//     </div>
+//   );
+// };
 
-export default Carts;
+// export default Carts;

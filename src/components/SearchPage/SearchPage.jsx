@@ -8,23 +8,39 @@ import { fetchCarts, fetchExecutor } from "../../redux/features/services";
 import Cart from "../Cart/Cart";
 
 const SearchPage = () => {
+  const cards = useSelector((state) => state.services.services);
+  const executors = useSelector((state) => state.services.executors);
+  // console.log(executors)
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchExecutor());
-    dispatch(fetchCarts())
+    dispatch(fetchCarts());
   }, [dispatch]);
 
-  const cards = useSelector((state) => state.services.services);
-  const executors = useSelector((state) => state.services.executors);
+  const textFromMainInput = window.location.href.split("?");
+  const textHref = decodeURI(textFromMainInput[textFromMainInput.length - 1]);
 
-  const [inputText, setInputText] = useState("");
+  const textToFind = () => {
+    if (textHref === textFromMainInput[0]) {
+      return clearAdress;
+    }
+    return textHref;
+  };
+
+  const [clearAdress, setClearAdress] = useState("");
+  const [inputText, setInputText] = useState(textToFind());
   const [categoryId, setCategoryId] = useState("");
   const [getCategory, setGetCategory] = useState(false);
   const [city, setCity] = useState("");
   const [priceFrom, setPriceFrom] = useState("");
   const [priceTo, setPriceTo] = useState("");
 
+  // const [generalArr, setGeneralArr] = useState(cards)
+  const [sortUp, setSortUp] = useState(false);
+  const [sortDown, setSortDown] = useState(false);
+  // console.log(sortUp, sortDown);
   /* const executorsCityAndId = executors.map((executor) => {
     let a = {};
     a.id = executor._id;
