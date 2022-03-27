@@ -1,16 +1,18 @@
 import React from "react";
 import styles from "./ServiceCategory.module.css";
-import {  useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import EditModal from "./EditRemoveModal/EditModal";
 import { useState } from "react";
 import RemoveModal from "./EditRemoveModal/RemoveModal";
 import moment from "moment";
 import ServiceAdd from "./ServiceAdd";
+import { loadServices } from "../../../redux/features/organization";
 
-const ServiceCategory = ({userCity}) => {
+const ServiceCategory = ({ userCity }) => {
+  const dispatch = useDispatch()
   const services = useSelector((state) => state.organization.services);
-//   console.log(services)
- 
+  //   console.log(services)
+
 
   const [currentItem, setCurrentItem] = useState("");
   const [showEdit, setShowEdit] = useState(false);
@@ -30,10 +32,18 @@ const ServiceCategory = ({userCity}) => {
     setCurrentItem(item);
   };
 
+  const handleReload = () => {
+    dispatch(loadServices())
+  }
+
   return (
     <div className={styles.servises}>
       <div className={styles.addServise}>
-        <h3>Список активных услуг</h3>
+        <div style={{ display: 'flex', justyfyContent: 'space-between', alignItems: 'center' }}>
+          <div onClick={handleReload} className={styles.reloadBtn}></div>
+          <h3>Список активных услуг</h3>
+        </div>
+
         <button className={styles.addBtn} onClick={() => handleShowAdd()}>
           +Добавить услугу
         </button>
@@ -43,7 +53,7 @@ const ServiceCategory = ({userCity}) => {
       </div>
       <div className={styles.ServisesMap}>
         <div
-          style={{ fontSize: "48px", textAlign: "center", margin: "30px 5px" }}
+          style={{ fontSize: "48px", textAlign: "center" }}
         >
           {services.length > 0 ? "" : "Вы пока не разместили ни одну услугу"}
         </div>

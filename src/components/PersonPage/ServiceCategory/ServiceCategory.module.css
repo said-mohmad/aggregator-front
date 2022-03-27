@@ -281,6 +281,7 @@
   right: -10px;
 }
 
+
 /* стили Сайд-Мохьмада для перетаскивания файлов */
 
 .dropArea {
@@ -291,4 +292,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+/* Reload Button by Ismail */
+
+.reloadBtn {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background-size: 100%;
+    background-position: center;
+    background-image: url('https://www.freeiconspng.com/thumbs/reload-icon/arrow-refresh-reload-icon-29.png');
+    /* background-color: blueviolet; */
+    cursor: pointer;
+    transition: 500ms;
+    margin: 10px
+  }
+
+.reloadBtn:hover {
+    width: 35px;
+    height: 35px;
+    transform: rotate(360deg);
+    transition: 1000ms;
+    margin: 5px
 }

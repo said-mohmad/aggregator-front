@@ -44,7 +44,7 @@ const SignIn = () => {
         <div>
             <div className={style.signinHeader}>
                 <div className={style.leftBlock}>
-                   <Link to="/home"> <img src={logoHome} alt="home" /> <b>Главная </b></Link>
+                   <Link to="/home"> <img src={logoHome} alt="home" />Главная</Link>
                 </div>
                 <div className={style.rightBlock}>
                     <div>

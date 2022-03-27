@@ -10,7 +10,7 @@
     /* border: 1px solid rgb(202, 200, 200); */
     margin-top: 20px;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    /* position: relative; */
+    position: relative;
 }
 
 .name{
@@ -81,6 +81,7 @@
 button:hover{
     background-color: white;
 }
+
 
 .money{
     color: gray;
@@ -171,4 +172,34 @@ input{
 
 .caruselImg {
     width: 100%;
+}
+
+
+.vivod{
+    color: blue;
+    text-align: center;
+}
+
+.model{
+    position: absolute;
+    background-color: gray;
+    border-radius: 20px;
+    padding: 5px;   
+    left: 300px;
+    width: 430px;
+    height: 260px;
+    bottom: 10px;
+}
+
+.model input{
+    margin: auto;
+}
+.executor{
+    position: relative;
+}
+
+.vihod{
+    color: white;
+    text-align: right;
+    cursor: pointer;
 }
