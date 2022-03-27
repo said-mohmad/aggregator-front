@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import style from "./cart.module.css";
 import img from "./mam.png";
 import { useDispatch } from "react-redux";
-import { fetchExecutorById } from "../../redux/features/services";
+import { fetchExecutor, fetchExecutorById } from "../../redux/features/services";
 import Carousel from "../Carousel/Carousel";
 import {Link} from "react-router-dom";
 
@@ -23,10 +23,14 @@ const Cart = ({ card }) => {
     }
 
   useEffect(() => {
-    dispatch(fetchExecutorById(card.executorId));
-  }, [dispatch, card.executorId ]);
-  const executor = useSelector((state) => state.services.executor);
+    dispatch(fetchExecutor());
+  }, [dispatch]);
+  const executors = useSelector((state) => state.services.executors);
+  console.log(executors)
+  const executor = executors.find(executor => executor._id === card.executorId)
 
+  console.log(executor);
+  // console.log(executor);
   const hundleClick = () => {
     setText(!text);
   };
