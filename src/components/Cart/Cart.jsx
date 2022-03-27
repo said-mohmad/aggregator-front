@@ -5,6 +5,7 @@ import img from "./mam.png";
 import { useDispatch } from "react-redux";
 import { fetchExecutorById } from "../../redux/features/services";
 import Carousel from "../Carousel/Carousel";
+import {Link} from "react-router-dom";
 
 const Cart = ({ card }) => {
   
@@ -23,7 +24,7 @@ const Cart = ({ card }) => {
 
   useEffect(() => {
     dispatch(fetchExecutorById(card.executorId));
-  }, [card.executorId, dispatch]);
+  }, [dispatch, card.executorId ]);
   const executor = useSelector((state) => state.services.executor);
 
   const hundleClick = () => {
@@ -54,9 +55,11 @@ const Cart = ({ card }) => {
 
   return (
     <div className={style.cart}>
+      
       <div className={style.name}>
         {/* Название услуги */}
-        <p>{card.serviceName}</p>
+        <Link to={`/oneCard/${card._id}`}><p>{card.serviceName}</p></Link>
+        
         <p className={style.time}>🕐</p>
       </div>
       <div className={style.discription}>
