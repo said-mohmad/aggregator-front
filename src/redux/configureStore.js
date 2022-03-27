@@ -7,9 +7,11 @@ import categories from './features/categories'
 import { organization } from "./features/organization";
 import { editRemove } from "./features/editRemove";
 import { addService } from "./features/addService";
+import { getOneServise } from "./features/getOneServise";
 import { orders } from "./features/orders";
 
 export const store = createStore(
-  combineReducers({ application, services, categories, organization, editRemove, addService, orders }),
+  combineReducers({ application, services, categories, organization, editRemove, addService, orders, getOneServise }),
+
   composeWithDevTools(applyMiddleware(thunk))
 );

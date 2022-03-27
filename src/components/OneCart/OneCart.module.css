@@ -1,0 +1,28 @@
+.OneCart {
+    width: 76%;
+    position: relative;
+}
+
+.boxModal {
+    width: 500px;
+    position: absolute;
+    top: 235px;
+    left: 280px;
+    text-align: center;
+    border: 0.1px solid black;
+    padding: 0;
+}
+
+.boxModal img {
+    height: 430px;
+    text-align: centers;
+}
+
+.boxModal button {
+    width: 40px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.boxModal button:hover {
+    background-color: rgba(0, 0, 0, 0.212);
+}

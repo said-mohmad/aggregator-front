@@ -1,29 +1,23 @@
-import  React from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import Carousel from '../Carousel/Carousel';
+import styles from './OneCart.module.css'
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import styles from './Carousel.module.css';
 
-const Carousel = () => {
+const OneCart = () => {
 
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+    const oneServise = useSelector(state => state.getOneServise.oneServise);
 
     const style = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
         transform: 'translate(-50%, -50%)',
-        bgcolor: 'background.paper',
-        boxShadow: 24,
         p: 4,
       };
-          
-      return (
-              <div>
-                <div className={styles.buttonCarusel} onClick={handleOpen}>Фотографии</div>
-                <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-                  <Box sx={style} className={styles.boxModal}>
+
+    
+    return (
+        <div className={styles.OneCart}>
+           <Box sx={style} className={styles.boxModal}>
                         <div className={styles.carousel}>
                             <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
                         <div class="carousel-indicators ">
@@ -49,9 +43,8 @@ const Carousel = () => {
                     </div>
                         </div>
                   </Box>
-                </Modal>
-              </div>
-            );
+        </div>
+    );
 };
 
-export default Carousel;
+export default OneCart;
