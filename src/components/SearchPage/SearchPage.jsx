@@ -4,18 +4,15 @@ import styles from "./SearchPage.module.css";
 import SidebarBlock from "./SidebarBlock/SidebarBlock";
 import Offer from "./Offer/Offer";
 import SearchForm from "./SearchForm/SearchForm";
-import { fetchCarts, fetchExecutor } from "../../redux/features/services";
+import { fetchCarts } from "../../redux/features/services";
 import Cart from "../Cart/Cart";
 
 const SearchPage = () => {
   const cards = useSelector((state) => state.services.services);
-  const executors = useSelector((state) => state.services.executors);
-  // console.log(executors)
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchExecutor());
     dispatch(fetchCarts());
   }, [dispatch]);
 
@@ -36,37 +33,44 @@ const SearchPage = () => {
   const [city, setCity] = useState("");
   const [priceFrom, setPriceFrom] = useState("");
   const [priceTo, setPriceTo] = useState("");
-
-  // const [generalArr, setGeneralArr] = useState(cards)
   const [sortUp, setSortUp] = useState(false);
   const [sortDown, setSortDown] = useState(false);
-  // console.log(sortUp, sortDown);
-  /* const executorsCityAndId = executors.map((executor) => {
-    let a = {};
-    a.id = executor._id;
-    a.city = executor.city;
-    return a;
-  });
-  console.log(executorsCityAndId); */
 
   const filteredCarts = cards.filter((card) => {
-    /*  const a = executorsCityAndId.find(
-      (executor) => executor.id === card.executorId
-    );
-    const executorCity = a.city; */
     if (
       (card.serviceName.toLowerCase().includes(inputText.toLowerCase()) ||
         !inputText) &&
       (card.categoryId === categoryId || !categoryId) &&
       (card.price >= priceFrom || !priceFrom) &&
       (card.price <= priceTo || !priceTo)
-      /*         &&
-        (executorCity === city || city === "Все города")) ||
-      !city */
     ) {
       return true;
     }
   });
+
+  const sortedUp = (arr) => {
+    const sortedArr = arr.sort((a, b) => {
+      return a.price - b.price;
+    });
+    return sortedArr;
+  };
+  const sortedDown = (arr) => {
+    const sortedArr = arr.sort((a, b) => {
+      return b.price - a.price;
+    });
+    return sortedArr;
+  };
+
+  let sortedFilter;
+  if (sortUp) {
+    sortedFilter = sortedUp(filteredCarts);
+  }
+  if (sortDown) {
+    sortedFilter = sortedDown(filteredCarts);
+  }
+  if (!sortUp && !sortDown) {
+    sortedFilter = filteredCarts;
+  }
 
   return (
     <div className={styles.SearchPage}>
@@ -75,10 +79,10 @@ const SearchPage = () => {
       <SearchForm inputText={inputText} setInputText={setInputText} />
       <div className={styles.Wrapper}>
         <div className={styles.carts}>
-          {filteredCarts.map((card) => {
+          {sortedFilter.map((card) => {
             return <Cart card={card} key={card._id} />;
           })}
-          {!filteredCarts.length && <div>Ничего не найдено</div>}
+          {!sortedFilter.length && <div>Ничего не найдено</div>}
         </div>
 
         <SidebarBlock
@@ -92,6 +96,10 @@ const SearchPage = () => {
           setPriceTo={setPriceTo}
           getCategory={getCategory}
           setGetCategory={setGetCategory}
+          sortUp={sortUp}
+          setSortUp={setSortUp}
+          sortDown={sortDown}
+          setSortDown={setSortDown}
         />
       </div>
     </div>
