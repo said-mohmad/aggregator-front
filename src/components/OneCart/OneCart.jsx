@@ -1,11 +1,48 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Carousel from '../Carousel/Carousel';
 import styles from './OneCart.module.css'
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
 
 const OneCart = () => {
+
+    const oneServise = useSelector(state => state.getOneServise.oneServise);
+
+    const style = {
+        transform: 'translate(-50%, -50%)',
+        p: 4,
+      };
+
+    
     return (
         <div className={styles.OneCart}>
-            fgestgsthsht
+           <Box sx={style} className={styles.boxModal}>
+                        <div className={styles.carousel}>
+                            <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
+                        <div class="carousel-indicators ">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner ">
+                        <div class="carousel-item active">
+                            <img src="https://32.img.avito.st/image/1/1.9X96i7axWZZMPNubHJS6Q-MoWZLGKlOU.LlHwhFyYbsE-8QpfZi3a9sKBIBFw0gr3ha-Alxk5DzI" className={style.caruselImg} alt="..." />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://51.img.avito.st/image/1/1.QsIu8rax7isYRWwmJu8N_rdR7i-SU-Qp.48Zat7lOXsuwhzrQkwd8LQ0AHUDZ1Q9MRrME2mlBpbk"  className={style.caruselImg} alt="..." />
+                        </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                        </div>
+                  </Box>
         </div>
     );
 };
