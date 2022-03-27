@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import style from "./Header.module.css";
 import logo from "../../assets/logo.png";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import ReactScroll from "react-scroll";
 import { useSelector } from "react-redux";
 
 
 const Header = () => {
+  const navigate = useNavigate();
 
   const token = useSelector(state => state.application.token)
   
@@ -17,7 +18,8 @@ const Header = () => {
   }
 
   const exitOutOfPersonPage = () => {
-    localStorage.removeItem('token')
+    localStorage.removeItem('token');
+    navigate("/home")
   }
   
   return (
@@ -43,7 +45,7 @@ const Header = () => {
                 {token && (
                   <div className={style.auth}>
                     
-                    <span className={style.auth_in_person}>Stroy</span>
+                    <Link to="/executor"><span className={style.auth_in_person}>Stroy</span></Link>
 
                     <div className={style.auth_register} onClick={() => handlePersonModal()}>
                       <img src="https://i09.fotocdn.net/s129/48ff032c0b181c4d/public_pin_m/2926015383.jpg" alt="" />

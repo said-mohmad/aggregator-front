@@ -39,7 +39,6 @@ export const addedService = (name, description, price, category) => {
       const response = await fetch("http://localhost:4000/services", {
         method: "POST",
         headers: {
-          "Content-type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         body: JSON.stringify({

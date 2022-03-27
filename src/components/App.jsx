@@ -13,7 +13,7 @@ import { useState } from "react";
 const App = () => {
     const [inputText, setInputText] = useState("");
     const token = useSelector(state => state.application.token)
-    if (!token) {
+    if (token) {
         return (
         <div className={style.app}>
             <BrowserRouter>
