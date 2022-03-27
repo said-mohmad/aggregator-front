@@ -33,7 +33,7 @@ const SearchPage = () => {
   console.log(executorsCityAndId); */
 
   const filteredCarts = cards.filter((card) => {
-   /*  const a = executorsCityAndId.find(
+    /*  const a = executorsCityAndId.find(
       (executor) => executor.id === card.executorId
     );
     const executorCity = a.city; */
