@@ -46,7 +46,7 @@ export const editRemove = (state = initialState, action) => {
                 ...state,
                 loadingRmv: false,
                 error: null,
-                message: action.message
+                message: action.payload
             }
         default:
             return state

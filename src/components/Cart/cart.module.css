@@ -10,7 +10,7 @@
     /* border: 1px solid rgb(202, 200, 200); */
     margin-top: 20px;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    /* position: relative; */
+    position: relative;
 }
 
 .name{
@@ -62,20 +62,26 @@
     margin-bottom: 8px;
 }
 
-.cart button{
-    width: 300px;
-    padding: 10px 15px;
+
+.sendedButton{
+    width: 200px;
+    padding: 5px 10px;
     font-size: 12px;
-    background-color: #48964D;
+    background-color: #2A66A0;
     color: white;
     border-radius: 5px;
     border: none;
     cursor: pointer;
 }
 
-button:hover{
-    background-color: rgb(81, 156, 81);
+.sendedButton:hover {
+    background-color: #1e3e7e;
 }
+
+button:hover{
+    background-color: white;
+}
+
 
 .money{
     color: gray;
@@ -111,11 +117,12 @@ button:hover{
     margin-top: 10px;
 }
 input{
-    width: 400px;
+    width: auto;
     height: 30px;
     border-radius: 5px;
+    border: 1px solid black;
     outline: none;
-    margin-top: 8px;
+    padding: 10px 15px;
 }
 
 .send_but{
@@ -165,4 +172,34 @@ input{
 
 .caruselImg {
     width: 100%;
+}
+
+
+.vivod{
+    color: blue;
+    text-align: center;
+}
+
+.model{
+    position: absolute;
+    background-color: gray;
+    border-radius: 20px;
+    padding: 5px;   
+    left: 300px;
+    width: 430px;
+    height: 260px;
+    bottom: 10px;
+}
+
+.model input{
+    margin: auto;
+}
+.executor{
+    position: relative;
+}
+
+.vihod{
+    color: white;
+    text-align: right;
+    cursor: pointer;
 }

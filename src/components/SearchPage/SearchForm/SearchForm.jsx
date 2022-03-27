@@ -31,6 +31,7 @@ const SearchForm = ({ inputText, setInputText }) => {
       </div>
     </div>
   );
+
 };
 
 export default SearchForm;

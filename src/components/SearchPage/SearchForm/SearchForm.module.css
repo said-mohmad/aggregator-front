@@ -4,15 +4,15 @@
 }
 
 .wrapper {
-    width: 1240px;
+    width: 600px;
     display: flex;
     margin: auto;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
 }
 
 .wrapper input {
-    width: 45%;
+    width: 75%;
     height: 35px;
     margin: 0 40px 0 0;
     padding: 0;
@@ -20,6 +20,10 @@
 }
 
 .wrapper button {
+    width: 20%;
     background-color: #4776AA;
+    border: none;
     height: 35px;
+    color: white;
+    border-radius: 4px;
 }

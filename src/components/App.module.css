@@ -3,3 +3,9 @@
   margin: auto;
   width: 100%;
 }
+
+.wrapper {
+  display: flex;
+  margin: auto;
+  width: 1240px;
+}

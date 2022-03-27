@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 import style from "./cart.module.css";
 import img from "./mam.png";
 import { useDispatch } from "react-redux";
-import { fetchExecutorById } from "../../redux/features/services";
+import { fetchExecutor, fetchExecutorById } from "../../redux/features/services";
 import Carousel from "../Carousel/Carousel";
+import {Link} from "react-router-dom";
 
 const Cart = ({ card }) => {
   
@@ -22,10 +23,14 @@ const Cart = ({ card }) => {
     }
 
   useEffect(() => {
-    dispatch(fetchExecutorById(card.executorId));
-  }, [card.executorId, dispatch]);
-  const executor = useSelector((state) => state.services.executor);
+    dispatch(fetchExecutor());
+  }, [dispatch]);
+  const executors = useSelector((state) => state.services.executors);
+  console.log(executors)
+  const executor = executors.find(executor => executor._id === card.executorId)
 
+  console.log(executor);
+  // console.log(executor);
   const hundleClick = () => {
     setText(!text);
   };
@@ -54,16 +59,17 @@ const Cart = ({ card }) => {
 
   return (
     <div className={style.cart}>
+      
       <div className={style.name}>
         {/* Название услуги */}
-        <p>{card.serviceName}</p>
+        <Link to={`/oneCard/${card._id}`}><p>{card.serviceName}</p></Link>
+        
         <p className={style.time}>🕐</p>
       </div>
       <div className={style.discription}>
         <div className={style.spisane}>
           {/* Описание услуги */}
           <span> {card.description}</span>
-          {/* <div onClick={() => setOpen(true)} className={style.imgs}>Фото</div> */}
           <div className={style.imgCarosel}>
           </div>
           <Carousel />
@@ -90,7 +96,7 @@ const Cart = ({ card }) => {
         </div>
 
         {!text ? (
-          <button onClick={() => hundleClick()}>Откликнуться</button>
+          <button className={style.sendedButton} onClick={() => hundleClick()}>Откликнуться</button>
         ) : (
           <div className={style.model}>
             <div className={style.vihod} onClick={() => closeModelWindow()}>

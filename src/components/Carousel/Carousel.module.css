@@ -6,5 +6,23 @@
     height: 500px;
 }
 .carousel button {
-    background-color: rgba(240, 248, 255, 0);
+    width: 7%;
+    background-color: rgba(0, 0, 0, 0.486);
+    border: none;
+}
+
+.boxModal {
+    width: 60%;
+    text-align: center;
+}
+
+.buttonCarusel {
+    width: 150px;
+    color: #2A66A0;
+    text-decoration: underline;
+    background-color: white;
+    border: none;
+    margin: 5px 0;
+    padding: none;
+    cursor: pointer;
 }

@@ -38,6 +38,9 @@
 }
 
 .Company {
+    display: flex;
+    justify-content: space-between;
+
     font-size: 16px;
     width: 100%;
     padding: 15px 0;
@@ -45,5 +48,30 @@
 }
 
 .Company h1 {
-    font-size: 16px;
+    font-size: 28px;
+}
+
+.btnInfo {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-size: 100%;
+    background-position: center;
+    cursor: pointer;
+    transition: 500ms;
+    margin-left: 15px;}
+
+.btnInfo:hover {
+    width: 35px;
+    height: 35px;
+    transition: 1000ms;
+    margin-left: 5px;
+}
+
+.editInfo {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/61/61094.png');
+}
+
+.logOut {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/320/320140.png');
 }

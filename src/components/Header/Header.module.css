@@ -80,11 +80,21 @@
 
 .auth_register {
   color: black;
-  background-color: #ffffff;
   border: none;
-  padding: 0 20px;
-  height: 30px;
-  width: 150px;
+  height: 45px;
+  width: 45px;
+  position: relative;
+  background-color: #e1f1ff00;
+  margin: 0 15px;
+  
+}
+
+.auth_register img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #195191c4;
+  position: relative;
 }
 
 .auth_register:hover {
@@ -103,4 +113,27 @@
   font-size: 12px;
   font-weight: 700;
   width: 130px;
+}
+
+
+/* 
+modal user */
+
+.userModal {
+  position: absolute;
+  top: 50px;
+  left: -100px;
+  background-color: white;
+  color: black;
+  width: 150px;
+  min-height: 30px;
+  border: none;
+  border-radius: 4px;
+  border: 2px solid #195191c4 ;
+}
+
+.userModal:hover {
+  background-color: #195191c4;
+  order: 2px solid #195191c4 ;
+  color: white;
 }
