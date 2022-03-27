@@ -45,6 +45,44 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
         }
     }
 
+    //код Сайд-Мохьмада для загрузки изображения перетаскиванием 
+    const [drag, setDrag] = useState(false);
+
+    const handleDragStart = (e) => {
+        e.preventDefault();
+        setDrag(true);
+    };
+
+    const handleDragLeave = (e) => {
+        e.preventDefault();
+        setDrag(false);
+    };
+     const token = localStorage.getItem('token');
+     
+    const handleOnDrop = (e) => {
+        e.preventDefault();
+        let files = [...e.dataTransfer.files];
+        const formData = new FormData();
+        formData.append('image', files[0]);
+        formData.append('serviceName', name);
+        formData.append('categoryId', category)
+        formData.append('price', price)
+        fetch("http://localhost:4000/services", {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch((e) => console.log(e,toString()));
+        setDrag(false);
+    }
+    
+
+
+
     return (
         <div className={`${styles.modal} ${!showAdd ? styles.hide : styles.show}`}>
             <div className={styles.modalDialog}>
@@ -76,7 +114,28 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
                                 </select>
                             </div>
                         </div>
-                        <div style={{ fontSize: '18px', color: 'red', textAlign: 'center', margin: '10px 0' }}>
+                        {/* код Сайд-Мохьмада для загрузки изображений перетаскиванием */}
+                        <div className={styles.addImage}>
+                            {console.log(drag)}
+                                  {drag 
+                                  ? <div className={styles.dropArea}
+                                  onDragStart={e => handleDragStart(e)}
+                                  onDragLeave={e => handleDragLeave(e)}
+                                  onDragOver={e => handleDragStart(e)}
+                                  onDrop={e => handleOnDrop(e)}
+                                  >Отпустите файлы, чтобы загрузить их</div>
+
+                                  :  <div className={styles.dropArea}
+                                  onDragStart={e => handleDragStart(e)}
+                                  onDragLeave={e => handleDragLeave(e)}
+                                  onDragOver={e => handleDragStart(e)}
+                                  >Перетащите файлы, чтобы загрузить их</div>}
+                                    <file></file>
+                                    <button>Обзор</button>
+                                    <div>Выберите изображение для услуги</div>
+                        </div>
+                        {/*конец кода Сайд-Мохьмада */}
+                        <div style={{fontSize:'18px', color:'red', textAlign:'center', margin: '10px 0'}}>
                             {stop && 'Пожалуйста, заполните поля'}
                         </div>
                         <div style={{ textAlign: 'center', margin: '15px 0' }}>
