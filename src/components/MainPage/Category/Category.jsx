@@ -2,7 +2,6 @@ import React from 'react';
 import style from "./Category.module.css";
 
 const Category = (categories) => {
-
     return (
           <div className={style.container}>
             <img src={categories.categories.img} alt="Avatar" className={style.image} />
