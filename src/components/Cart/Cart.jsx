@@ -6,21 +6,16 @@ import { useDispatch } from "react-redux";
 import { fetchExecutor, fetchExecutorById } from "../../redux/features/services";
 import Carousel from "../Carousel/Carousel";
 import {Link} from "react-router-dom";
+import { getOneServise } from "../../redux/features/getOneServise";
 
 const Cart = ({ card }) => {
-  
+
+    const dispatch = useDispatch();
   // const [sended, setSended ] = useState(false)
   const [text, setText] = useState(false);
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
   const [sendUser, setSendUser] = useState(false);
-  const dispatch = useDispatch();
-  
-  const [carusel, setCarusel] = useState(false)
-
-    const handlePhoto = () => {
-        setCarusel(!carusel)
-    }
 
   useEffect(() => {
     dispatch(fetchExecutor());
@@ -57,12 +52,16 @@ const Cart = ({ card }) => {
     setText(!text);
   };
 
+  const handleGetOneCart = (id) => {
+    dispatch(getOneServise(id));
+  }
+
   return (
     <div className={style.cart}>
       
       <div className={style.name}>
         {/* Название услуги */}
-        <Link to={`/oneCard/${card._id}`}><p>{card.serviceName}</p></Link>
+        <Link to={`/oneCard/${card._id}`} onClick={() => handleGetOneCart(card._id)}><p>{card.serviceName}</p></Link>
         
         <p className={style.time}>🕐</p>
       </div>
@@ -73,7 +72,6 @@ const Cart = ({ card }) => {
           <div className={style.imgCarosel}>
           </div>
           <Carousel />
-
         </div>
         <div className={style.money}>
           {/* Цена услуги и место оказания */}
