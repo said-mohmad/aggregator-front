@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import EditModal from "./EditRemoveModal/EditModal";
 import { useState } from "react";
 import RemoveModal from "./EditRemoveModal/RemoveModal";
-import moment from "moment";
+import moment, { HTML5_FMT } from "moment";
 import ServiceAdd from "./ServiceAdd";
 import { loadServices } from "../../../redux/features/organization";
 
-const ServiceCategory = ({ userCity }) => {
+const ServiceCategory = () => {
   const dispatch = useDispatch()
   const services = useSelector((state) => state.organization.services);
   const user = useSelector((state) => state.organization.user)
@@ -19,7 +19,12 @@ const ServiceCategory = ({ userCity }) => {
   const [showEdit, setShowEdit] = useState(false);
   const [showAdd, setShowAdd] = useState(false);
   const [showRemove, setShowRemove] = useState(false);
-  // const [time, setTime] = useState()
+  const [time, setTime] = useState(false)
+
+
+  const handleTime = () => {
+    setTime(!time)
+  }
 
   const handleShowEdit = (item) => {
     setShowEdit(!showEdit);
@@ -45,13 +50,18 @@ const ServiceCategory = ({ userCity }) => {
           <div onClick={handleReload} className={styles.reloadBtn}></div>
           <h3>Список активных услуг</h3>
         </div>
+        <div style={{display:'flex', justifyContent:'space-between', width:'15%'}}>
+          <button className={styles.addBtn} onClick={() => handleShowAdd()}>
+            +Добавить услугу
+          </button>
+          <div onClick={handleTime} className={styles.clock} style={{ cursor: 'pointer', fontSize: '30px' }}>🕐</div>
+        </div>
 
-        <button className={styles.addBtn} onClick={() => handleShowAdd()}>
-          +Добавить услугу
-        </button>
+
         {showAdd && (
           <ServiceAdd showAdd={showAdd} handleShowAdd={handleShowAdd} />
         )}
+
       </div>
       <div className={styles.ServisesMap}>
         <div
@@ -64,20 +74,18 @@ const ServiceCategory = ({ userCity }) => {
           return (
             <div className={styles.cart}>
               <div className={styles.name}>
-                <h1>{item.serviceName}</h1>
-                <p className={styles.time}>
-                  <>🕐 {moment(item.time).fromNow()}</>
-                </p>
+                <h2>{item.serviceName}</h2>
+                <h5 className={styles.time}>
+                  {time ? moment(item.time).format('Y-MMM-DD HH:MM') : moment(item.time).fromNow()}
+                </h5>
               </div>
-              <div className={styles.discription}>
-                <div className={styles.spisane}>
-                  <span>{item.description}</span>
-                  <div className={styles.imgs}>3 фото</div>
-                </div>
-                <div className={styles.money}>
-                  <p>Бюджет: {item.price}р</p>
-                  <p>Регион: {user ? user.city : "Загрузка..."}</p>
-                </div>
+              <div className={styles.description}>
+                <h4>{item.description}</h4>
+              </div>
+              <div className={styles.imgs}>3 фото</div>
+              <div className={styles.money}>
+                <h4>Бюджет: {item.price}р</h4>
+                <h4>Регион: {user ? user.city : "Загрузка..."}</h4>
               </div>
               <div
                 style={{ width: "80%", margin: "auto", textAlign: "center" }}

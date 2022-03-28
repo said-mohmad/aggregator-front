@@ -21,6 +21,13 @@ const PersonPage = () => {
     const orders = useSelector(state => state.orders.orders)
     // console.log(userCity)
 
+    const [go, setGo] = useState(true)
+
+
+    const handleGo = () => {
+        setGo(!go)
+    }
+
     useEffect(() => {
         dispatch(loadOrganization())
         dispatch(loadServices())
@@ -34,14 +41,14 @@ const PersonPage = () => {
         <div className={styles.personPage}>
             <div className={styles.wrapper}>
 
-                {!user ? <div style={{ width: '100%', height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Loader /></div> : <><PersonSidebar /><PersonCard /></>}
+                {!user ? <div style={{ width: '100%', height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Loader /></div> : <><PersonSidebar go={go} handleGo={handleGo} /><PersonCard /></>}
             </div>
-            <div className={styles.personService}>
+            <div style={{ backgroundColor: 'white', width: '100%', margin: 'auto'  }}>
                 {!services || !orders || !user ? <div style={{ width: '100%', height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Loader /></div>
                     :
-                    <div style={{display: 'flex', width:'1140px', margin:'auto'}}>
-                    <div><ServiceCategory /></div>
-                    <div><OrderCategory /></div>
+                    <div style={{ width: '1140px', margin: 'auto'  }}>
+                        {go ? '' : <ServiceCategory />}
+                        {go ? <OrderCategory /> : ''}
                     </div>
                 }
             </div>

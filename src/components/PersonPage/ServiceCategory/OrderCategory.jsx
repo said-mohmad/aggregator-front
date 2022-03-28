@@ -7,11 +7,13 @@ import RemoveModal from "./EditRemoveModal/RemoveModal";
 import moment from "moment";
 import { loadServices } from "../../../redux/features/organization";
 import { fetchOrders } from "../../../redux/features/orders";
+import Loader from "../Loader/Loader";
 
 const OrderCategory = () => {
     const dispatch = useDispatch()
     const orders = useSelector((state) => state.orders.orders);
-    const user = useSelector((state) => state.organization.user)
+    const user = useSelector((state) => state.organization.user);
+    const loading = useSelector((state) => state.orders.loading)
     //   console.log(services)
 
 
@@ -19,7 +21,12 @@ const OrderCategory = () => {
     const [showEdit, setShowEdit] = useState(false);
     const [showAdd, setShowAdd] = useState(false);
     const [showRemove, setShowRemove] = useState(false);
-    // const [time, setTime] = useState()
+    const [time, setTime] = useState(false)
+
+
+  const handleTime = () => {
+    setTime(!time)
+  }
 
     useEffect(() => {
         dispatch(fetchOrders(user._id))
@@ -48,12 +55,14 @@ const OrderCategory = () => {
                     <div onClick={handleReload} className={styles.reloadBtn}></div>
                     <h3>Список заказов</h3>
                 </div>
+                <div onClick={handleTime} className={styles.clock} style={{cursor:'pointer', fontSize:'30px'}}>🕐</div>
             </div>
             <div className={styles.ServisesMap}>
                 <div
                     style={{ fontSize: "48px", textAlign: "center" }}
                 >
-                    {orders.length > 0 ? "" : "У вас пока нет заказов..."}
+                    {loading ? <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Loader /></div> : ''}
+                    {orders.length === 0 && !loading ? "У вас пока нет заказов..." : ""}
                 </div>
                 {orders.map((item) => {
                     console.log(moment(item.time).fromNow())
@@ -61,15 +70,13 @@ const OrderCategory = () => {
                         <div className={styles.cart}>
                             <div className={styles.name}>
                                 <h1>{item.name}</h1>
-                                <p className={styles.time}>
-                                    <>🕐 {moment(item.time).format('Y-MMM-DD HH:MM')}</>
-                                </p>
+                                <h5 className={styles.time}>
+                                 {time ? moment(item.time).format('Y-MMM-DD HH:MM') : moment(item.time).fromNow()}
+                                </h5>
                             </div>
-                            <div className={styles.description}>
                                 <div className={styles.money}>
-                                    <p>Телефон: {item.phone}р</p>
+                                    <h3>Телефон: {item.phone}р</h3>
                                 </div>
-                            </div>
                             <div
                                 style={{ width: "80%", margin: "auto", textAlign: "center" }}
                             >
@@ -80,7 +87,7 @@ const OrderCategory = () => {
                                 >
                                     <span>Принять</span>
                                 </button>
-                                {showEdit ? (
+                                {/* {showEdit ? (
                                     <EditModal
                                         showEdit={showEdit}
                                         handleShowEdit={handleShowEdit}
@@ -88,7 +95,7 @@ const OrderCategory = () => {
                                     />
                                 ) : (
                                     ""
-                                )}
+                                )} */}
 
                                 <button
                                     className={`${styles.removeBtn} ${styles.button}`}
@@ -97,7 +104,7 @@ const OrderCategory = () => {
                                 >
                                     <span>Отклонить</span>
                                 </button>
-                                {showRemove ? (
+                                {/* {showRemove ? (
                                     <RemoveModal
                                         showRemove={showRemove}
                                         handleShowRemove={handleShowRemove}
@@ -105,7 +112,7 @@ const OrderCategory = () => {
                                     />
                                 ) : (
                                     ""
-                                )}
+                                )} */}
                             </div>
                         </div>
                     );

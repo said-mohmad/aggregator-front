@@ -10,22 +10,7 @@
     justify-content: space-between;
 }
 
-.placeBlock {
-    position: relative;
-}
-
-.normalSide {
-    left: 0;
-    right: 0;
-    transition: 5000ms;
-}
-
-.leftSide {
-    transition: 5000ms;
-    left: -1000%;
-}
-
-.rightSide {    
-    transition: 5000ms;
-    right: -1000%;
+.reTurn {
+    transform: rotateY(360deg);
+    transition: 500ms
 }
