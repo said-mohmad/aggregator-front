@@ -132,3 +132,29 @@ const Cart = ({ card, executor }) => {
 };
 
 export default Cart;
+
+
+{/* <div className={styles.modalContent}>
+<div className={styles.modalHeader}>
+    <h3 className={styles.modalTitle}>Заказ</h3>
+    <a onClick={handleShowEdit} className={styles.close}>×</a>
+</div>
+<div className={styles.modalBody}>
+    <div style={{display: 'flex', justifyContent:'space-between', alignItems: 'center', fontSize:'16px', padding: '10px 5px'}}>
+        <div style={{width: '35%'}}>Название</div>
+        <div style={{width: '65%'}}><input value={name} onChange={hundleName} style={{width:'100%'}} placeholder='Необходимо ввести имя' /></div>
+    </div>
+    <div style={{display: 'flex', justifyContent:'space-between', alignItems: 'center', fontSize:'16px', padding: '10px 5px'}}>
+        <div style={{width: '35%', alignSelf:'self-start'}}>Описание</div>
+        <div style={{width: '65%'}}><textarea value={description} onChange={handleDescription} style={{width:'100%'}} placeholder='Необходимо ввести номер' /></div>
+    </div>
+    <div style={{fontSize:'18px', color:'red', textAlign:'center', margin: '10px 0'}}>
+        {stop ? 'Пожалуйста, обновите данные перед отправкой' : ''}
+        {error ? `Ошибка: ${error}` : ''}
+    </div>
+    <div style={{textAlign: 'center', margin:'15px 0'}}>
+            <button onClick={handleEdit} className={`${styles.editBtn} ${styles.button}`}><span>Подтвердить</span></button>
+            <button onClick={handleShowEdit} className={`${styles.removeBtn} ${styles.button}`} ><span>Отменить</span></button>
+    </div>
+</div>
+</div> */}
