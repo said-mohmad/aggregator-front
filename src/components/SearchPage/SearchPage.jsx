@@ -36,7 +36,7 @@ const SearchPage = () => {
   const [sortUp, setSortUp] = useState(false);
   const [sortDown, setSortDown] = useState(false);
 
-  
+  const executors = useSelector(state => state.services.executors)
 
   const filteredCarts = cards.filter((card) => {
     if (
@@ -83,7 +83,7 @@ const SearchPage = () => {
       <div className={styles.Wrapper}>
         <div className={styles.carts}>
           {sortedFilter.map((card) => {
-            return <Cart card={card} key={card._id}/>;
+            return <Cart card={card} key={card._id} executor={executors.find(executor => executor._id === card.executorId)}/>;
           })}
           {!sortedFilter.length && <div>Ничего не найдено</div>}
         </div>

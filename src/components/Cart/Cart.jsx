@@ -82,7 +82,7 @@ const Cart = ({ card, executor }) => {
       <div className={style.executor}>
         <div className={style.info}>
           {console.log(card.serviceImg)}
-          <img className={style.executor_img} src={card.serviceImg ? `http://localhost:4000/${card.serviceImg}` : img} alt="" />
+          <img className={style.executor_img} src={card.serviceImg[0] ? `http://localhost:4000/${card.serviceImg[0]}` : img} alt="" />
           <div className={style.number_phone}>
             {/* Данные об исполнителе */}
             <p>{executor ? executor.executor : "Не указан"}</p>

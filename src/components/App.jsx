@@ -7,15 +7,21 @@ import MainPage from "../components/MainPage/Main";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import SignUp from "./SignUp/SignUp";
 import SignIn from "./SignIn/SignIn";
-import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import OneCart from "./OneCart/OneCart";
 import SidebarBlock from "./SearchPage/SidebarBlock/SidebarBlock";
+import { fetchExecutor } from "../redux/features/services";
 
 
 const App = () => {
-
+    const dispatch = useDispatch()
     const [inputText, setInputText] = useState("");
+
+    useEffect(() => {
+        dispatch(fetchExecutor())
+    }, [dispatch]);
+    
     const token = useSelector(state => state.application.token)
     if (token) {
         return (
