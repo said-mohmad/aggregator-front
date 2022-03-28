@@ -13,6 +13,7 @@
   transition: opacity 400ms ease-in;
   /* анимация перехода */
   pointer-events: none;
+  padding: 40px;
   /* элемент невидим для событий мыши */
 }
 
@@ -66,6 +67,7 @@
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: .3rem;
   outline: 0;
+  padding: 20px;
 }
 
 @media (min-width: 768px) {
@@ -137,7 +139,7 @@
 }
 
 .button {
-  border-radius: 4px;
+  /* border-radius: 4px; */
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -149,11 +151,11 @@
 }
 
 .editBtn {
-  background-color: #f4511e;
+  background-color: #CE0000;
 }
 
 .removeBtn {
-  background-color: #a50101;
+  background-color: #4E79AA;
 }
 
 .button span {

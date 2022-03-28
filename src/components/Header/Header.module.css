@@ -129,7 +129,7 @@ modal user */
   min-height: 30px;
   border: none;
   border-radius: 4px;
-  border: 2px solid #195191c4 ;
+  box-shadow: #195191c4;
 }
 
 .userModal:hover {

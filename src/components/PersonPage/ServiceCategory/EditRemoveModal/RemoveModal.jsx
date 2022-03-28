@@ -13,7 +13,7 @@ const RemoveModal = ({ showRemove, handleShowRemove, item }) => {
     const handleRemove = () => {
         dispatch(removeService(item._id))
         dispatch(loadServices())
-        alert(`${message}`)
+        handleShowRemove()
     }
 
     return (
@@ -26,15 +26,13 @@ const RemoveModal = ({ showRemove, handleShowRemove, item }) => {
                     </div>
                     <div className={styles.modalBody}>
                         <div style={{ padding: '15px' }}>
-                            <div style={{ fontSize: '36px', fontWeght: 'bold', textAlign: 'center' }}>
+                            <div style={{ fontSize: '20px', fontWeght: 'bold', textAlign: 'center' }}>
                                 Вы уверены что хотите удалить данную услугу?
                                 {/* <hr /> */}
-                                <b style={{color: 'red'}}>{item.serviceName}</b>
+                                <p><b style={{color: 'red'}}>{item.serviceName}</b></p>
+                                
                             </div>
                             <hr />
-                            <div style={{ fontSize: '16px', border: '1px solid red', borderRadius: '5px', textAlign: 'center' }}>
-                                ВНИМАНИЕ: все запросы отправленные по данной услуге будут удалены!
-                            </div>
                             <div style={{textAlign: 'center', margin:'15px 0' }}>
                                 <button onClick={handleRemove} className={`${styles.editBtn} ${styles.button}`} ><span>Подтвердить</span></button>
                                 <button onClick={handleShowRemove} className={`${styles.removeBtn} ${styles.button}`} ><span>Отменить</span></button>

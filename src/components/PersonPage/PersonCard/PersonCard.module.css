@@ -1,6 +1,7 @@
 
 .person {
-    width: 100%;
+    
+    width: 795px;
 }
 .wrapper {
     width: 100%;
@@ -14,41 +15,53 @@
     padding: 10px;
     width: 20%;
     margin: 0 40px 0 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .personImg img {
     width: 100%;
+    
 }
 
 .EditImg {
-    width: 80%;
+    position: absolute;
+    top: 170px;
+    left: 0;
+    width: 87%;
     margin: 15px;
     border: none;
-    background-color: #4776AA ;
-    color: white;
+    background-color: #4775aa00 ;
+    color: rgba(255, 255, 255, 0);
     padding: 5px 20px;
     border-radius: 4px;
 }
 
+.EditImg:hover {
+    background-color: #4775aaa2 ;
+    color: rgb(255, 255, 255);
+}
+
 .personInfo {
-    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.4);
-    padding: 5px 20px;
     background-color: white;
-    width: 80%;
+    --page-block-shadow: 0 1px 0 0 var(--separator_common), 0 0 0 1px var(--separator_alternate);
+    --online-badge-background: var(--background_content);
+    border-radius: 8px;
+    padding: 15px 15px 6px 15px;
+    width: 550px;
 }
 
 .Company {
     display: flex;
     justify-content: space-between;
-
-    font-size: 16px;
     width: 100%;
     padding: 15px 0;
     border-bottom: 1px solid #4775aa2f ;
 }
 
 .Company h1 {
-    font-size: 28px;
+    font-size: 13px;
 }
 
 .btnInfo {
@@ -72,9 +85,32 @@
 }
 
 .editInfo {
+    width: 20px;
+    height: 20px;
     background-image: url('https://cdn-icons-png.flaticon.com/512/61/61094.png');
 }
 
 .logOut {
+    width: 20px;
+    height: 20px;
     background-image: url('https://cdn-icons-png.flaticon.com/512/320/320140.png');
+}
+
+.infoLine {
+    color: #2A5885;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.infoLine p {
+    margin-bottom: 3px;
+}
+
+.infoLine h3 {
+    width: 150px;
+    color: #2A5885;
+    margin-left: 5px;
+    margin-right: 20px;
+    font-size: 13px;
+    font-weight: 500;
 }

@@ -36,6 +36,8 @@ const SearchPage = () => {
   const [sortUp, setSortUp] = useState(false);
   const [sortDown, setSortDown] = useState(false);
 
+  
+
   const filteredCarts = cards.filter((card) => {
     if (
       (card.serviceName.toLowerCase().includes(inputText.toLowerCase()) ||
@@ -46,6 +48,7 @@ const SearchPage = () => {
     ) {
       return true;
     }
+    return false;
   });
 
   const sortedUp = (arr) => {
@@ -80,7 +83,7 @@ const SearchPage = () => {
       <div className={styles.Wrapper}>
         <div className={styles.carts}>
           {sortedFilter.map((card) => {
-            return <Cart card={card} key={card._id} />;
+            return <Cart card={card} key={card._id}/>;
           })}
           {!sortedFilter.length && <div>Ничего не найдено</div>}
         </div>

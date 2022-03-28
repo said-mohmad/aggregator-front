@@ -1,19 +1,69 @@
+* {
+  font-size: 13px;
+}
+
+.wrapper {
+  display: flex;
+    width: 960px;
+    margin: auto;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
 .servises {
   width: 100%;
+  margin: auto;
   background-color: white;
+  margin: auto;
+  padding: 15px 20px 0;
+  border-radius: 8px;
+}
+
+.name {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px
+}
+
+.description {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0
+}
+
+.money *{
+  margin-bottom: 20px;
+}
+
+.imgs {
+  text-align: center;
+  font-size: 26px;
+}
+
+.clock:hover {
+  transform:scale(1.3) rotate(360deg);
+  transition:300ms
 }
 
 .addServise {
-  display: flex;
-  width: 1240px;
+  display: flex;  
   margin: auto;
   justify-content: space-between;
-  padding: 25px 40px;
+  padding: 0px 40px;
+}
+
+.addServise h3 {
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
 }
 
 .addBtn {
   background-color: #4E79AA ;
+  color: white;
   border: 1px solid #4E79AA;
+  border-radius: 4px;
+  width: 150px;
+  height: 30px;
 }
 .addBtn:hover {
   border: 1px solid #4E79AA;
@@ -22,8 +72,9 @@
 }
 
 .ServisesMap {
-  width: 1240px;
+  width: 100%;
   margin: auto;
+  padding: 15px 20px 0;
 }
 
 .cart {
@@ -34,27 +85,18 @@
 }
 
 .button {
-  border-radius: 4px;
+  /* border-radius: 4px; */
   border: none;
   color: #FFFFFF;
   text-align: center;
-  padding: 20px;
+  padding: 5px;
   width: 45%;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
 }
 
-.editBtn {
-  background-color: #f4511e;
-}
-
-.removeBtn {
-  background-color: #a50101;
-}
-
 .button span {
-  font-size:28px;
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -158,6 +200,7 @@
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: .3rem;
   outline: 0;
+  padding: 20px;
 }
 
 @media (min-width: 768px) {
@@ -226,62 +269,6 @@
   overflow: auto;
 }
 
-.button {
-  border-radius: 4px;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  padding: 5px;
-  width: 45%;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
-
-.editBtn {
-  background-color: #f4511e;
-}
-
-.removeBtn {
-  background-color: #a50101;
-}
-
-.button span {
-  font-size:14px;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.editBtn span:after {
-  content: '✔';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.removeBtn span:after {
-  content: '✖';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 25px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: -10px;
-}
-
-
 /* стили Сайд-Мохьмада для перетаскивания файлов */
 
 .dropArea {
@@ -292,12 +279,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+/* Просто для проверки by Ismail */
+  text-align: center;
 }
 /* Reload Button by Ismail */
 
 .reloadBtn {
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     text-align: center;
     background-size: 100%;
     background-position: center;
@@ -305,13 +294,11 @@
     /* background-color: blueviolet; */
     cursor: pointer;
     transition: 500ms;
-    margin: 10px
+    margin: 0 10px
   }
 
 .reloadBtn:hover {
-    width: 35px;
-    height: 35px;
-    transform: rotate(360deg);
+    transform: rotate(360deg) scale(1.3);
     transition: 1000ms;
-    margin: 5px
 }
+

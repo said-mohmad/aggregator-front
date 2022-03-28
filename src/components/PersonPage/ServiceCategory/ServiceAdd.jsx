@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addedService } from '../../../redux/features/addService';
 import { loadServices } from '../../../redux/features/organization';
 import { addService } from '../../../redux/features/services';
+import  PhotoAdd from '../../AddPhotoBlock/PhotoAdd'
 import styles from "./ServiceCategory.module.css"
 
 const ServiceAdd = ({ showAdd, handleShowAdd }) => {
@@ -80,8 +81,8 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
         e.preventDefault();
         setDrag(false);
     };
-     const token = localStorage.getItem('token');
-     
+    const token = localStorage.getItem('token');
+
     const handleOnDrop = (e) => {
         e.preventDefault();
         let files = [...e.dataTransfer.files];
@@ -113,9 +114,6 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
         // .catch((e) => console.log(e,toString()));
         setDrag(false);
     }
-    
-
-
 
     return (
         <div className={`${styles.modal} ${!showAdd ? styles.hide : styles.show}`}>
@@ -132,7 +130,7 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '16px', padding: '10px 5px' }}>
                             <div style={{ width: '35%', alignSelf: 'self-start' }}>Описание</div>
-                            <div style={{ width: '65%' }}><textarea value={description} onChange={handleDescription} style={{ width: '100%' }} placeholder='Необходимо ввести описание' /></div>
+                            <div style={{ width: '65%' }}><textarea value={description} onChange={handleDescription} style={{ width: '100%', minHeight:'50px' }} placeholder='Необходимо ввести описание' /></div>
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '16px', padding: '10px 5px' }}>
                             <div style={{ width: '35%' }}>Цена</div>
@@ -148,6 +146,11 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
                                 </select>
                             </div>
                         </div>
+                        {/* Код Альви для загрузки фотографии  */}
+                       
+                            <PhotoAdd />
+                        
+                        {/* Конец кода Альви */}
                         {/* код Сайд-Мохьмада для загрузки изображений перетаскиванием */}
                         <div className={styles.addImage}>
                             {console.log(drag)}
@@ -172,12 +175,13 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
                                     <button onClick={(e) => handleCleanSelect(e)}>Убрать выбранные</button>
                 
                                     <div>Выберите изображение для услуги</div>
+
                         </div>
                         {/*конец кода Сайд-Мохьмада */}
-                        <div style={{fontSize:'18px', color:'red', textAlign:'center', margin: '10px 0'}}>
+                        <div style={{ fontSize: '18px', color: 'red', textAlign: 'center', margin: '10px 0' }}>
                             {stop && 'Пожалуйста, заполните поля'}
                         </div>
-                        <div style={{ textAlign: 'center', margin: '15px 0' }}>
+                        <div style={{ textAlign: 'center', margin: '15px 0', display: "grid", margin: 'auto', justifyContent: 'space-around' }}>
                             <button onClick={() => handleAdd(name, description, price, category, filesForSend)} className={`${styles.editBtn} ${styles.button}`}><span>Подтвердить</span></button>
                             <button onClick={handleShowAdd} className={`${styles.removeBtn} ${styles.button}`} ><span>Отменить</span></button>
                         </div>
