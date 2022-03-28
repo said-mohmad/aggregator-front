@@ -47,6 +47,12 @@
     border-radius: 4px;
     width: 130px;
     height: 30px;
+    border: 2px solid #f85112;
+}
+.chooseOneTitle button:hover {
+    background-color: white;
+    border: 2px solid #f85112;
+    color: #f85112;
 }
 
 

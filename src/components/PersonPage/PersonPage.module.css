@@ -1,11 +1,11 @@
 .personPage {
     width: 100%;
-    background-color: #dde4ff;
+    background-color: white;
 }
 
 .wrapper {
     display: flex;
-    width: 1240px;
+    width: 960px;
     margin: auto;
     justify-content: space-between;
 }

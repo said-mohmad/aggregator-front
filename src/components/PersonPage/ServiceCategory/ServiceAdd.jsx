@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addedService } from '../../../redux/features/addService';
 import { loadServices } from '../../../redux/features/organization';
+import  PhotoAdd from '../../AddPhotoBlock/PhotoAdd'
 import styles from "./ServiceCategory.module.css"
 
 const ServiceAdd = ({ showAdd, handleShowAdd }) => {
@@ -115,6 +116,11 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
                                 </select>
                             </div>
                         </div>
+                        {/* Код Альви для загрузки фотографии  */}
+                       
+                            <PhotoAdd />
+                        
+                        {/* Конец кода Альви */}
                         {/* код Сайд-Мохьмада для загрузки изображений перетаскиванием */}
                         <div className={styles.addImage}>
                             {console.log(drag)}
@@ -143,7 +149,7 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
                         <div style={{ fontSize: '18px', color: 'red', textAlign: 'center', margin: '10px 0' }}>
                             {stop && 'Пожалуйста, заполните поля'}
                         </div>
-                        <div style={{ textAlign: 'center', margin: '15px 0' }}>
+                        <div style={{ textAlign: 'center', display: "grid", margin: 'auto', justifyContent: 'space-around'}}>
                             <button onClick={handleAdd} className={`${styles.editBtn} ${styles.button}`}><span>Подтвердить</span></button>
                             <button onClick={handleShowAdd} className={`${styles.removeBtn} ${styles.button}`} ><span>Отменить</span></button>
                         </div>

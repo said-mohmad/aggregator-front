@@ -1,18 +1,42 @@
 .OneCart {
-    width: 76%;
+    width: 960;
     position: relative;
+    padding: 30px 0;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    padding: 25px;
+    justify-content: space-around;
+    text-align: center;
+    
+}
+
+.UsersInfoWrapper {
+    display: flex;
+    width: 180px;
+    margin: 5px 20px;
+    
+}
+
+.title {
+    margin-left: 30px;
+    text-decoration: underline;
+    color: #4776AA;
 }
 
 .boxModal {
-    width: 500px;
-    position: absolute;
-    top: 235px;
-    left: 280px;
+    width: 700px;
     text-align: center;
-    border: 0.1px solid black;
-    padding: 0;
+    background-color: rgba(0, 0, 0, 0.253);
+    padding: 25px;
 }
 
+.UsersInfo {
+    width: 200px;
+    margin: 0 auto;
+}
 .boxModal img {
     height: 430px;
     text-align: centers;
@@ -25,4 +49,47 @@
 
 .boxModal button:hover {
     background-color: rgba(0, 0, 0, 0.212);
+}
+
+.phone {
+    width: 180px;
+    height: 40px;
+    border: none;
+    background-color: #4FCC02;
+    color: white;
+    margin: 5px 20px;
+}
+
+.message {
+    width: 180px;
+    height: 40px;
+    border: none;
+    background-color: #4776AA;
+    color: white;
+    margin: 5px 20px;
+}
+
+.ServisesInfo {
+    color: #9c9c9c;
+    font-size: 11px;
+    margin: 5px 20px;
+    border-radius: 4px;
+    width: 180px;
+    border: 1px solid rgb(129, 129, 129);
+}
+
+
+.infoOboutSrvises {
+    width: 700px;
+    margin: 0 30px ;
+}
+
+.infoOboutSrvises label {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.infoOboutSrvises div {
+    font-size: 18px;
 }
