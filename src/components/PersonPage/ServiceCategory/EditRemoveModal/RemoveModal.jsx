@@ -13,7 +13,7 @@ const RemoveModal = ({ showRemove, handleShowRemove, item }) => {
     const handleRemove = () => {
         dispatch(removeService(item._id))
         dispatch(loadServices())
-        alert(`${message}`)
+        handleShowRemove()
     }
 
     return (

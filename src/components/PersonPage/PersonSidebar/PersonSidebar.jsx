@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './PersonSidebar.module.css'
 
-const PersonSidebar = () => {
+const PersonSidebar = ({go, handleGo}) => {
     return (
         <div className={styles.serviceSidebar}>
-                <button className={styles.serviceBtn}>Ваши услуги</button>
-                <button className={styles.serviceBtn}>Заказы</button>
+                <button onClick={go ? handleGo : ''} className={styles.serviceBtn}>Ваши услуги</button>
+                <button onClick={go ? '' :  handleGo} className={styles.serviceBtn}>Заказы</button>
         </div>
     );
 };

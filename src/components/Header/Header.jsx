@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Header.module.css";
 import logo from "../../assets/logo.png";
 import { Link, useNavigate } from 'react-router-dom'
 import ReactScroll from "react-scroll";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { loadOrganization } from "../../redux/features/organization";
 
 
 const Header = () => {
@@ -21,6 +23,17 @@ const Header = () => {
     localStorage.removeItem('token');
     navigate("/home")
   }
+  
+
+  //Код для вывода имени от Исмаила
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    dispatch(loadOrganization())
+  })
+
+  const user = useSelector(state=>state.organization.user)
+  //=================================
   
   return (
     <header className={style.headerContainer}>
@@ -45,7 +58,7 @@ const Header = () => {
                 {token && (
                   <div className={style.auth}>
                     
-                    <Link to="/executor"><span className={style.auth_in_person}>Stroy</span></Link>
+                    <Link to="/executor"><span className={style.auth_in_person}>{user && user.executor}</span></Link>
 
                     <div className={style.auth_register} onClick={() => handlePersonModal()}>
                       <img src="https://i09.fotocdn.net/s129/48ff032c0b181c4d/public_pin_m/2926015383.jpg" alt="" />
