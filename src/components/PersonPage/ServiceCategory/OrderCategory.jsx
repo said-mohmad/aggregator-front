@@ -64,10 +64,10 @@ const OrderCategory = () => {
                     {loading ? <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Loader /></div> : ''}
                     {orders.length === 0 && !loading ? "У вас пока нет заказов..." : ""}
                 </div>
-                {orders.map((item) => {
-                    console.log(moment(item.time).fromNow())
+                {orders.map((item, index) => {
+                    
                     return (
-                        <div className={styles.cart}>
+                        <div className={styles.cart} key={index}>
                             <div className={styles.name}>
                                 <h1>{item.name}</h1>
                                 <h5 className={styles.time}>

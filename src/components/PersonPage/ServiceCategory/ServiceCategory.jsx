@@ -75,7 +75,7 @@ const ServiceCategory = () => {
           {services.length > 0 ? "" : "Вы пока не разместили ни одну услугу"}
         </div>
         {services.map((item) => {
-          console.log(moment(item.time).fromNow())
+          
           return (
             <div className={styles.cart}>
               <div className={styles.name}>

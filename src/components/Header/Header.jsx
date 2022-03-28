@@ -28,9 +28,9 @@ const Header = () => {
   //Код для вывода имени от Исмаила
   const dispatch = useDispatch()
 
-  useEffect(()=>{
-    dispatch(loadOrganization())
-  })
+  // useEffect(()=>{
+  //   dispatch(loadOrganization())
+  // })
 
   const user = useSelector(state=>state.organization.user)
   //=================================
@@ -62,7 +62,7 @@ const Header = () => {
                     <Link to="/executor"><span className={style.auth_in_person}>{user && user.executor}</span></Link>
 
                     <div className={style.auth_register} onClick={() => handlePersonModal()}>
-                      <img src="https://i09.fotocdn.net/s129/48ff032c0b181c4d/public_pin_m/2926015383.jpg" alt="" />
+                      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="" />
                         {userModal && <button className={style.userModal} onClick={() => exitOutOfPersonPage()}>Выход</button> }
                     </div>
                     
