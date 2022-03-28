@@ -8,17 +8,25 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { loadOrganization, loadServices } from '../../redux/features/organization';
 import { fetchCategories } from '../../redux/features/categories';
+import Loader from './Loader/Loader';
+import { fetchOrders } from '../../redux/features/orders';
+import OrderCategory from './ServiceCategory/OrderCategory';
+import { useState } from 'react';
 
 
 const PersonPage = () => {
     const dispatch = useDispatch()
-    const loadingPerson = useSelector(state=>state.organization.loadingPerson)
-    const loadingService = useSelector(state=>state.organization.loadingService)
-    const user = useSelector(state=>state.organization.user)
-    const services = useSelector(state=>state.organization.services)
-    const service = useSelector(state=>state.addService.service)
+    const user = useSelector(state => state.organization.user)
+    const services = useSelector(state => state.organization.services)
+    const orders = useSelector(state => state.orders.orders)
     // console.log(userCity)
 
+    const [go, setGo] = useState(true)
+
+
+    const handleGo = () => {
+        setGo(!go)
+    }
 
     useEffect(() => {
         dispatch(loadOrganization())
@@ -26,20 +34,23 @@ const PersonPage = () => {
         dispatch(fetchCategories())
     }, [dispatch])
 
-    
+
 
 
     return (
         <div className={styles.personPage}>
             <div className={styles.wrapper}>
-                {/* <PersonNavigate /> */}
-                <PersonSidebar />
 
-                {!user ? <div style={{fontSize: '72px'}}>Загрузка</div> : <PersonCard />}
+                {!user ? <div style={{ width: '100%', height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Loader /></div> : <><PersonSidebar go={go} handleGo={handleGo} /><PersonCard /></>}
             </div>
-            <div className={styles.personService}>
-                {!services ? <div style={{fontSize: '72px'}}>Загрузка</div> : <ServiceCategory />}
-                {/* <OrderCategory /> */}
+            <div style={{ backgroundColor: 'white', width: '100%', margin: 'auto'  }}>
+                {!services || !orders || !user ? <div style={{ width: '100%', height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Loader /></div>
+                    :
+                    <div style={{ width: '1140px', margin: 'auto'  }}>
+                        {go ? '' : <ServiceCategory />}
+                        {go ? <OrderCategory /> : ''}
+                    </div>
+                }
             </div>
         </div>
     );

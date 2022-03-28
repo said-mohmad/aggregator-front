@@ -1,69 +1,148 @@
 * {
-    box-sizing: border-box;
-    font-size: 14px;
-    font-weight: 400;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
 }
 .SidebarForm {
-    width: 300px;
-    min-height: 800px;
-    /* background-color: white; */
-    margin: 0px 0 20px 0;
-    padding: 15px;
-    border-radius: 5px;
+  width: 300px;
+  min-height: 800px;
+  /* background-color: white; */
+  margin: 0px 0 20px 0;
+  padding: 15px;
+  border-radius: 5px;
 }
 
 .CategoryTitle {
-    text-align: center;
-    font-size: 18px;
-    margin: 20px;
-
+  text-align: center;
+  font-size: 18px;
+  margin: 20px;
 }
 
 .CategoryOfMap {
-    display: flex;
-    /* border-top: 1px solid #EEEEEE; */
-    padding: 2px;
-    align-items: center;
-    font-size: 14px;
-    text-align: justify;
-    font-weight: bold;
+  display: flex;
+  /* border-top: 1px solid #EEEEEE; */
+  padding: 2px;
+  align-items: center;
+  font-size: 14px;
+  text-align: justify;
+  font-weight: bold;
+}
+.CategoryOfMapSelected {
+  display: flex;
+  padding: 2px;
+  align-items: center;
+  font-size: 14px;
+  text-align: justify;
+  font-weight: bold;
+
+  color: white;
+}
+.CategoryOfMapSelected span {
+  width: 100%;
+  font-weight: 700;
+  font-size: 16px;
+  border-bottom: 1px solid #ffffff;
+  margin: 5px 0;
+  color: rgb(255, 255, 255);
+  padding: 0 10px;
+  background-color: #143555;
+  border-radius: 5px;
+}
+.CategoryOfMap :hover {
+  background-color: #c8e2f8;
+  border-radius: 5px;
 }
 
 .CategoryOfMap span {
-    width: 100%;
-    font-weight: 700;
-    font-size: 16px;
-    border-bottom: 1px solid #94cdff;
-    margin: 5px 0;
+  width: 100%;
+  font-weight: 700;
+  font-size: 16px;
+  border-bottom: 1px solid #94cdff;
+  margin: 5px 0;
+  color: rgb(0, 0, 0);
+  padding: 0 10px;
 }
 
 .CategoryOfMap input {
-    margin: 5px 15px;
-    width: 14px;
+  margin: 5px 15px;
+  width: 14px;
 }
-
 
 .region {
-    width: 100%;
-    background-color: #e1f1ff;
-    padding: 20px;
-    border-radius: 4px;
-    margin-bottom: 20px;
+  width: 100%;
+  background-color: #e1f1ff;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
 }
 .region p {
-    font-weight: 700;
+  font-weight: 700;
+}
+.sortBlock {
+  width: 100%;
+  background-color: #e1f1ff;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.sortBlock p {
+  text-align: center;
+  font-size: 18px;
+  margin: 20px;
+}
+.sortBtns {
+  display: flex;
+  justify-content: space-around;
+}
+.sortBtns button {
+  padding: 5px 10px;
+  font-size: 12px;
+  background-color: #2a66a0;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.sortBtns :hover {
+  background-color: #143555;
+}
+.sortBtns .selected {
+  background-color: #143555;
+}
+
+.priceTitle {
+  text-align: center;
+  font-size: 18px;
+  margin: 20px;
+}
+.priceBlock {
+  width: 100%;
+  background-color: #e1f1ff;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.priceBlock p {
+  min-width: 16px;
+}
+.priceChange {
+  display: flex;
+  padding: 5px 0;
+  text-align: center;
+}
+.priceChange input {
+  margin-left: 10px;
 }
 
 .Sidebar {
-    background-color: #e1f1ff;
-    border-radius: 4px;
-    padding: 20px;
+  background-color: #e1f1ff;
+  border-radius: 4px;
+  padding: 20px;
 }
 
-
 .region input {
-    border-radius: 4px;
-    width: auto;
-    border: none;
-    margin-top: 20px;
+  border-radius: 4px;
+  width: auto;
+  border: none;
+  margin-top: 20px;
 }

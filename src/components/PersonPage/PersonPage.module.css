@@ -9,3 +9,8 @@
     margin: auto;
     justify-content: space-between;
 }
+
+.reTurn {
+    transform: rotateY(360deg);
+    transition: 500ms
+}

@@ -13,9 +13,14 @@ const SidebarBlock = ({
   priceTo,
   setPriceTo,
   getCategory,
-  setGetCategory
+  setGetCategory,
+  generalArr,
+  setGeneralArr,
+  sortUp,
+  setSortUp,
+  sortDown,
+  setSortDown
 }) => {
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,41 +30,54 @@ const SidebarBlock = ({
   const categories = useSelector((state) => state.categories.categories);
 
   const handleCategoryId = (id) => {
-    setGetCategory(!getCategory);
-    if (getCategory) setCategoryId(id);
+    if (categoryId === id) {
+      setGetCategory(false);
+      setCategoryId("");
+    } else {
+      setGetCategory(true);
+      setCategoryId(id);
+    }
   };
-  const handleCity = (city) => {
-    setCity(city);
-  };
+
   const handlePriceFrom = (e) => {
     if (e.target.value >= 0) setPriceFrom(e.target.value);
   };
   const handlePriceTo = (e) => {
     if (e.target.value >= 0) setPriceTo(e.target.value);
   };
+  const selectSortUp = () => {
+    setSortUp(!sortUp);
+    setSortDown(false);
+  };
+  const selectSortDown = () => {
+    setSortDown(!sortDown);
+    setSortUp(false);
+  };
 
   return (
     <div className={styles.SidebarForm}>
-      <div className={styles.region}>
-        <p>Регион</p>
-        <select
-          id={styles.selecttheme}
-          onChange={(e) => handleCity(e.target.value)}
-        >
-          <option value="Все города">Все города</option>
-          <option value="Грозный">Грозный</option>
-          <option value="Назрань">Назрань</option>
-          <option value="Москва">Москва</option>
-          <option value="Киев">Киев</option>
-          <option value="Нью-йорк">Нью-йорк</option>
-        </select>
-        <input type="text" placeholder="        Найти мой город" />
+      <div className={styles.sortBlock}>
+        <p>Сортировать по цене</p>
+        <div className={styles.sortBtns}>
+          <button
+            className={sortUp && styles.selected}
+            onClick={() => selectSortUp()}
+          >
+            Увеличение
+          </button>
+          <button
+            className={sortDown && styles.selected}
+            onClick={() => selectSortDown()}
+          >
+            Уменьшение
+          </button>
+        </div>
       </div>
 
-      <div>
-        <div>Стоимость услуг</div>
-        <div>
-          От{" "}
+      <div className={styles.priceBlock}>
+        <div className={styles.priceTitle}>Стоимость услуг</div>
+        <div className={styles.priceChange}>
+          <p>ОТ</p>
           <input
             onChange={(e) => {
               handlePriceFrom(e);
@@ -69,8 +87,8 @@ const SidebarBlock = ({
             value={priceFrom}
           />
         </div>
-        <div>
-          До{" "}
+        <div className={styles.priceChange}>
+          <p>ДО</p>
           <input
             onChange={(e) => {
               handlePriceTo(e);
@@ -87,7 +105,14 @@ const SidebarBlock = ({
 
         {categories.map((category) => {
           return (
-            <div key={category._id} className={styles.CategoryOfMap}>
+            <div
+              key={category._id}
+              className={
+                categoryId === category._id
+                  ? styles.CategoryOfMapSelected
+                  : styles.CategoryOfMap
+              }
+            >
               <span onClick={() => handleCategoryId(category._id)}>
                 {category.title}
               </span>

@@ -39,7 +39,8 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
         } else {
             setStop(false)
             // console.log(category)
-            dispatch(addedService(name, description, price, category))
+            // dispatch(addedService(name, description, price, category))
+            handleOnDrop()
             handleShowAdd()
             dispatch(loadServices())
 
@@ -58,8 +59,8 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
         e.preventDefault();
         setDrag(false);
     };
-     const token = localStorage.getItem('token');
-     
+    const token = localStorage.getItem('token');
+
     const handleOnDrop = (e) => {
         e.preventDefault();
         let files = [...e.dataTransfer.files];
@@ -75,12 +76,12 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
             },
             body: formData
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch((e) => console.log(e,toString()));
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch((e) => console.log(e, toString()));
         setDrag(false);
     }
-    
+
 
 
 
@@ -99,7 +100,7 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '16px', padding: '10px 5px' }}>
                             <div style={{ width: '35%', alignSelf: 'self-start' }}>Описание</div>
-                            <div style={{ width: '65%' }}><textarea value={description} onChange={handleDescription} style={{ width: '100%' }} placeholder='Необходимо ввести описание' /></div>
+                            <div style={{ width: '65%' }}><textarea value={description} onChange={handleDescription} style={{ width: '100%', minHeight:'50px' }} placeholder='Необходимо ввести описание' /></div>
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '16px', padding: '10px 5px' }}>
                             <div style={{ width: '35%' }}>Цена</div>
@@ -123,22 +124,29 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
                         {/* код Сайд-Мохьмада для загрузки изображений перетаскиванием */}
                         <div className={styles.addImage}>
                             {console.log(drag)}
-                                  {drag 
-                                  ? <div className={styles.dropArea}
-                                  onDragStart={e => handleDragStart(e)}
-                                  onDragLeave={e => handleDragLeave(e)}
-                                  onDragOver={e => handleDragStart(e)}
-                                  onDrop={e => handleOnDrop(e)}
-                                  >Отпустите файлы, чтобы загрузить их</div>
+                            {drag
+                                ? <div className={styles.dropArea}
+                                    onDragStart={e => handleDragStart(e)}
+                                    onDragLeave={e => handleDragLeave(e)}
+                                    onDragOver={e => handleDragStart(e)}
+                                    onDrop={e => handleOnDrop(e)}
+                                >Отпустите файлы, чтобы загрузить их</div>
 
-                                  :  <div className={styles.dropArea}
-                                  onDragStart={e => handleDragStart(e)}
-                                  onDragLeave={e => handleDragLeave(e)}
-                                  onDragOver={e => handleDragStart(e)}
-                                  >Перетащите файлы, чтобы загрузить их</div>}
+                                : <div className={styles.dropArea}
+                                    onDragStart={e => handleDragStart(e)}
+                                    onDragLeave={e => handleDragLeave(e)}
+                                    onDragOver={e => handleDragStart(e)}
+                                >Перетащите файлы, чтобы загрузить их</div>}
+                            <file></file>
+                            {/* Стили от Исмаила (Можно удалить) */}
+                            <div style={{ textAlign:'center' }}>
+                                <button style={{margin:'20px 0'}}>Обзор</button>
+                                <div>Выберите изображение для услуги</div>
+                            </div>
+
                         </div>
                         {/*конец кода Сайд-Мохьмада */}
-                        <div style={{fontSize:'18px', color:'red', textAlign:'center', margin: '10px 0'}}>
+                        <div style={{ fontSize: '18px', color: 'red', textAlign: 'center', margin: '10px 0' }}>
                             {stop && 'Пожалуйста, заполните поля'}
                         </div>
                         <div style={{ textAlign: 'center', display: "grid", margin: 'auto', justifyContent: 'space-around'}}>
