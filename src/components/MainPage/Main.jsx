@@ -6,7 +6,6 @@ import SearchBlock from './SearchBlock/SearchBlock'
 import Advantages from "./Advantages/Advantages";
 import Promotion from "./Promotion/Promotion";
 import OboutUs from "./OboutUs/OboutUs";
-import PhotoAdd from "../AddPhotoBlock/PhotoAdd";
 
 const Main = () => {
   return (
@@ -17,7 +16,6 @@ const Main = () => {
       <Categories />
       <Promotion />
       <OboutUs />
-      <PhotoAdd />
     </div>
   );
 };

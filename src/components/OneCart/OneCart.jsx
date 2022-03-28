@@ -16,7 +16,7 @@ const OneCart = () => {
     
     return (
         <div className={styles.OneCart}>
-            <Link className={styles.Home_buttons} rel="stylesheet" to="/home">HOME</Link>
+            <Link className={styles.Home_buttons} rel="stylesheet" to="/home">Категории</Link>
              <h2 className={styles.title}>{oneServise.serviceName}</h2>
             <div className={styles.wrapper}>
                

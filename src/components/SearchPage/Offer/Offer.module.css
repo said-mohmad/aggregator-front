@@ -34,15 +34,17 @@
 
 .offerButtons button {
     background-color: #4776AA;
+    color: white;
     width: 200px;
     margin-right: 30px;
     border: 1px solid #4776AA;
+    border-radius: 4px;
 }
 
 .offerButtons button:hover {
     background-color: #e1f1ff;
     border: 1px solid #4776AA;
-    color: black;
+    color: #4776AA;
 }
 
 .offerButtons .span {

@@ -4,15 +4,14 @@
 }
 
 .wrapper {
-    width: 600px;
+    width: 800px;
     display: flex;
     margin: auto;
-    justify-content: space-between;
     align-items: center;
 }
 
 .wrapper input {
-    width: 75%;
+    width: 380px;
     height: 35px;
     margin: 0 40px 0 0;
     padding: 0;
