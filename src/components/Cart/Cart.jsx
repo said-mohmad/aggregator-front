@@ -67,7 +67,7 @@ const Cart = ({ card, executor }) => {
           <span> {card.description}</span>
           <div className={style.imgCarosel}>
           </div>
-          <Carousel />
+          <Carousel card={card} />
         </div>
         <div className={style.money}>
           {/* Цена услуги и место оказания */}
@@ -75,17 +75,19 @@ const Cart = ({ card, executor }) => {
             <p>Бюджет</p> <p>{card.price}</p>
           </div>
           <div>
-            {/* <p>Регион</p> <p>{executor.city}</p> */}
+            <p>Регион</p> <p>{executor ? executor.city : "Не указан"}</p>
           </div>
         </div>
       </div>
-        <div className={style.executor}>
-          {/* <div className={style.info}> */}
-            {/* <img className={style.executor_img} src={img} alt="" /> */}
-            {/* <div className={style.number_phone}> */}
-              {/* Данные об исполнителе */}
-              {/* <p>{executor.executor}</p>
-              <p>{executor.phone}</p> */}
+      <div className={style.executor}>
+        <div className={style.info}>
+          {console.log(card.serviceImg)}
+          <img className={style.executor_img} src={card.serviceImg ? `http://localhost:4000/${card.serviceImg}` : img} alt="" />
+          <div className={style.number_phone}>
+            {/* Данные об исполнителе */}
+            <p>{executor ? executor.executor : "Не указан"}</p>
+            <p>{executor ? executor.phone : "Не указан"}</p>
+          </div>
         </div>
 
         {!text ? (

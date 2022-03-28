@@ -62,6 +62,25 @@ export default function services(state = initialState, action) {
         executor: [],
         error: action.error
       };
+      case "services/add/pending":
+      return {
+        ...state,
+        loading: true,
+        error: null,
+      };
+    case "services/add/fulfilled":
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        services: [...state.services, action.payload],
+      };
+    case "services/add/rejected":
+      return {
+        ...state,
+        loading: false,
+        error: action.error,
+      };
     default:
       return state;
   }
@@ -133,3 +152,36 @@ export const fetchExecutorById = (id) => {
     }
   };
 };
+
+export const addService = (name, description, price, category, files) => {
+  return async(dispatch) => {
+    const formData = new FormData();
+    for (let i = 0; i < files.length; i++) {
+      formData.append('images', files[i]);
+      console.log(files[i]);
+    }
+        
+        formData.append('serviceName', name);
+        formData.append('categoryId', category);
+        formData.append('price', price);
+        formData.append('description', description);
+    dispatch({ type: "services/add/fulfilled" });
+    try {
+      const response = await fetch("http://localhost:4000/services", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: formData,
+      });
+      const json = await response.json();
+      if (json.error) {
+        dispatch({ type: "services/add/rejected", error: json.error });
+      } else {
+        dispatch({ type: "services/add/fulfilled", payload: json });
+      }
+    } catch (e) {
+      dispatch({ type: "services/add/rejected", error: e.toString() });
+    }
+  }
+}
