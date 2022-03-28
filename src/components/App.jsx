@@ -11,7 +11,6 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import OneCart from "./OneCart/OneCart";
 import SidebarBlock from "./SearchPage/SidebarBlock/SidebarBlock";
-import Carts from "./Cart/Carts";
 
 
 const App = () => {

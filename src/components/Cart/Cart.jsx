@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { fetchExecutor, fetchExecutorById } from "../../redux/features/services";
 import Carousel from "../Carousel/Carousel";
 import {Link} from "react-router-dom";
-import { getOneServise } from "../../redux/features/getOneServise";
+import { getOneServise } from "../../redux/features/oneServise";
 
 const Cart = ({ card }) => {
 
@@ -17,14 +17,7 @@ const Cart = ({ card }) => {
   const [name, setName] = useState("");
   const [sendUser, setSendUser] = useState(false);
 
-  useEffect(() => {
-    dispatch(fetchExecutor());
-  }, [dispatch]);
-  const executors = useSelector((state) => state.services.executors);
-  console.log(executors)
-  const executor = executors.find(executor => executor._id === card.executorId)
-
-  console.log(executor);
+  
   // console.log(executor);
   const hundleClick = () => {
     setText(!text);
@@ -79,18 +72,18 @@ const Cart = ({ card }) => {
             <p>Бюджет</p> <p>{card.price}</p>
           </div>
           <div>
-            <p>Регион</p> <p>{executor.city}</p>
+            {/* <p>Регион</p> <p>{executor.city}</p> */}
           </div>
         </div>
       </div>
       <div className={style.executor}>
-        <div className={style.info}>
-          <img className={style.executor_img} src={img} alt="" />
-          <div className={style.number_phone}>
+        {/* <div className={style.info}> */}
+          {/* <img className={style.executor_img} src={img} alt="" /> */}
+          {/* <div className={style.number_phone}> */}
             {/* Данные об исполнителе */}
-            <p>{executor.executor}</p>
-            <p>{executor.phone}</p>
-          </div>
+            {/* <p>{executor.executor}</p> */}
+            {/* <p>{executor.phone}</p> */}
+          {/* </div> */}
         </div>
 
         {!text ? (
@@ -130,7 +123,7 @@ const Cart = ({ card }) => {
           </div>
         )}
       </div>     
-    </div>
+    // </div>
 
    
     

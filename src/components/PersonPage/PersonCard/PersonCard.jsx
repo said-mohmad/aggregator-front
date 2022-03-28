@@ -24,7 +24,7 @@ const PersonCard = () => {
 
                 <div className={styles.personImg}>
                     <img src='https://cdn.freelance.ru/img/portfolio/pics/00/36/88/3573970.jpg?mt=c7bcef8b' alt="personImg" />
-                    <button className={styles.EditImg}>Изменить</button>
+                    <button className={styles.EditImg}>Редактировать</button>
                 </div>
                 <div className={styles.personInfo}>
                     <div className={styles.Company}>
@@ -38,15 +38,15 @@ const PersonCard = () => {
 
                     </div>
                     <div className={styles.infoLine}>
-                        <h3>Имя</h3>
+                        <h3>Имя:</h3>
                         <p>{user.executor}</p>
                     </div>
                     <div className={styles.infoLine}>
-                        <h3>Номер</h3>
+                        <h3>Номер:</h3>
                         <p>{user.phone}</p>
                     </div>
                     <div className={styles.infoLine}>
-                        <h3>Город</h3>
+                        <h3>Город:</h3>
                         <p>{user.city}</p>
                     </div>
                 </div>

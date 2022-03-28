@@ -1,19 +1,43 @@
+* {
+  font-size: 13px;
+}
+
+.wrapper {
+  display: flex;
+    width: 960px;
+    margin: auto;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
 .servises {
-  width: 100%;
+  width: 795px;
   background-color: white;
+  margin: auto;
+  padding: 15px 20px 0;
+  border-radius: 8px;
 }
 
 .addServise {
   display: flex;
-  width: 1240px;
-  margin: auto;
+  align-items: center;
+  width: 795px;
   justify-content: space-between;
-  padding: 25px 40px;
+  padding: 0px 40px;
+}
+
+.addServise h3 {
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
 }
 
 .addBtn {
   background-color: #4E79AA ;
+  color: white;
   border: 1px solid #4E79AA;
+  border-radius: 4px;
+  width: 150px;
+  height: 30px;
 }
 .addBtn:hover {
   border: 1px solid #4E79AA;
@@ -22,8 +46,9 @@
 }
 
 .ServisesMap {
-  width: 1240px;
+  width: 795px;
   margin: auto;
+  padding: 15px 20px 0;
 }
 
 .cart {
@@ -45,16 +70,7 @@
   margin: 5px;
 }
 
-.editBtn {
-  background-color: #f4511e;
-}
-
-.removeBtn {
-  background-color: #a50101;
-}
-
 .button span {
-  font-size:28px;
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -158,6 +174,7 @@
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: .3rem;
   outline: 0;
+  padding: 20px;
 }
 
 @media (min-width: 768px) {
@@ -239,11 +256,13 @@
 }
 
 .editBtn {
-  background-color: #f4511e;
+  background-color: #4E79AA;
+  width: 150px;
 }
 
 .removeBtn {
-  background-color: #a50101;
+  background-color: #ce0000;
+  width: 150px;
 }
 
 .button span {
@@ -305,13 +324,13 @@
     /* background-color: blueviolet; */
     cursor: pointer;
     transition: 500ms;
-    margin: 10px
+    margin: 0 10px
   }
 
 .reloadBtn:hover {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     transform: rotate(360deg);
     transition: 1000ms;
-    margin: 5px
+    margin: 0 10px
 }

@@ -37,7 +37,12 @@ const ServiceCategory = ({ userCity }) => {
   }
 
   return (
-    <div className={styles.servises}>
+
+    <div className={styles.wrapper}>
+      <div className={styles.empthy}></div>
+
+      <div className={styles.content}>
+<div className={styles.servises}>
       <div className={styles.addServise}>
         <div style={{ display: 'flex', justyfyContent: 'space-between', alignItems: 'center' }}>
           <div onClick={handleReload} className={styles.reloadBtn}></div>
@@ -118,6 +123,10 @@ const ServiceCategory = ({ userCity }) => {
         })}
       </div>
     </div>
+
+      </div>
+    </div>
+    
   );
 };
 
