@@ -126,7 +126,8 @@ const Cart = ({ card, executor }) => {
             </div>
           </div>
         )}
-      </div>     
+      </div>  
+      </div>   
   );
 };
 
