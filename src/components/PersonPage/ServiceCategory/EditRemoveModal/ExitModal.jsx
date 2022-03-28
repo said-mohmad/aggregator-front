@@ -20,7 +20,7 @@ const ExitModal = ({ showExit, handleShowExit}) => {
                     </div>
                     <div className={styles.modalBody}>
                         <div style={{ padding: '15px' }}>
-                            <div style={{ fontSize: '48px', fontWeght: 'bold', textAlign: 'center' }}>
+                            <div style={{ fontSize: '20px', fontWeght: 'bold', textAlign: 'center' }}>
                                 Вы уверены что хотите выйти из личного кабинета?
                                 {/* <hr /> */}
                             </div>

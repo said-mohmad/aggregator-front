@@ -21,13 +21,15 @@
 }
 
 .title {
-    margin-left: 30px;
+    margin-left: 27px;
+    margin-top: 20px;
     text-decoration: underline;
     color: #4776AA;
 }
 
 .boxModal {
     width: 700px;
+    min-height: 480px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.253);
     padding: 25px;
@@ -37,12 +39,19 @@
     width: 200px;
     margin: 0 auto;
 }
+
+.UsersInfo h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
 .boxModal img {
     height: 430px;
     text-align: centers;
 }
 
 .boxModal button {
+    height: 430px;
     width: 40px;
     background-color: rgba(0, 0, 0, 0);
 }
@@ -58,6 +67,11 @@
     background-color: #4FCC02;
     color: white;
     margin: 5px 20px;
+    border-radius: 8px;
+}
+
+.phone:hover {
+    background-color: #3da000;
 }
 
 .message {
@@ -67,6 +81,10 @@
     background-color: #4776AA;
     color: white;
     margin: 5px 20px;
+    border-radius: 8px;
+}
+.message:hover {
+    background-color: #3b5e86;
 }
 
 .ServisesInfo {
@@ -92,4 +110,13 @@
 
 .infoOboutSrvises div {
     font-size: 18px;
+}
+
+.Home_buttons {
+    font-size: 16px;
+    border: none;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    color: #4776AA;
 }

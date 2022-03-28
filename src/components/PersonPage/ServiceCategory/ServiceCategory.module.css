@@ -9,6 +9,12 @@
     justify-content: space-between;
     margin-bottom: 50px;
 }
+
+.empthy {
+  width: 165px;
+  height: 100px;
+}
+
 .servises {
   width: 100%;
   margin: auto;
@@ -21,22 +27,42 @@
 .name {
   display: flex;
   justify-content: space-between;
-  padding: 15px 10px
+  padding: 10px 0;
+  font-size: 14px
 }
 
-.description {
-  display: flex;
-  justify-content: space-around;
-  margin: 20px 0
+.name h2 {
+  font-size: 16px;
 }
 
-.money *{
+.name h1 {
+  font-size: 18px;
+}
+
+.money h3 {
+  font-size: 18px;
   margin-bottom: 20px;
 }
 
+
+
+
+.description {
+  display: flex;
+}
+
+.description h4 {
+  font-size: 14px;
+}
+
+.money *{
+  margin-bottom: 10px;
+}
+
 .imgs {
-  text-align: center;
-  font-size: 26px;
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
 .clock:hover {
@@ -52,7 +78,7 @@
 }
 
 .addServise h3 {
-  font-size: 15px;
+  font-size: 14px;
   margin: 0;
   padding: 0;
 }
@@ -63,7 +89,12 @@
   border: 1px solid #4E79AA;
   border-radius: 4px;
   width: 150px;
-  height: 30px;
+  padding: 5px;
+  margin-right: 20px;
+}
+
+.clock {
+  padding-bottom: 10px;
 }
 .addBtn:hover {
   border: 1px solid #4E79AA;
@@ -78,6 +109,7 @@
 }
 
 .cart {
+  width: 750px;
   padding: 25px 0;
   background-color: white;
   border-bottom: 1px solid #4E79AA ;
@@ -85,7 +117,6 @@
 }
 
 .button {
-  /* border-radius: 4px; */
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -302,3 +333,31 @@
     transition: 1000ms;
 }
 
+.editBtn {
+  border-radius: 8px;
+  background-color: #4E79AA;
+}
+
+.removeBtn {
+  background-color: rgb(190, 0, 0);
+  border-radius: 8px;
+}
+
+
+.btnspan {
+  border-radius: 8px;
+}
+
+.button {
+  width: 150px;
+}
+
+.checkout {
+  border: none;
+  background-color: #4E79AA;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-left: 20px;
+}

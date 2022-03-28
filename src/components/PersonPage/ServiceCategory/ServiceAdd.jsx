@@ -171,10 +171,8 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
                                         {renderPhotos(selectedImages)}
                                       </div>
                                       <p>Перетащите файлы, чтобы загрузить их</p></div>}
-                                    <input type="file" multiple id="file" onChange={(e) => imageHandleChange(e)} />
-                                    <button onClick={(e) => handleCleanSelect(e)}>Убрать выбранные</button>
+                                    <button className={styles.checkout} onClick={(e) => handleCleanSelect(e)}>Убрать выбранные</button>
                 
-                                    <div>Выберите изображение для услуги</div>
 
                         </div>
                         {/*конец кода Сайд-Мохьмада */}

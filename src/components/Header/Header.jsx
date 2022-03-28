@@ -59,7 +59,7 @@ const Header = () => {
                 {token && (
                   <div className={style.auth}>
                     
-                    <Link to="/executor"><span className={style.auth_in_person}>{user && user.executor}</span></Link>
+                    <Link to="/executor"><span className={style.auth_in_person}>Личный кабинет</span></Link>
 
                     <div className={style.auth_register} onClick={() => handlePersonModal()}>
                       <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="" />

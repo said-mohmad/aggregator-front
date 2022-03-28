@@ -49,13 +49,13 @@ const ServiceCategory = () => {
       <div className={styles.empthy}></div>
 
       <div className={styles.content}>
-<div className={styles.servises}>
+    <div className={styles.servises}>
       <div className={styles.addServise}>
         <div style={{ display: 'flex', justyfyContent: 'space-between', alignItems: 'center' }}>
           <div onClick={handleReload} className={styles.reloadBtn}></div>
           <h3>Список активных услуг</h3>
         </div>
-        <div style={{display:'flex', justifyContent:'space-between', width:'15%'}}>
+        <div style={{display:'flex', justifyContent:'space-between', alignItems: 'center'}}>
           <button className={styles.addBtn} onClick={() => handleShowAdd()}>
             +Добавить услугу
           </button>
@@ -70,7 +70,7 @@ const ServiceCategory = () => {
       </div>
       <div className={styles.ServisesMap}>
         <div
-          style={{ fontSize: "48px", textAlign: "center" }}
+          style={{ fontSize: "24px", textAlign: "center" }}
         >
           {services.length > 0 ? "" : "Вы пока не разместили ни одну услугу"}
         </div>
@@ -89,8 +89,8 @@ const ServiceCategory = () => {
               </div>
               <div className={styles.imgs}>3 фото</div>
               <div className={styles.money}>
-                <h4>Бюджет: {item.price}р</h4>
-                <h4>Регион: {user ? user.city : "Загрузка..."}</h4>
+                <h5>Бюджет: {item.price}р</h5>
+                <h5>Регион: {user ? user.city : "Загрузка..."}</h5>
               </div>
               <div
                 style={{ width: "80%", margin: "auto", textAlign: "center" }}
@@ -98,8 +98,7 @@ const ServiceCategory = () => {
                 <button
                   className={`${styles.editBtn} ${styles.button}`}
                   onClick={() => handleShowEdit(item)}
-                  disabled={showEdit || showRemove}
-                >
+                  disabled={showEdit || showRemove}>
                   <span>Редактировать</span>
                 </button>
                 {showEdit ? (

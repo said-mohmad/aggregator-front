@@ -15,7 +15,7 @@ const SearchForm = ({ inputText, setInputText }) => {
       <div className={styles.wrapper}>
         <input
           type="text"
-          placeholder="Давайте найдем"
+          placeholder="  Поиск по сайту"
           value={inputText}
           onChange={(e) => handleInput(e)}
         />

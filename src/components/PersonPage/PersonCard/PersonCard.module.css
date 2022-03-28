@@ -18,28 +18,30 @@
     display:flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
 
 .personImg img {
     width: 100%;
     
+    
 }
 
 .EditImg {
     position: absolute;
-    top: 170px;
-    left: 0;
+    top: 125px;
+    left: -4px;
     width: 87%;
     margin: 15px;
     border: none;
-    background-color: #4775aa00 ;
-    color: rgba(255, 255, 255, 0);
+    background-color: #4775aa70 ;
+    color: rgb(255, 255, 255);
     padding: 5px 20px;
     border-radius: 4px;
 }
 
 .EditImg:hover {
-    background-color: #4775aaa2 ;
+    background-color: #4775aa ;
     color: rgb(255, 255, 255);
 }
 
