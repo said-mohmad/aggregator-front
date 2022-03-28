@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addedService } from '../../../redux/features/addService';
 import { loadServices } from '../../../redux/features/organization';
+import { addService } from '../../../redux/features/services';
 import styles from "./ServiceCategory.module.css"
 
 const ServiceAdd = ({ showAdd, handleShowAdd }) => {
@@ -32,13 +33,14 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
         setPrice(e.target.value)
     }
 
-    const handleAdd = () => {
+    const handleAdd = (name, description, price, category, filesForSend) => {
         if (!name && !description && !price) {
             setStop(true)
         } else {
             setStop(false)
             // console.log(category)
-            dispatch(addedService(name, description, price, category))
+            // dispatch(addedService(name, description, price, category))
+            dispatch(addService(name, description, price, category, filesForSend))
             handleShowAdd()
             dispatch(loadServices())
 
@@ -47,6 +49,27 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
 
     //код Сайд-Мохьмада для загрузки изображения перетаскиванием 
     const [drag, setDrag] = useState(false);
+    const [selectedImages, setSelectedImages] = useState([]);
+    const [filesForSend, setFilesForSend] = useState(null)
+    const imageHandleChange = (e) => {
+        // console.log(e.target.files);
+        if (e.target.files) {
+            const fileArray = Array.from(e.target.files).map((file) => URL.createObjectURL(file));
+            console.log(fileArray);
+            setSelectedImages((prevImages) => prevImages.concat(fileArray));
+            Array.from(e.target.files).map((file) => {
+                URL.revokeObjectURL(file)
+            })
+        }
+    }
+    const renderPhotos = (source) => {
+        return source.map((photo) => {
+            return <img style={{width: "90px", marginLeft: "5px", marginTop: "5px"}} src={photo} key={photo} alt="images" />
+        })
+    }
+    const handleCleanSelect = () => {
+        setSelectedImages([]);
+    }
 
     const handleDragStart = (e) => {
         e.preventDefault();
@@ -62,21 +85,32 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
     const handleOnDrop = (e) => {
         e.preventDefault();
         let files = [...e.dataTransfer.files];
-        const formData = new FormData();
-        formData.append('image', files[0]);
-        formData.append('serviceName', name);
-        formData.append('categoryId', category)
-        formData.append('price', price)
-        fetch("http://localhost:4000/services", {
-            method: "POST",
-            headers: {
-                Authorization: `Bearer ${token}`
-            },
-            body: formData
+
+        setFilesForSend(files);
+        
+        const fileArray = files.map((file) => URL.createObjectURL(file));
+        console.log(fileArray);
+        setSelectedImages((prevImages) => prevImages.concat(fileArray));
+        Array.from(files).map((file) => {
+            URL.revokeObjectURL(file)
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch((e) => console.log(e,toString()));
+        
+        console.log(files)
+        // const formData = new FormData();
+        // formData.append('image', files[0]);
+        // formData.append('serviceName', name);
+        // formData.append('categoryId', category);
+        // formData.append('price', price);
+        // fetch("http://localhost:4000/services", {
+        //     method: "POST",
+        //     headers: {
+        //         Authorization: `Bearer ${token}`
+        //     },
+        //     body: formData
+        // })
+        // .then(res => res.json())
+        // .then(data => console.log(data))
+        // .catch((e) => console.log(e,toString()));
         setDrag(false);
     }
     
@@ -129,9 +163,14 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
                                   onDragStart={e => handleDragStart(e)}
                                   onDragLeave={e => handleDragLeave(e)}
                                   onDragOver={e => handleDragStart(e)}
-                                  >Перетащите файлы, чтобы загрузить их</div>}
-                                    <file></file>
-                                    <button>Обзор</button>
+                                  >
+                                      <div className={styles.resultImages}>
+                                        {renderPhotos(selectedImages)}
+                                      </div>
+                                      <p>Перетащите файлы, чтобы загрузить их</p></div>}
+                                    <input type="file" multiple id="file" onChange={(e) => imageHandleChange(e)} />
+                                    <button onClick={(e) => handleCleanSelect(e)}>Убрать выбранные</button>
+                
                                     <div>Выберите изображение для услуги</div>
                         </div>
                         {/*конец кода Сайд-Мохьмада */}
@@ -139,7 +178,7 @@ const ServiceAdd = ({ showAdd, handleShowAdd }) => {
                             {stop && 'Пожалуйста, заполните поля'}
                         </div>
                         <div style={{ textAlign: 'center', margin: '15px 0' }}>
-                            <button onClick={handleAdd} className={`${styles.editBtn} ${styles.button}`}><span>Подтвердить</span></button>
+                            <button onClick={() => handleAdd(name, description, price, category, filesForSend)} className={`${styles.editBtn} ${styles.button}`}><span>Подтвердить</span></button>
                             <button onClick={handleShowAdd} className={`${styles.removeBtn} ${styles.button}`} ><span>Отменить</span></button>
                         </div>
                     </div>

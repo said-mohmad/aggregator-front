@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import styles from './Carousel.module.css';
 
-const Carousel = () => {
+const Carousel = ({card}) => {
 
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -20,7 +20,7 @@ const Carousel = () => {
       };
           
       return (
-              <div>
+              <div>{console.log(card.serviceImg)}
                 <div className={styles.buttonCarusel} onClick={handleOpen}>Фотографии</div>
                 <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
                   <Box sx={style} className={styles.boxModal}>
@@ -29,13 +29,18 @@ const Carousel = () => {
                         <div class="carousel-indicators ">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
                         <div class="carousel-inner ">
                         <div class="carousel-item active">
-                            <img src="https://32.img.avito.st/image/1/1.9X96i7axWZZMPNubHJS6Q-MoWZLGKlOU.LlHwhFyYbsE-8QpfZi3a9sKBIBFw0gr3ha-Alxk5DzI" className={style.caruselImg} alt="..." />
+                          {console.log(card.serviceImg)}
+                            <img src={`http://localhost:4000/${card.serviceImg[0]}`} className={style.caruselImg} alt="..." />
                         </div>
                         <div class="carousel-item">
-                            <img src="https://51.img.avito.st/image/1/1.QsIu8rax7isYRWwmJu8N_rdR7i-SU-Qp.48Zat7lOXsuwhzrQkwd8LQ0AHUDZ1Q9MRrME2mlBpbk"  className={style.caruselImg} alt="..." />
+                            <img src={`http://localhost:4000/${card.serviceImg[1]}`}  className={style.caruselImg} alt="..." />
+                        </div>
+                        <div class="carousel-item">
+                            <img src={`http://localhost:4000/${card.serviceImg[2]}`}  className={style.caruselImg} alt="..." />
                         </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
