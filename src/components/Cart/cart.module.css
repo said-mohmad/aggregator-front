@@ -108,8 +108,9 @@
 }
 .add_name{
     font-size: 20px;
-    border-bottom: 1px solid gray;
+    /* border-bottom: 1px solid gray; */
     margin-top: 10px;
+    text-align: left;
 }
 input{
     width: auto;
@@ -122,8 +123,11 @@ input{
 
 .send_but{
     margin-top: 10px;   
-    background-color: brown;
-    margin-left: 47px;
+    background-color: rgb(192, 25, 25);
+    /* margin-left: 47px; */
+    border-radius: 5px;
+    width: 120px;
+    color: aliceblue;
 }
 .send_but:hover{
     background-color: red;
@@ -177,24 +181,27 @@ input{
 
 .model{
     position: absolute;
-    background-color: gray;
+    background-color: rgb(245, 245, 245);
     border-radius: 20px;
     padding: 5px;   
     left: 300px;
-    width: 430px;
+    width: 412px;
     height: 260px;
     bottom: 10px;
+    /* border: 1px solid black; */
+    text-align: center;
+    box-shadow: 0px 0px 32px 14px rgba(34, 60, 80, 0.2);
 }
-
 .model input{
     margin: auto;
+    width: 400px;
 }
 .executor{
     position: relative;
 }
 
 .vihod{
-    color: white;
+    color: black;
     text-align: right;
     cursor: pointer;
 }
