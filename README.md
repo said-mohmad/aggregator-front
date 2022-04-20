@@ -24,7 +24,7 @@
 
 - В личном кабинете есть возможность добавлять новые карточки, редактировать существующие и просматривать заказы
 
-![gif](https://github.com/said-mohmad/aggregator-front/blob/final/profile.gif)
+![gif](https://github.com/said-mohmad/aggregator-front/blob/final/profile-res.gif)
 
 ## Запуск проекта
 
