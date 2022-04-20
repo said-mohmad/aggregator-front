@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# Агрегатор строительных услуг
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>Сервис, где регистрируются в качестве исполнителей компании или частные лица, предоставляющие строительные услуги различного типа. Посетители могут заказать необходимую услугу из списка, оставив заявку</p>
 
-## Available Scripts
+## Функционал сайта
 
-In the project directory, you can run:
+- Поиск услуги с применением многофункционального фильтра
 
-### `npm start`
+![gif](https://github.com/said-mohmad/aggregator-front/blob/final/filter.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![gif](https://github.com/said-mohmad/aggregator-front/blob/final/find.gif)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Посетитель может просматривать каточку услуги с подробностями
 
-### `npm test`
+![gif](https://github.com/said-mohmad/aggregator-front/blob/final/one-card1.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- После выбора услугу можно оформить заявку:
 
-### `npm run build`
+![gif](https://github.com/said-mohmad/aggregator-front/blob/final/order1.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Регистрация c валидацией пароля, почтового адреса, номера телефона
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![gif](https://github.com/said-mohmad/aggregator-front/blob/final/registration.gif)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- В личном кабинете есть возможность добавлять новые карточки, редактировать существующие и просматривать заказы
 
-### `npm run eject`
+![gif](https://github.com/said-mohmad/aggregator-front/blob/final/profile-res.gif)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Запуск проекта
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Для запуска проекта вам необходимо набрать команду в терминале:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```javascript
+cd yedoo-frontend
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```javascript
+npm i
+```
 
-## Learn More
+После набрать команду:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```javascript
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Использованный стек технологий 🛠
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- React
+- Node.js
+- Express
+- MongoDB
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Использованные библиотеки 📚
 
-### Making a Progressive Web App
+- Redux
+- Redux Thunk
+- React Router
+- Mongoose
+- Multer
+- bcrypt
+- jsonwebtoken
+- Moment.js
+- dotenv
+- Axios
+- React Scroll
+- MaterialUI
+- CleaveJS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Команда проекта
 
-### Advanced Configuration
+<h3>
+  <a href="https://github.com/zhelezobeton">
+        🌐Мусхаб Исраилов
+  </a>
+</h3>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<h3>
+  <a href="https://github.com/alvi-soltakhanov">
+        🌐Альви Солтаханов
+  </a>
+</h3>
 
-### Deployment
+<h3>
+  <a href="https://github.com/Sadulaev">
+        🌐Исмаил Садулаев
+  </a>
+</h3>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<h3>
+  <a href="https://github.com/said-mohmad">
+        🌐Саид-Магомед Джабраилов
+  </a>
+</h3>
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h3>
+  <a href="https://github.com/AbuYas7">
+        🌐Абубакар Гайтукаев
+  </a>
+</h3>
