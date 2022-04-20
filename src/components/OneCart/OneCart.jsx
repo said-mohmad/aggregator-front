@@ -29,7 +29,7 @@ const OneCart = () => {
                         </div>
                         <div class="carousel-inner ">
                         <div class="carousel-item active">
-                            <img src={oneServise.serviceImg} className={style.caruselImg} alt="..." />
+                            <img src="https://cstor.nn2.ru/blog/data/blog/2018-03/1472735_1522222510.jpg" className={style.caruselImg} alt="..." />
                         </div>
                         <div class="carousel-item">
                             <img src="https://51.img.avito.st/image/1/1.QsIu8rax7isYRWwmJu8N_rdR7i-SU-Qp.48Zat7lOXsuwhzrQkwd8LQ0AHUDZ1Q9MRrME2mlBpbk"  className={style.caruselImg} alt="..." />
