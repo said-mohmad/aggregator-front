@@ -31,7 +31,7 @@
 Для запуска проекта вам необходимо набрать команду в терминале:
 
 ```javascript
-cd yedoo-frontend
+cd aggregator-front
 ```
 
 ```javascript
